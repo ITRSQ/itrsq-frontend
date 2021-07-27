@@ -1,1 +1,107 @@
 /* Other rules */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
+
+/* Header */
+
+.header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: rgb(255, 90, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 90, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.header__container {
+  margin: 0 auto;
+  display: flex;
+  width: 1440px;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__container > div {
+  font-size: 1.2rem;
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+}
+
+.header__container > div > a {
+  color: white;
+}
+
+.header__logo {
+  width: 6rem;
+}
+
+/* Hero */
+
+.hero {
+  width: 1440px;
+
+  margin-top: 10%;
+}
+
+.hero > h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  background: linear-gradient(
+    90deg,
+    rgba(41, 18, 58, 1) 0%,
+    rgba(127, 61, 86, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-left: 10%;
+}
+
+/* Footer */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background: rgb(255, 90, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 90, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.footer__container {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__container > h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 90, 0, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  border: solid white 2px;
+  padding: 5px;
+}
