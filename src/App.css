@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 /* Header */
 
 .header {
@@ -35,6 +39,16 @@
 
 .header__container > div > a {
   color: white;
+}
+
+.header__clicked {
+  border-bottom: solid white 3px;
+  padding-bottom: 5px;
+}
+
+.header__container > div > a:hover {
+  border-bottom: solid white 3px;
+  padding-bottom: 5px;
 }
 
 .header__logo {
