@@ -12,34 +12,50 @@ const Header = () => {
         <div>
           <Link
             to="/"
-            className={location.pathname === "/" && "header__clicked"}
+            className={
+              location.pathname === "/" ? "header__clicked" : "underline-grow"
+            }
           >
             Home
-          </Link>
+          </Link>{" "}
           <Link
             to="/consultancy"
             className={
-              location.pathname === "/consultancy" && "header__clicked"
+              location.pathname === "/consultancy"
+                ? "header__clicked"
+                : "underline-grow"
             }
           >
             IT Consultancy
-          </Link>
+          </Link>{" "}
           <Link
             to="/services"
-            className={location.pathname === "/services" && "header__clicked"}
+            className={
+              location.pathname === "/services"
+                ? "header__clicked"
+                : "underline-grow"
+            }
           >
             {" "}
             Services and Pricing
-          </Link>
+          </Link>{" "}
           <Link
             to="/about"
-            className={location.pathname === "/about" && "header__clicked"}
+            className={
+              location.pathname === "/about"
+                ? "header__clicked"
+                : "underline-grow"
+            }
           >
             About Us
-          </Link>
+          </Link>{" "}
           <Link
             to="/account"
-            className={location.pathname === "/account" && "header__clicked"}
+            className={
+              location.pathname === "/account"
+                ? "header__clicked"
+                : "underline-grow"
+            }
           >
             Account
           </Link>
