@@ -6,12 +6,18 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
 /* GENERAL CLASSES */
 
 .container1 {
   width: 1440px;
   margin-top: 10%;
   margin-left: 10%;
+  margin-bottom: 800px;
 }
 
 .large-purple-text {
@@ -77,6 +83,7 @@
 .hero {
   width: 1440px;
   margin-top: 10%;
+  margin-bottom: 800px;
 }
 
 .hero > h1 {
@@ -86,9 +93,10 @@
 /* Footer */
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
   padding: 20px 30px;
   width: 100%;
   background: rgb(255, 90, 0);
@@ -99,6 +107,7 @@
   );
   display: flex;
   align-items: center;
+  margin-bottom: 0px;
 }
 
 .footer__container {

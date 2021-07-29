@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <div className="hero large-purple-text">
-      <h1 className="fade-in-text">
+    <div className="hero">
+      <h1 className="large-purple-text fade-in-text">
         Basic to advanced
         <br />
         IT Solutions
