@@ -1,7 +1,7 @@
 const Account = () => {
   return (
-    <div className="container1">
-      <div className="large-purple-text fade-in-text">Account</div>
+    <div className="container_1">
+      <div className="large-purple-text fade-in-text-lr">Account</div>
     </div>
   );
 };

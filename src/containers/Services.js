@@ -1,7 +1,7 @@
 const Services = () => {
   return (
     <div className="container1">
-      <div className="large-purple-text fade-in-text">Services</div>
+      <div className="large-purple-text fade-in-text-lr">Services</div>
     </div>
   );
 };

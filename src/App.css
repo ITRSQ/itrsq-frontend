@@ -13,11 +13,23 @@ body {
 
 /* GENERAL CLASSES */
 
-.container1 {
-  width: 1440px;
+.container_1 {
+  max-width: 1440px;
   margin-top: 10%;
   margin-left: 10%;
   margin-bottom: 800px;
+}
+
+.container_2 {
+  margin: 80px 0;
+}
+
+.header_1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
 }
 
 .large-purple-text {
@@ -32,6 +44,14 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.orange-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: rgb(255, 90, 0);
+  line-height: 2rem;
 }
 
 /* Header */
@@ -78,16 +98,24 @@ body {
   width: 6rem;
 }
 
+/* Home */
+
 /* Hero */
 
 .hero {
   width: 1440px;
-  margin-top: 10%;
-  margin-bottom: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero > h1 {
-  margin-left: 10%;
+  margin-bottom: 20px;
+}
+
+.hero > h2 {
+  width: 800px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 /* Footer */
@@ -152,7 +180,7 @@ body {
 
 /* Text apppears Left to Right */
 
-.fade-in-text {
+.fade-in-text-lr {
   display: inline-block;
   overflow: hidden;
   animation: fadeIn linear 2s;
@@ -230,4 +258,75 @@ body {
 
 .underline-grow:hover::before {
   transform: scaleX(1);
+}
+
+/* Text appears slowly */
+
+.fade-in-text-blur {
+  display: inline-block;
+  animation: fadeInBlur linear 2s;
+  -webkit-animation: fadeInBlur linear 2s;
+  -moz-animation: fadeInBlur linear 2s;
+  -o-animation: fadeInBlur linear 2s;
+  -ms-animation: fadeInBlur linear 2s;
+}
+
+@keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeInBlur {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
