@@ -2,6 +2,9 @@ import "./App.css";
 
 // Packages
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Containers
 import Header from "./containers/Header";
@@ -13,6 +16,10 @@ import About from "./containers/About";
 import Account from "./containers/Account";
 
 function App() {
+  // Scroll Animation function usin AOS package
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Router>
       <Header />

@@ -1,5 +1,6 @@
 /* Other rules */
 
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
 
 * {
@@ -13,29 +14,98 @@ body {
 
 /* GENERAL CLASSES */
 
-.container_1 {
-  max-width: 1440px;
-  margin-top: 10%;
-  margin-left: 10%;
+/* CONTAINERS */
+
+/* Container for an entire page */
+.container_main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom is to keep the footer down */
   margin-bottom: 800px;
 }
 
+/* Basic container */
+.container_1 {
+  width: 1440px;
+  max-width: 1440px;
+  padding: 130px;
+}
+/* Same but without padding-top */
 .container_2 {
-  margin: 80px 0;
+  width: 1440px;
+  max-width: 1440px;
+  padding: 0 100px;
 }
 
-.header_1 {
-  font-size: 1.8rem;
+.container_right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-container > div {
+  flex: 1;
+  padding: 30px 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid lightgrey 1px;
+  border-radius: 10px;
+}
+
+.card-container > div > h2 {
+  font-size: 1.2em;
+  text-align: center;
+  color: rgb(255, 90, 0);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-container > div > p {
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.3em;
+}
+
+/* TEXT */
+
+.header_medium_black {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
   font-weight: 600;
   color: black;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.large-purple-text {
+.header_medium_orange {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+  color: rgb(255, 90, 0);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.header_purple_gradient {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-size: 4rem;
+  line-height: 4.2rem;
   background: linear-gradient(
     90deg,
     rgba(41, 18, 58, 1) 0%,
@@ -46,12 +116,37 @@ body {
   background-clip: text;
 }
 
-.orange-header {
+.header_small_orange {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
   color: rgb(255, 90, 0);
   line-height: 2rem;
+}
+
+.text_classic_black {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: black;
+  line-height: 1.8rem;
+  width: 80%;
+  margin-bottom: 80px;
+}
+
+.text_classic_orange {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: rgb(255, 90, 0);
+  line-height: 2.4rem;
+  margin-top: 80px;
+  padding: 0% 10%;
+  text-align: center;
+}
+
+.text_classic_black > span {
+  color: rgb(255, 90, 0);
 }
 
 /* Header */
@@ -67,6 +162,9 @@ body {
     rgba(255, 90, 0, 1) 0%,
     rgba(255, 255, 255, 1) 100%
   );
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .header__container {
@@ -100,12 +198,8 @@ body {
 
 /* Home */
 
-/* Hero */
-
 .hero {
-  width: 1440px;
-  display: flex;
-  flex-direction: column;
+  height: 60vh;
 }
 
 .hero > h1 {
@@ -178,64 +272,6 @@ body {
 
 /* ANIMATON CLASSES */
 
-/* Text apppears Left to Right */
-
-.fade-in-text-lr {
-  display: inline-block;
-  overflow: hidden;
-  animation: fadeIn linear 2s;
-  -webkit-animation: fadeIn linear 2s;
-  -moz-animation: fadeIn linear 2s;
-  -o-animation: fadeIn linear 2s;
-  -ms-animation: fadeIn linear 2s;
-  white-space: nowrap;
-}
-
-@keyframes fadeIn {
-  0% {
-    max-width: 0%;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    max-width: 0%;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    max-width: 0%;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    max-width: 0%;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
-@-ms-keyframes fadeIn {
-  0% {
-    max-width: 0%;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
 /* Text underline grow from middle */
 
 .underline-grow {
@@ -258,75 +294,4 @@ body {
 
 .underline-grow:hover::before {
   transform: scaleX(1);
-}
-
-/* Text appears slowly */
-
-.fade-in-text-blur {
-  display: inline-block;
-  animation: fadeInBlur linear 2s;
-  -webkit-animation: fadeInBlur linear 2s;
-  -moz-animation: fadeInBlur linear 2s;
-  -o-animation: fadeInBlur linear 2s;
-  -ms-animation: fadeInBlur linear 2s;
-}
-
-@keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-o-keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
