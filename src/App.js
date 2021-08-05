@@ -7,13 +7,15 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 // Containers
-import Header from "./containers/Header";
 import Home from "./containers/Home";
-import Footer from "./containers/Footer";
-import Consultancy from "./containers/Consultancy";
-import Services from "./containers/Services";
+import Support from "./containers/Support";
+import Website from "./containers/Website";
 import About from "./containers/About";
-import Account from "./containers/Account";
+import Contact from "./containers/Contact";
+
+// Components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   // Scroll Animation function usin AOS package
@@ -24,17 +26,17 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/account">
-          <Account />
+        <Route path="/contact">
+          <Contact />
         </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/services">
-          <Services />
+        <Route path="/website">
+          <Website />
         </Route>
-        <Route path="/consultancy">
-          <Consultancy />
+        <Route path="/support">
+          <Support />
         </Route>
         <Route path="/">
           <Home />

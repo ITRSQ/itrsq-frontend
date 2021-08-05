@@ -19,26 +19,37 @@ const Header = () => {
             Home
           </Link>{" "}
           <Link
-            to="/consultancy"
+            to="/support"
             className={
-              location.pathname === "/consultancy"
+              location.pathname === "/support"
                 ? "header__clicked"
                 : "underline-grow"
             }
           >
-            IT Consultancy
+            IT Support
           </Link>{" "}
           <Link
-            to="/services"
+            to="/website"
             className={
-              location.pathname === "/services"
+              location.pathname === "/website"
                 ? "header__clicked"
                 : "underline-grow"
             }
           >
             {" "}
-            Services and Pricing
+           Website
           </Link>{" "}
+         
+          <Link
+            to="/contact"
+            className={
+              location.pathname === "/contact"
+                ? "header__clicked"
+                : "underline-grow"
+            }
+          >
+           Contact
+          </Link>
           <Link
             to="/about"
             className={
@@ -49,16 +60,6 @@ const Header = () => {
           >
             About Us
           </Link>{" "}
-          <Link
-            to="/account"
-            className={
-              location.pathname === "/account"
-                ? "header__clicked"
-                : "underline-grow"
-            }
-          >
-            Account
-          </Link>
         </div>
         <img src={logo} alt={logo} className="header__logo" />
       </div>
