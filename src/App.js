@@ -15,12 +15,11 @@ import Contact from "./containers/Contact";
 
 // Components
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 function App() {
   // Scroll Animation function usin AOS package
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 800 });
   }, []);
   return (
     <Router>
@@ -42,7 +41,6 @@ function App() {
           <Home />
         </Route>
       </Switch>
-      <Footer />
     </Router>
   );
 }

@@ -1,26 +1,37 @@
 // Packages
 import { useHistory } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 
-const Hero = () => {
+const Hero = ({ onArrow }) => {
   const history = useHistory();
   return (
-    <div className="container_1 hero">
-      <h1 className="header_purple_gradient" data-aos="fade-right">
-        Beautiful websites <br />
-        With dedicated IT support
-      </h1>
-      <h2 className="header_small_orange" data-aos="fade" data-aos-delay={400}>
-        A London-based company focused on helping and assisting clients bring
-        their vision or business online, from design to deployment
-      </h2>
-      <button
-        className="button_classic_orange"
-        onClick={() => history.push("/contact")}
-        data-aos="fade-up"
+    <div className="hero bg-gradient-orange">
+      <div className="hero__container">
+        {" "}
+        <h1 data-aos="fade-up">
+          Beautiful websites <br />
+          with dedicated IT support
+        </h1>
+        <h2 data-aos="fade-up" data-aos-delay={200}>
+          A London-based company focused on helping and assisting clients bring
+          their vision or business online, from design to deployment
+        </h2>
+        <div data-aos="fade-up" data-aos-delay={400}>
+          {" "}
+          <button
+            className="btn-classic"
+            // onClick={() => history.push("/contact")}
+          >
+            Ask for a quote now
+          </button>
+        </div>
+      </div>
+      <IoIosArrowDown
+        data-aos="fade"
         data-aos-delay={600}
-      >
-        Ask for a quote now
-      </button>
+        className="icn-arrow-down"
+        onClick={onArrow}
+      />
     </div>
   );
 };
