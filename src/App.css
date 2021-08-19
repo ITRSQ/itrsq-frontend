@@ -103,6 +103,36 @@ body {
   background-color: var(--clr--white--transparent);
 }
 
+.contact-modal {
+  margin: auto auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  height: 70%;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal > div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin-top: 4em;
+}
+
+.contatct-modal > div > button {
+  flex: 1;
+}
+
 /* Text*/
 
 .txt-header-large-white {
@@ -165,6 +195,18 @@ body {
   margin-bottom: 40px;
   background-clip: text;
 }
+
+.txt-header-medium-white {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+
+  color: white;
+  font-family: var(--ff--common);
+
+  margin-bottom: 40px;
+  text-align: center;
+}
 .txt-description-large-grey {
   font-family: var(--ff--common);
   font-weight: 400;
@@ -218,18 +260,19 @@ body {
   padding: 10px 20px;
   background-color: transparent;
   border-radius: 5px;
-  border: solid 3px var(--clr--white--transparent);
+  border: solid 1px var(--clr--white--transparent);
   background-color: var(--clr--white--transparent);
   color: white;
   font-family: var(--ff--common);
   font-weight: 600;
   font-size: 1.2rem;
-  transition: 0.2s all ease-in-out;
+  transition: 0.1s all ease-out;
 }
 
 .btn-classic:hover {
-  background-color: transparent;
-  border: solid 3px white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid 1px rgba(0, 0, 0, 0.3);
 }
 
 /* CLASSES */
@@ -330,6 +373,20 @@ body {
   align-items: center;
 }
 
+/* .hero__container::before {
+  content: "";
+  background-image: url("./assets/img/logo.png");
+  background-size: 108%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.1;
+} */
+
 .hero__container {
   width: 1440px;
   max-width: 1440px;
@@ -372,22 +429,22 @@ body {
 }
 @keyframes pulseFadeInOut {
   0% {
-    transform: scale(0.75);
+    transform: scale(1);
   }
   20% {
-    transform: scale(1);
+    transform: scale(1.5);
   }
   40% {
-    transform: scale(0.75);
-  }
-  60% {
     transform: scale(1);
   }
+  60% {
+    transform: scale(1.5);
+  }
   80% {
-    transform: scale(0.75);
+    transform: scale(1);
   }
   100% {
-    transform: scale(0.75);
+    transform: scale(1.5);
   }
 }
 
