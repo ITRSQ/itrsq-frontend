@@ -20,7 +20,7 @@ const Hero = ({ onArrow }) => {
           {" "}
           <button
             className="btn-classic"
-            // onClick={() => history.push("/contact")}
+            onClick={() => history.push("/contact")}
           >
             Ask for a quote now
           </button>
