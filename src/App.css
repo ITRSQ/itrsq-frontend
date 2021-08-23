@@ -709,6 +709,8 @@ body {
 
 /* RESPONSIVE */
 
+/* Width */
+
 @media (max-width: 1105px) {
   .header__container > div {
     font-size: 1rem;
@@ -718,6 +720,37 @@ body {
 @media (max-width: 975px) {
   .header__container > div {
     font-size: 0.8rem;
+  }
+}
+
+/* Height */
+
+@media (max-height: 1068px) {
+  .contact {
+    display: block;
+    padding-top: 150px;
+  }
+  .about {
+    display: block;
+    padding-top: 150px;
+  }
+  .hero {
+    justify-content: flex-start;
+    padding-top: 150px;
+  }
+  .hero__container {
+    height: 90%;
+  }
+}
+
+@media (max-height: 742px) {
+  .hero {
+    justify-content: flex-start;
+    padding-top: 150px;
+  }
+  .hero__container {
+    padding-top: 85px;
+    height: fit-content;
   }
 }
 
