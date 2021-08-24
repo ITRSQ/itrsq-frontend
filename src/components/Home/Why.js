@@ -1,9 +1,6 @@
-// Components
-import Footer from "../Footer";
-
-const Why = () => {
+const Why = ({ id }) => {
   return (
-    <div className="home__why bg-gradient-orange">
+    <div className="home__why " id={id}>
       <div className="home__why__container">
         {" "}
         <h1 className="txt-header-large-white">Why choose our service ?</h1>
@@ -78,7 +75,6 @@ const Why = () => {
           and we’ll be happy to discuss your project with you.
         </h3>
       </div>
-      <Footer />
     </div>
   );
 };

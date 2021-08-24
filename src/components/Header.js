@@ -1,5 +1,6 @@
 // Packages
 import { Link, useLocation } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Logo
 import logo from "../assets/img/logo.png";
@@ -10,6 +11,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__container">
+        <GiHamburgerMenu className="burger-menu" />
         <div>
           <img src={logo} alt={logo} className="header__logo" />
           <div>
@@ -33,7 +35,7 @@ const Header = () => {
               Website
             </Link>{" "}
             <Link
-              // to="/support"
+              to="/support"
               className={
                 location.pathname === "/support"
                   ? "header__clicked"

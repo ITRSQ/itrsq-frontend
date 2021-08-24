@@ -2,11 +2,11 @@
 import { useHistory } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Hero = ({ onArrow }) => {
+const Hero = ({ onArrow, id }) => {
   const history = useHistory();
 
   return (
-    <div className="hero bg-gradient-orange">
+    <div className="hero bg-gradient-orange" id={id}>
       <div className="hero__container">
         {" "}
         <h1 data-aos="fade-up">

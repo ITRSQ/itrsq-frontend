@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // Components
 import Footer from "../components/Footer";
+import WhatsApp from "../components/Communication/WhatsApp";
 
 // JSON
 import topics from "../assets/json/topics.json";
@@ -16,6 +17,8 @@ const Contact = () => {
 
   return (
     <div className="contact bg-gradient-orange">
+      <WhatsApp />
+      <div className="filler"></div>
       <div className="contact__container ">
         <div className="contact__form">
           <h1 className="txt-header-small-white">Contact</h1>

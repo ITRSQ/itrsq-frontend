@@ -1,8 +1,11 @@
 // Components
 import Footer from "../components/Footer";
+import WhatsApp from "../components/Communication/WhatsApp";
 
 // Img
 import logo from "../assets/img/logo.png";
+import ruth from "../assets/img/ruth.jpg";
+import aaron from "../assets/img/aaron.jpg";
 
 // JSON
 import team from "../assets/json/team.json";
@@ -10,6 +13,8 @@ import team from "../assets/json/team.json";
 const About = () => {
   return (
     <div className="about bg-gradient-orange">
+      <WhatsApp />
+      <div></div>
       <div className="about__container">
         <div>
           <img src={logo} alt={logo} />
@@ -26,7 +31,15 @@ const About = () => {
             {team.map((member) => {
               return (
                 <div>
-                  <img src={member.picture} alt={member.picture} />
+                  {member.name === "Ruth Miller" && (
+                    <img src={ruth} alt={ruth} />
+                  )}
+                  {member.name === "Aaron Raha" && (
+                    <img src={aaron} alt={aaron} />
+                  )}
+                  {member.name === "Julian Tran" && (
+                    <img src={member.picture} alt={member.picture} />
+                  )}
                   <h2 className="txt-description-small-white">{member.name}</h2>
                   <h3 className="txt-description-small-grey">
                     {member.position}

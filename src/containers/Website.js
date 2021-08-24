@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 
 // Components
 import Footer from "../components/Footer";
+import WhatsApp from "../components/Communication/WhatsApp";
+import StickyMenu from "../components/Navigation/StickyMenu";
 
 // Icons
 import { IoIosArrowDown } from "react-icons/io";
@@ -21,7 +23,16 @@ const Website = () => {
   const history = useHistory();
   return (
     <div className="website bg-gradient-orange">
-      <div className="hero">
+      <StickyMenu
+        anchor1="Website"
+        anchor1Id="hero"
+        anchor2="How it works"
+        anchor2Id="how"
+        anchor3="What we use"
+        anchor3Id="what"
+      />
+      <WhatsApp />
+      <div className="hero" id="hero">
         <div className="hero__container">
           {" "}
           <h1 data-aos="fade-up">
@@ -38,7 +49,7 @@ const Website = () => {
             {" "}
             <button
               className="btn-classic"
-              // onClick={() => history.push("/contact")}
+              onClick={() => history.push("/contact")}
             >
               Ask for a quote now
             </button>
@@ -50,12 +61,12 @@ const Website = () => {
           className="icn-arrow-down"
           onClick={() =>
             document
-              .getElementById("whatWeUse")
+              .getElementById("how")
               .scrollIntoView({ behavior: "smooth" })
           }
         />
       </div>
-      <div className="container-full-white" id="whatWeUse">
+      <div className="container-full-white" id="how">
         {" "}
         <div className="website__how">
           <h1 className="txt-header-large-dynamic">How it works</h1>
@@ -114,7 +125,7 @@ const Website = () => {
           </div>
         </div>
       </div>
-      <div className="website__technologies">
+      <div className="website__technologies" id="what">
         <h1 className="txt-header-large-white">What we use</h1>
         <h2 className="txt-description-small-white">
           To keep up with the ever-changing web development world, <br /> we
