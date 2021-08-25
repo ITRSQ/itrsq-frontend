@@ -11,10 +11,12 @@
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 .master-wrapper {
   overflow-x: hidden;
+  position: relative;
 }
 
 :root {
@@ -991,10 +993,6 @@ body {
   }
   .icn-arrow-down {
     display: none;
-  }
-
-  .hero {
-    height: fit-content;
   }
 
   .hero__container {
