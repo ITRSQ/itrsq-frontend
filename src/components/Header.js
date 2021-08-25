@@ -1,4 +1,5 @@
 // Packages
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -7,11 +8,50 @@ import logo from "../assets/img/logo.png";
 
 const Header = () => {
   const location = useLocation();
+  // States
+  const [burgerModal, setBurgerModal] = useState(false);
 
   return (
     <div className="header">
+      {burgerModal && (
+        <div className="burger-modal" data-aos="slide-right">
+          <i class="fas fa-times" onClick={() => setBurgerModal(false)}></i>{" "}
+          <Link
+            to="/"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            Home
+          </Link>{" "}
+          <Link
+            to="/website"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            {" "}
+            Website
+          </Link>{" "}
+          <Link
+            to="/support"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            IT Support
+          </Link>{" "}
+          <Link
+            to="/about"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            About Us
+          </Link>{" "}
+        </div>
+      )}
       <div className="header__container">
-        <GiHamburgerMenu className="burger-menu" />
+        <GiHamburgerMenu
+          className="burger-menu"
+          onClick={() => setBurgerModal(true)}
+        />
         <div>
           <img src={logo} alt={logo} className="header__logo" />
           <div>
@@ -56,7 +96,7 @@ const Header = () => {
             </Link>{" "}
           </div>
         </div>
-        <Link to="/contact" className="btn-classic ">
+        <Link to="/contact" className="btn-classic-blue ">
           Contact Us
         </Link>
       </div>
