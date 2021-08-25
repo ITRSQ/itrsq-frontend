@@ -84,6 +84,7 @@ body {
 .container-full-white {
   width: 100%;
   background-color: white;
+  z-index: 1;
 }
 
 .container-right {
@@ -457,13 +458,14 @@ body {
   background-image: url("./assets/img/Q.png");
   background-size: 70%;
   background-repeat: no-repeat;
-  background-position: center;
+
   position: absolute;
   top: 0px;
   right: -500px;
   bottom: 0px;
   left: 500px;
   opacity: 0.6;
+  z-index: 0;
 }
 
 .hero__container {
@@ -843,6 +845,7 @@ body {
   width: 1440px;
   max-width: 1440px;
   margin: 0 auto;
+  z-index: 0;
 }
 
 .about__container > div:nth-child(1) {
@@ -953,13 +956,6 @@ body {
   body {
     overflow-x: hidden;
   }
-  .hero__container::before,
-  .support::before,
-  .about::before,
-  .contact::before {
-    background-image: none;
-    background-size: 0%;
-  }
   .burger-menu {
     font-size: 2rem;
   }
@@ -1052,6 +1048,23 @@ body {
   }
   .card-container {
     flex-direction: column;
+  }
+  .hero__container::before,
+  .support::before,
+  .about::before,
+  .contact::before {
+    content: "";
+    background-image: url("./assets/img/Q.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 3vh;
+
+    left: 20vw;
+
+    opacity: 0.6;
+    z-index: 0;
   }
 }
 
