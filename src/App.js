@@ -22,26 +22,29 @@ function App() {
     Aos.init({ duration: 800 });
   }, []);
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/website">
-          <Website />
-        </Route>
-        <Route path="/support">
-          <Support />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="master-wrapper">
+      {" "}
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/website">
+            <Website />
+          </Route>
+          <Route path="/support">
+            <Support />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

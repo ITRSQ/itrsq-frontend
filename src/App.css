@@ -13,6 +13,10 @@ body {
   overflow-x: hidden;
 }
 
+.master-wrapper {
+  overflow-x: hidden;
+}
+
 :root {
   --clr--blue: #017dd8;
   --clr--blue--hover: #0064ad;
