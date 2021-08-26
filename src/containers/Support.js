@@ -48,8 +48,8 @@ const Support = () => {
             <h1 className="txt-header-large-white" data-aos="fade-up">
               <i className="fas fa-user-cog"></i>
               IT Support
-              <span className="txt-description-small-grey">
-                Toggle one of the services on the left for more information
+              <span className="txt-description-large-grey">
+                Toggle one of the services for more information
               </span>
             </h1>
           ) : (

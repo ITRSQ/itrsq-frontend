@@ -69,7 +69,7 @@ const Website = () => {
       <div className="container-full-white" id="how">
         {" "}
         <div className="website__how">
-          <h1 className="txt-header-large-dynamic">How it works</h1>
+          <h1 className="txt-header-medium-dynamic">How it works</h1>
           <div className="website__how__path">
             <div data-aos="fade-up">
               <SiGooglemessages className="website__how__path__icons" />

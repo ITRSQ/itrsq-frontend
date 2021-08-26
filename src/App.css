@@ -596,6 +596,7 @@ body {
 .website__how__path {
   display: flex;
   justify-content: space-evenly;
+
   width: 90%;
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -759,7 +760,6 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-
   padding: 70px;
   margin-bottom: 3rem;
 }
@@ -956,6 +956,16 @@ body {
   body {
     overflow-x: hidden;
   }
+  :root {
+    --clr--blue: #017dd8;
+    --clr--blue--hover: #0064ad;
+    --clr--orange--itrsq: #ff5a00;
+    --clr--yellow--itrsq: #ffc400;
+    --clr--orange--complementary: #e66e2e;
+    --clr--white--transparent: rgba(255, 255, 255, 0.5);
+    --clr--black--transparent: rgba(0, 0, 0, 0.2);
+    --ff--common: "Inter", sans-serif;
+  }
   .burger-menu {
     font-size: 2rem;
   }
@@ -1029,6 +1039,7 @@ body {
   .txt-header-small-white {
     font-size: 1rem;
     line-height: 1.4rem;
+    text-align: center;
   }
   .txt-description-small-white {
     font-size: 0.8rem;
@@ -1037,6 +1048,14 @@ body {
   .txt-description-large-white {
     font-size: 1rem;
     line-height: 1.4rem;
+  }
+  .txt-description-large-grey {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  .txt-header-small-black {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
   }
   .card-container > div {
     padding: 15px;
@@ -1065,6 +1084,82 @@ body {
 
     opacity: 0.6;
     z-index: 0;
+  }
+  .website__how__path {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    flex-direction: column;
+  }
+  .website__how__path > div {
+    padding: 0 0;
+  }
+  .website__technologies > div {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .website__technologies > h2 {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .website__technologies img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .support__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 3rem;
+  }
+  .support__container h2 {
+    text-align: center;
+  }
+
+  .support__container > div:nth-child(1) {
+    margin-top: 2rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__container > div:nth-child(2) > div {
+    margin-top: 0;
+    margin-bottom: 3rem;
+    flex-direction: column;
+  }
+  .about__container > div:nth-child(2) > div img {
+    width: 7rem;
+    height: 7rem;
+  }
+  .about__container > div:nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+  .contact__container {
+    width: 100%;
+    z-index: 1;
+  }
+  .contact__form {
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+  }
+  .contact__form > div:nth-child(2),
+  .contact__form > div:nth-child(3) {
+    display: flex;
+    width: 100%;
+    padding: 0 10%;
+    flex-direction: column;
   }
 }
 

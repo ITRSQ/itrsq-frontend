@@ -15,36 +15,42 @@ const Header = () => {
     <div className="header">
       {burgerModal && (
         <div className="burger-modal" data-aos="slide-right">
-          <i class="fas fa-times" onClick={() => setBurgerModal(false)}></i>{" "}
+          <i class="fas fa-times" onClick={() => setBurgerModal(false)}></i>
           <Link
             to="/"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
           >
             Home
-          </Link>{" "}
+          </Link>
           <Link
             to="/website"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
           >
-            {" "}
             Website
-          </Link>{" "}
+          </Link>
           <Link
             to="/support"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
           >
             IT Support
-          </Link>{" "}
+          </Link>
           <Link
             to="/about"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
           >
             About Us
-          </Link>{" "}
+          </Link>
+          <Link
+            to="/contact"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            Contact
+          </Link>
         </div>
       )}
       <div className="header__container">
@@ -62,7 +68,7 @@ const Header = () => {
               }
             >
               Home
-            </Link>{" "}
+            </Link>
             <Link
               to="/website"
               className={
@@ -71,9 +77,8 @@ const Header = () => {
                   : "underline-grow"
               }
             >
-              {" "}
               Website
-            </Link>{" "}
+            </Link>
             <Link
               to="/support"
               className={
@@ -83,7 +88,7 @@ const Header = () => {
               }
             >
               IT Support
-            </Link>{" "}
+            </Link>
             <Link
               to="/about"
               className={
@@ -93,7 +98,7 @@ const Header = () => {
               }
             >
               About Us
-            </Link>{" "}
+            </Link>
           </div>
         </div>
         <Link to="/contact" className="btn-classic-blue ">
