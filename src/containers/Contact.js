@@ -1,9 +1,11 @@
 // Packages
 import { useState } from "react";
+import axios from "axios";
 
 // Components
 import Footer from "../components/Footer";
 import WhatsApp from "../components/Communication/WhatsApp";
+import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 
 // JSON
 import topics from "../assets/json/topics.json";
@@ -14,8 +16,52 @@ const Contact = () => {
   // States
   const [topic, setTopic] = useState("website");
   const [specific, setSpecific] = useState();
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [text, setText] = useState();
+  const [subject, setSubject] = useState();
+  const [orderRef, setOrderRef] = useState();
+  const [from, setFrom] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState();
 
-  return (
+  // Send email
+
+  const submitHandle = async () => {
+    setIsLoading(true);
+    setSubject(`${topic} | ${specific}`);
+    try {
+      const formData = new FormData();
+      formData.append("from", from);
+      formData.append("orderRef", orderRef);
+      formData.append("firstName", firstName);
+      formData.append("lastName", lastName);
+      formData.append("subject", subject);
+      formData.append("text", text);
+
+      console.log(text);
+
+      const response = await axios.post(
+        "https://itrsq.herokuapp.com/mail/contact",
+        formData
+      );
+      if ((response.data = "Email sent !")) {
+        alert("Your email has been successfully sent !");
+        setIsLoading(false);
+      } else {
+        setIsLoading(false);
+        console.log(response.data);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      alert(error.response.data.error);
+      console.log(error.response.data.error);
+    }
+  };
+
+  return isLoading ? (
+    <LoaderFullScreen />
+  ) : (
     <div className="contact bg-gradient-orange">
       <WhatsApp />
       <div className="filler"></div>
@@ -92,24 +138,42 @@ const Contact = () => {
           <div>
             <div>
               <h2 className="txt-description-small-white">First Name</h2>
-              <input />{" "}
+              <input
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />{" "}
               <h2 className="txt-description-small-white">Last Name</h2>
-              <input />
+              <input
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </div>
             <div>
               <h2 className="txt-description-small-white">Email</h2>
-              <input />
+              <input value={from} onChange={(e) => setFrom(e.target.value)} />
               <h2 className="txt-description-small-white">
                 Reference Number (if applicable)
               </h2>
-              <input />
+              <input
+                value={orderRef}
+                onChange={(e) => setOrderRef(e.target.value)}
+              />
             </div>
           </div>
           <div>
             <h2 className="txt-description-small-white">Your Message</h2>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            ></textarea>
           </div>
-          <button className="btn-classic">Submit</button>
+          <button className="btn-classic" onClick={() => submitHandle()}>
+            Submit
+          </button>
         </div>
       </div>
       <Footer />

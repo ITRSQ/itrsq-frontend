@@ -31,15 +31,8 @@ const About = () => {
             {team.map((member) => {
               return (
                 <div>
-                  {member.name === "Ruth Miller" && (
-                    <img src={ruth} alt={ruth} />
-                  )}
-                  {member.name === "Aaron Raha" && (
-                    <img src={aaron} alt={aaron} />
-                  )}
-                  {member.name === "Julian Tran" && (
-                    <img src={member.picture} alt={member.picture} />
-                  )}
+                  <img src={member.picture} alt={member.picture} />
+
                   <h2 className="txt-description-small-white">{member.name}</h2>
                   <h3 className="txt-description-small-black">
                     {member.position}
