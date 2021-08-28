@@ -41,7 +41,7 @@ const About = () => {
                     <img src={member.picture} alt={member.picture} />
                   )}
                   <h2 className="txt-description-small-white">{member.name}</h2>
-                  <h3 className="txt-description-small-grey">
+                  <h3 className="txt-description-small-black">
                     {member.position}
                   </h3>
                 </div>

@@ -8,7 +8,7 @@ import WhatsApp from "../components/Communication/WhatsApp";
 
 const Home = () => {
   return (
-    <div className=" home bg-gradient-orange">
+    <div className="bg-gradient-orange">
       <WhatsApp />
       <StickyMenu
         anchor1="Home"
