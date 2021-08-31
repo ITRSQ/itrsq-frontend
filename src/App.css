@@ -57,7 +57,8 @@ body {
   --clr--orange--itrsq: #ff5a00;
   --clr--yellow--itrsq: #ffc400;
   --clr--orange--complementary: #e66e2e;
-  --clr--white--transparent: rgba(255, 255, 255, 0.2);
+  --clr--white--transparent: rgba(255, 255, 255, 0.3);
+  --clr--white--transparent--hover: rgba(255, 255, 255, 0.6);
   --clr--black--transparent: rgba(0, 0, 0, 0.2);
   --ff--common: "Inter", sans-serif;
 }
@@ -290,23 +291,25 @@ body {
 /* Buttons */
 
 .btn-classic {
+  width: 396px;
+  height: 72px;
   cursor: pointer;
   padding: 10px 20px;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 20px;
   border: solid 1px var(--clr--white--transparent);
   background-color: var(--clr--white--transparent);
   color: white;
   font-family: var(--ff--common);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 16px;
   transition: 0.1s all ease-out;
 }
 
 .btn-classic:hover {
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: solid 1px rgba(0, 0, 0, 0.3);
+  background-color: var(--clr--white--transparent--hover);
+  border: solid 1px var(--clr--white--transparent--hover);
 }
 
 .btn-classic-blue {
@@ -322,6 +325,8 @@ body {
   font-weight: 600;
   font-size: 16px;
   transition: 0.1s all ease-out;
+  text-decoration: none;
+  border: none;
 }
 
 .btn-classic-blue:hover {
@@ -501,7 +506,7 @@ body {
   left: 50%;
   right: -50%;
   bottom: 0px;
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: 0;
 }
 
@@ -521,8 +526,8 @@ body {
 .hero__container > h1 {
   font-family: var(--ff--common);
   text-align: center;
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 60px;
+  line-height: 66px;
   font-weight: 600;
   color: white;
 }
@@ -530,8 +535,8 @@ body {
 .hero__container > h2 {
   font-family: var(--ff--common);
   text-align: center;
-  font-size: 1.4rem;
-  line-height: 1.9rem;
+  font-size: 25px;
+  line-height: 31px;
   font-weight: 400;
   width: 40%;
   margin: 30px 0 70px 0;
@@ -539,7 +544,7 @@ body {
 }
 
 .icn-arrow-down {
-  color: white;
+  color: rgba(255, 255, 255, 0.3);
   font-size: 3rem;
   cursor: pointer;
   animation-name: pulseFadeInOut;

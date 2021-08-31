@@ -199,7 +199,10 @@ const Contact = () => {
               {errorMessage && (
                 <h5 className="error-message">{errorMessage}</h5>
               )}
-              <button className="btn-classic" onClick={() => submitHandle()}>
+              <button
+                className="btn-classic-blue"
+                onClick={() => submitHandle()}
+              >
                 Submit
               </button>
             </>
