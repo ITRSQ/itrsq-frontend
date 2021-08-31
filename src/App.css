@@ -1187,6 +1187,15 @@ body {
     background-color: white;
     border: none;
   }
+  .contact__form button {
+    color: white;
+    background-color: var(--clr--blue);
+  }
+  .contact__form button:hover {
+    color: white;
+    background-color: var(--clr--blue--hover);
+    border: solid 1px var(--clr--blue);
+  }
   .contact__form h2,
   .contact__form h1 {
     color: black;
