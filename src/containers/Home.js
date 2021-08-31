@@ -3,21 +3,21 @@ import Hero from "../components/Home/Hero";
 import Services from "../components/Home/Services";
 import Why from "../components/Home/Why";
 import Footer from "../components/Footer";
-import StickyMenu from "../components/Navigation/StickyMenu";
+// import StickyMenu from "../components/Navigation/StickyMenu";
 import WhatsApp from "../components/Communication/WhatsApp";
 
 const Home = () => {
   return (
     <div className="bg-gradient-orange">
       <WhatsApp />
-      <StickyMenu
+      {/* <StickyMenu
         anchor1="Home"
         anchor1Id="hero"
         anchor2="Services"
         anchor2Id="services"
         anchor3="Why us ?"
         anchor3Id="why"
-      />
+      /> */}
       <Hero
         id="hero"
         onArrow={() =>

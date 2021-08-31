@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 // Components
 import Footer from "../components/Footer";
 import WhatsApp from "../components/Communication/WhatsApp";
-import StickyMenu from "../components/Navigation/StickyMenu";
+// import StickyMenu from "../components/Navigation/StickyMenu";
 
 // Icons
 import { IoIosArrowDown } from "react-icons/io";
@@ -23,14 +23,14 @@ const Website = () => {
   const history = useHistory();
   return (
     <div className="website bg-gradient-orange">
-      <StickyMenu
+      {/* <StickyMenu
         anchor1="Website"
         anchor1Id="hero"
         anchor2="How it works"
         anchor2Id="how"
         anchor3="What we use"
         anchor3Id="what"
-      />
+      /> */}
       <WhatsApp />
       <div className="hero" id="hero">
         <div className="hero__container">

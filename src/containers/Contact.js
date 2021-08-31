@@ -24,6 +24,7 @@ const Contact = () => {
   const [from, setFrom] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState();
+  const [success, setSuccess] = useState();
 
   // Send email
 
@@ -45,17 +46,25 @@ const Contact = () => {
         "https://itrsq.herokuapp.com/mail/contact",
         formData
       );
-      if ((response.data = "Email sent !")) {
-        alert("Your email has been successfully sent !");
+      if (response.data === "Email sent!") {
         setIsLoading(false);
+        setSuccess(true);
       } else {
         setIsLoading(false);
-        console.log(response.data);
+        alert(response.data);
       }
     } catch (error) {
-      setIsLoading(false);
-      alert(error.response.data.error);
-      console.log(error.response.data.error);
+      if (
+        error.response.data.error ===
+        "'from' parameter is not a valid address. please check documentation"
+      ) {
+        setIsLoading(false);
+        setErrorMessage("Email Adress Not Valid");
+      } else {
+        setIsLoading(false);
+        setErrorMessage(error.response.data.error);
+        console.log(error.response.data.error);
+      }
     }
   };
 
@@ -67,113 +76,134 @@ const Contact = () => {
       <div className="filler"></div>
       <div className="contact__container ">
         <div className="contact__form">
-          <h1 className="txt-header-small-white">Contact</h1>
-          <div>
-            <div>
-              <h2 className="txt-description-small-white">
-                What is this about ?
-              </h2>
-              <select
-                name="topic"
-                id="topic"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
-              >
-                {topics.map((topic) => {
-                  return (
-                    <option key={topic.value} value={topic.value}>
-                      {topic.title}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <div>
-              <h2 className="txt-description-small-white">
-                Could you be more specific ?
-              </h2>
-              {topic === "website" && (
-                <select
-                  name="website"
-                  id="website"
-                  value={specific}
-                  onChange={(e) => setSpecific(e.target.value)}
-                >
-                  {websiteSpecifics.map((specific) => {
-                    return (
-                      <option key={specific.value} value={specific.value}>
-                        {specific.title}
-                      </option>
-                    );
-                  })}
-                </select>
+          {success ? (
+            <>
+              {" "}
+              <h1 className="txt-header-small-white">
+                Your email has been sent !
+              </h1>
+              <button className="btn-classic" onClick={() => setSuccess()}>
+                Send another
+              </button>
+            </>
+          ) : (
+            <>
+              {" "}
+              <h1 className="txt-header-small-white">Contact</h1>
+              <div>
+                <div>
+                  <h2 className="txt-description-small-white">
+                    What is this about ? *
+                  </h2>
+                  <select
+                    name="topic"
+                    id="topic"
+                    value={topic}
+                    onChange={(e) => setTopic(e.target.value)}
+                  >
+                    {topics.map((topic) => {
+                      return (
+                        <option key={topic.value} value={topic.value}>
+                          {topic.title}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div>
+                  <h2 className="txt-description-small-white">
+                    Could you be more specific ? *
+                  </h2>
+                  {topic === "website" && (
+                    <select
+                      name="website"
+                      id="website"
+                      value={specific}
+                      onChange={(e) => setSpecific(e.target.value)}
+                    >
+                      {websiteSpecifics.map((specific) => {
+                        return (
+                          <option key={specific.value} value={specific.value}>
+                            {specific.title}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  )}
+                  {topic === "itSupport" && (
+                    <select
+                      name="itSupport"
+                      id="itSupport"
+                      value={specific}
+                      onChange={(e) => setSpecific(e.target.value)}
+                    >
+                      {itSupportSpecifics.map((specific) => {
+                        return (
+                          <option key={specific.value} value={specific.value}>
+                            {specific.title}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  )}
+                  {topic === "otherTopic" && (
+                    <input
+                      name="otherTopic"
+                      id="otherTopic"
+                      value={specific}
+                      onChange={(e) => setSpecific(e.target.value)}
+                      placeholder="Summarize your request in 2-3 words"
+                    />
+                  )}
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h2 className="txt-description-small-white">First Name *</h2>
+                  <input
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />{" "}
+                  <h2 className="txt-description-small-white">Last Name *</h2>
+                  <input
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <h2 className="txt-description-small-white">Email *</h2>
+                  <input
+                    value={from}
+                    onChange={(e) => setFrom(e.target.value)}
+                  />
+                  <h2 className="txt-description-small-white">
+                    Reference Number (if applicable)
+                  </h2>
+                  <input
+                    value={orderRef}
+                    onChange={(e) => setOrderRef(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div>
+                <h2 className="txt-description-small-white">Your Message *</h2>
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                ></textarea>
+              </div>
+              {errorMessage && (
+                <h5 className="error-message">{errorMessage}</h5>
               )}
-              {topic === "itSupport" && (
-                <select
-                  name="itSupport"
-                  id="itSupport"
-                  value={specific}
-                  onChange={(e) => setSpecific(e.target.value)}
-                >
-                  {itSupportSpecifics.map((specific) => {
-                    return (
-                      <option key={specific.value} value={specific.value}>
-                        {specific.title}
-                      </option>
-                    );
-                  })}
-                </select>
-              )}
-              {topic === "otherTopic" && (
-                <input
-                  name="otherTopic"
-                  id="otherTopic"
-                  value={specific}
-                  onChange={(e) => setSpecific(e.target.value)}
-                  placeholder="Summarize your request in 2-3 words"
-                />
-              )}
-            </div>
-          </div>
-          <div>
-            <div>
-              <h2 className="txt-description-small-white">First Name</h2>
-              <input
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />{" "}
-              <h2 className="txt-description-small-white">Last Name</h2>
-              <input
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-            </div>
-            <div>
-              <h2 className="txt-description-small-white">Email</h2>
-              <input value={from} onChange={(e) => setFrom(e.target.value)} />
-              <h2 className="txt-description-small-white">
-                Reference Number (if applicable)
-              </h2>
-              <input
-                value={orderRef}
-                onChange={(e) => setOrderRef(e.target.value)}
-              />
-            </div>
-          </div>
-          <div>
-            <h2 className="txt-description-small-white">Your Message</h2>
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            ></textarea>
-          </div>
-          <button className="btn-classic" onClick={() => submitHandle()}>
-            Submit
-          </button>
+              <button className="btn-classic" onClick={() => submitHandle()}>
+                Submit
+              </button>
+            </>
+          )}
         </div>
       </div>
       <Footer />

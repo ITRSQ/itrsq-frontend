@@ -4,8 +4,6 @@ import WhatsApp from "../components/Communication/WhatsApp";
 
 // Img
 import logo from "../assets/img/logo.png";
-import ruth from "../assets/img/ruth.jpg";
-import aaron from "../assets/img/aaron.jpg";
 
 // JSON
 import team from "../assets/json/team.json";
