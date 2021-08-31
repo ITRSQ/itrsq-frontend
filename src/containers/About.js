@@ -24,7 +24,7 @@ const About = () => {
             your needs. We believe in Value, Trust and Transparency.
           </p>
         </div>
-        <div>
+        {/* <div>
           <div>
             {team.map((member) => {
               return (
@@ -39,7 +39,7 @@ const About = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>
