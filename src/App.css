@@ -117,9 +117,8 @@ body {
 .container-full-white {
   width: 100%;
   background-color: white;
-  /* background-image: url(https://res.cloudinary.com/itrsq/image/upload/v1630137991/ITRSQ-WEBSITE-ASSETS/white-background_nwq3tw.png);
-
-  background-size: cover; */
+  /* background-image: url(./assets/img/white-background.png); */
+  background-size: cover;
   z-index: 1;
 }
 
