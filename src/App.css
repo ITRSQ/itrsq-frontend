@@ -965,6 +965,13 @@ body {
   .support__container {
     flex-direction: column;
   }
+  .contact__form > div:nth-child(2),
+  .contact__form > div:nth-child(3) {
+    display: flex;
+    width: 100%;
+    padding: 0 10%;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 975px) {
@@ -989,16 +996,7 @@ body {
   body {
     overflow-x: hidden;
   }
-  :root {
-    --clr--blue: #017dd8;
-    --clr--blue--hover: #0064ad;
-    --clr--orange--itrsq: #ff5a00;
-    --clr--yellow--itrsq: #ffc400;
-    --clr--orange--complementary: #e66e2e;
-    --clr--white--transparent: rgba(255, 255, 255, 0.5);
-    --clr--black--transparent: rgba(0, 0, 0, 0.2);
-    --ff--common: "Inter", sans-serif;
-  }
+
   .burger-menu {
     font-size: 2rem;
   }
@@ -1186,13 +1184,25 @@ body {
     width: 90%;
     padding: 20px 10px;
     margin-bottom: 20px;
+    background-color: white;
+    border: none;
   }
-  .contact__form > div:nth-child(2),
-  .contact__form > div:nth-child(3) {
-    display: flex;
-    width: 100%;
-    padding: 0 10%;
-    flex-direction: column;
+  .contact__form h2,
+  .contact__form h1 {
+    color: black;
+  }
+
+  .contact__form select,
+  .contact__form input,
+  .contact__form textarea {
+    width: 80%;
+    border-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    font-family: var(--ff--common);
+    color: black;
+    background-color: white;
+    border: solid 1px black;
   }
 }
 
