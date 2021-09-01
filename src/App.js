@@ -23,7 +23,7 @@ function App() {
     Aos.init({ duration: 800 });
   }, []);
   // States
-  const [promotion, setPromotion] = useState(true);
+  const [promotion, setPromotion] = useState(false);
 
   return (
     <div className="master-wrapper">
