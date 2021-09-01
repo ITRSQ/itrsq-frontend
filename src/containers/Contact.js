@@ -15,7 +15,7 @@ import itSupportSpecifics from "../assets/json/itSupportSpecifics.json";
 const Contact = () => {
   // States
   const [topic, setTopic] = useState("website");
-  const [specific, setSpecific] = useState();
+  const [specific, setSpecific] = useState("it1");
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [text, setText] = useState();
@@ -66,6 +66,8 @@ const Contact = () => {
       }
     }
   };
+
+  console.log(topic, specific);
 
   return isLoading ? (
     <LoaderFullScreen />
