@@ -116,8 +116,8 @@ body {
 
 .container-full-white {
   width: 100%;
-  background-color: white;
-  /* background-image: url(./assets/img/white-background.png); */
+  /* background-color: white; */
+  background-image: url(./assets/img/white-background.png);
   background-size: cover;
   z-index: 1;
 }
@@ -957,6 +957,36 @@ body {
   align-items: center;
   flex: 1;
 } */
+
+/* Promotion */
+
+.promotionBanner {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.promotionBanner__container {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  /* background-color: black; */
+  background-image: url(https://images.milledcdn.com/2021-08-06/R4hzeegMwBZ5pC0d/Nf7LixrWrEGD.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* RESPONSIVE */
 

@@ -42,13 +42,13 @@
 },
 {
     "title": "Backup & data recovery",
-    "detail":["Prevention of software failure, protection of critical systems and data", "Virtualised real-time backup environments and immediate data restoration", "Ecommerce, SEO optimisation and security integration"]
+    "detail":["Prevention of software failure, protection of critical systems and data", "Virtualised real-time backup environments and immediate data restoration", "GDPR"]
     ,
     "icon":"fas fa-database"
 },
 {
     "title": "Website design/development",
-    "detail":["Design, branding and logo consultation services", "Complete database, backend, and frontend website development", "GDPR"]
+    "detail":["Design, branding and logo consultation services", "Complete database, backend, and frontend website development", "Ecommerce, SEO optimisation and security integration"]
     ,
     "icon":"fas fa-globe"
 }]

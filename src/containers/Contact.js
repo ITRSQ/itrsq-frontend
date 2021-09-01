@@ -63,7 +63,6 @@ const Contact = () => {
       } else {
         setIsLoading(false);
         setErrorMessage(error.response.data.error);
-        console.log(error.response.data.error);
       }
     }
   };

@@ -5,8 +5,8 @@ import WhatsApp from "../components/Communication/WhatsApp";
 // Img
 import logo from "../assets/img/logo.png";
 
-// JSON
-import team from "../assets/json/team.json";
+// // JSON
+// import team from "../assets/json/team.json";
 
 const About = () => {
   return (
