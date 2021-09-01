@@ -52,8 +52,8 @@ body {
 }
 
 :root {
-  --clr--blue: #017dd8;
-  --clr--blue--hover: #0064ad;
+  --clr--blue: #0064ad;
+  --clr--blue--hover: #004b81;
   --clr--orange--itrsq: #ff5a00;
   --clr--yellow--itrsq: #ffc400;
   --clr--orange--complementary: #e66e2e;
@@ -290,10 +290,8 @@ body {
 /* Buttons */
 
 .btn-classic {
-  width: 396px;
-  height: 72px;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: transparent;
   border-radius: 20px;
   border: solid 1px var(--clr--white--transparent);
@@ -301,7 +299,7 @@ body {
   color: white;
   font-family: var(--ff--common);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 22px;
   transition: 0.1s all ease-out;
 }
 
@@ -410,6 +408,7 @@ body {
 
 .header__container > div > div > a {
   color: white;
+  height: 24px;
 }
 
 .burger-menu {
