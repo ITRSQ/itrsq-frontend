@@ -70,7 +70,7 @@ const Testimonials = () => {
           infinite={true}
           autoPlay={true}
           autoPlaySpeed={3500}
-          arrows={false}
+          arrows={true}
         >
           {data.map((testimonial) => {
             return (
@@ -78,7 +78,7 @@ const Testimonials = () => {
                 <img src={testimonial.picture} alt={testimonial.picture} />
                 <h2>{testimonial.author}</h2>
                 <h3>{testimonial.authorPosition}</h3>
-                <p>"{testimonial.testimonial}""</p>
+                <p>"{testimonial.testimonial}"</p>
               </div>
             );
           })}
