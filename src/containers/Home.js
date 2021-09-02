@@ -5,6 +5,7 @@ import Why from "../components/Home/Why";
 import Footer from "../components/Footer";
 // import StickyMenu from "../components/Navigation/StickyMenu";
 import WhatsApp from "../components/Communication/WhatsApp";
+import Testimonials from "../components/Home/Testimonials";
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
             .scrollIntoView({ behavior: "smooth" })
         }
       />
+      <Testimonials />
 
       <Services id="services" />
 
