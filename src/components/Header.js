@@ -97,12 +97,12 @@ const Header = () => {
                   : "underline-grow"
               }
             >
-              About Us
+              About
             </Link>
           </div>
         </div>
         <Link to="/contact" className="btn-classic-blue ">
-          Contact Us
+          Contact
         </Link>
       </div>
     </div>
