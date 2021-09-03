@@ -14,6 +14,10 @@ body {
   position: relative;
 }
 
+.test {
+  background-color: #004b81;
+}
+
 .master-wrapper {
   overflow-x: hidden;
   position: relative;
