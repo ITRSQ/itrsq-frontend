@@ -28,9 +28,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  z-index: 10;
-  border-radius: 10px;
+  background-color: black;
+  z-index: 1000;
 }
 
 .loader-fullscreen > img {
@@ -246,7 +245,7 @@ body {
 .txt-description-small-white {
   font-family: var(--ff--common);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 14px;
   color: white;
   line-height: 1.4rem;
   text-align: center;
@@ -775,7 +774,6 @@ body {
   margin: 0 auto;
   width: 50%;
   min-height: 80vh;
-
   height: 100%;
   border-radius: 10px;
   background-color: var(--clr--white--transparent);
@@ -788,6 +786,9 @@ body {
   margin-bottom: 20px;
   z-index: 5;
   position: relative;
+}
+.contact__form h1 {
+  margin-bottom: 10px;
 }
 .contact__form h2 {
   margin-bottom: 10px;
@@ -1219,7 +1220,7 @@ body {
   .about::before,
   .contact::before {
     content: "";
-    background-image: url("./assets/img/Q.png");
+    background-image: none;
     background-size: 90%;
     background-repeat: no-repeat;
 
@@ -1299,10 +1300,10 @@ body {
     width: 90%;
     padding: 20px 10px;
     margin-bottom: 20px;
-    background-color: white;
+    /* background-color: white; */
     border: none;
   }
-  .contact__form button {
+  /* .contact__form button {
     color: white;
     background-color: var(--clr--blue);
   }
@@ -1327,7 +1328,7 @@ body {
     color: black;
     background-color: white;
     border: solid 1px black;
-  }
+  } */
 }
 
 /* Height */

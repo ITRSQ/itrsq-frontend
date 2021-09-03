@@ -79,7 +79,6 @@ const Contact = () => {
         <div className="contact__form">
           {success ? (
             <>
-              {" "}
               <h1 className="txt-header-small-white">
                 Your email has been sent !
               </h1>
@@ -89,7 +88,6 @@ const Contact = () => {
             </>
           ) : (
             <>
-              {" "}
               <h1 className="txt-header-small-white">Contact</h1>
               <div>
                 <div>
@@ -164,7 +162,7 @@ const Contact = () => {
                   <input
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                  />{" "}
+                  />
                   <h2 className="txt-description-small-white">Last Name *</h2>
                   <input
                     value={lastName}
@@ -178,7 +176,7 @@ const Contact = () => {
                     onChange={(e) => setFrom(e.target.value)}
                   />
                   <h2 className="txt-description-small-white">
-                    Reference Number (if applicable)
+                    Reference Number
                   </h2>
                   <input
                     value={orderRef}
