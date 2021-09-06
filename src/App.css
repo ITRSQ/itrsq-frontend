@@ -619,7 +619,6 @@ body {
 }
 
 .testimonials__container {
-  width: 1440px;
   max-width: 1440px;
   padding: 50px;
 }
@@ -1175,6 +1174,11 @@ body {
     align-items: center;
     text-align: center;
   }
+
+  .txt-header-large-dynamic {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
   .txt-header-medium-dynamic {
     font-size: 1.4rem;
     line-height: 1.6rem;
@@ -1227,12 +1231,9 @@ body {
     background-image: none;
     background-size: 90%;
     background-repeat: no-repeat;
-
     position: absolute;
     top: 3vh;
-
     left: 20vw;
-
     opacity: 0.6;
   }
   .website__how__path {
