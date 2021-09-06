@@ -14,6 +14,10 @@ body {
   position: relative;
 }
 
+.test {
+  background-color: #004b81;
+}
+
 .master-wrapper {
   overflow-x: hidden;
   position: relative;
@@ -319,7 +323,7 @@ body {
   color: white;
   font-family: var(--ff--common);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   transition: 0.1s all ease-out;
   text-decoration: none;
   border: none;
@@ -464,7 +468,7 @@ body {
 .footer__container > h1 {
   font-family: var(--ff--common);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 10px;
   color: white;
   padding: 5px;
   display: flex;
@@ -611,7 +615,7 @@ body {
 
 .testimonials {
   width: 100vw;
-  background-color: black;
+  background-color: rgb(233, 233, 233);
 }
 
 .testimonials__container {
@@ -641,7 +645,7 @@ body {
 
 .testimonials__card p {
   font-family: var(--ff--common);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 14px;
   line-height: 18px;
@@ -652,7 +656,7 @@ body {
 
 .testimonials__card h2 {
   font-family: var(--ff--common);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 16px;
   line-height: 20px;
@@ -661,7 +665,7 @@ body {
 }
 .testimonials__card h3 {
   font-family: var(--ff--common);
-  color: grey;
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 14px;
   line-height: 20px;
