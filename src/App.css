@@ -1152,7 +1152,7 @@ body {
   padding: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .blog__mainContent > div > h1 {
@@ -1328,7 +1328,7 @@ body {
     padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     border: solid var(--clr--white--transparent) 2px;
   }
 

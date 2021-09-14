@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Cookies from "js-cookie";
-import { useHistory } from "react-router-dom";
 
 // Containers
 import Home from "./containers/Home";
@@ -14,14 +13,13 @@ import Support from "./containers/Support";
 import Website from "./containers/Website";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
-import Blog from "./containers/Blog";
+// import Blog from "./containers/Blog";
 
 // Components
 import Header from "./components/Header";
 import PromotionalBanner from "./components/Promotions/PromotionalBanner";
 
 function App() {
-  const history = useHistory();
   useEffect(() => {
     // Scroll Animation function usin AOS package
     Aos.init({ duration: 800 });
