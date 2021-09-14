@@ -1034,7 +1034,7 @@ body {
   position: relative;
   height: 498px;
   width: 1138px;
-  background-color: #3d3b3b;
+  background-color: #ffffff;
   border-radius: 15px;
   background-position: center;
   padding: 40px;
@@ -1042,7 +1042,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 90px 0;
+  padding: 120px 0;
 }
 
 .promotionBanner__x {
@@ -1071,7 +1071,7 @@ body {
   font-size: 40px;
   line-height: 48px;
   text-align: center;
-  color: #dedede;
+  color: #c9c9c9;
   width: 70%;
   line-height: 60px;
 }
@@ -1080,6 +1080,29 @@ body {
   background: #9f9f9f;
   border-radius: 10px;
   padding: 5px 10px;
+}
+
+.promotionBanner__btn {
+  width: 136px;
+  height: 62px;
+  left: 1353px;
+  top: 736px;
+  color: white;
+  background: #595959;
+  font-size: 16px;
+  border-radius: 15px;
+  font-family: var(--ff--common);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  margin-top: 20px;
+}
+
+.promotionBanner__btn:hover {
+  background: white;
+  border: solid 2px #595959;
+  color: #595959;
 }
 
 /* Blog */
