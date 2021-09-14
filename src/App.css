@@ -1023,11 +1023,11 @@ body {
   width: 100vw;
   top: 0;
   left: 0;
-
+  padding: 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .promotionBanner__container {
@@ -1043,6 +1043,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 120px 0;
+  z-index: 2000;
 }
 
 .promotionBanner__x {
@@ -1084,7 +1085,7 @@ body {
 
 .promotionBanner__btn {
   width: 136px;
-  height: 62px;
+  min-height: 62px;
   left: 1353px;
   top: 736px;
   color: white;
@@ -1323,6 +1324,14 @@ body {
   .blog__smallContent {
     width: 45%;
   }
+  .promotionBanner__instructions {
+    font-size: 30px;
+    width: 80%;
+  }
+  .promotionBanner__message {
+    font-size: 50px;
+    width: 80%;
+  }
 }
 
 @media (max-width: 975px) {
@@ -1366,6 +1375,10 @@ body {
 @media (max-width: 708px) {
   body {
     overflow-x: hidden;
+  }
+
+  .promotionBanner__container {
+    height: 598px;
   }
 
   .burger-menu {
@@ -1560,32 +1573,7 @@ body {
     /* background-color: white; */
     border: none;
   }
-  /* .contact__form button {
-    color: white;
-    background-color: var(--clr--blue);
-  }
-  .contact__form button:hover {
-    color: white;
-    background-color: var(--clr--blue--hover);
-    border: solid 1px var(--clr--blue);
-  }
-  .contact__form h2,
-  .contact__form h1 {
-    color: black;
-  }
 
-  .contact__form select,
-  .contact__form input,
-  .contact__form textarea {
-    width: 80%;
-    border-radius: 5px;
-    outline: none;
-    text-decoration: none;
-    font-family: var(--ff--common);
-    color: black;
-    background-color: white;
-    border: solid 1px black;
-  } */
   .blog__smallContent {
     width: 100%;
   }
