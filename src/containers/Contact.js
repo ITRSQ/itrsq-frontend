@@ -1,6 +1,7 @@
 // Packages
 import { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 // Components
 import Footer from "../components/Footer";
@@ -20,7 +21,9 @@ const Contact = () => {
   const [lastName, setLastName] = useState();
   const [text, setText] = useState();
   const [subject, setSubject] = useState();
-  const [orderRef, setOrderRef] = useState();
+  const [orderRef, setOrderRef] = useState(
+    Cookies.get("promoClick") ? "PROMO111" : undefined
+  );
   const [from, setFrom] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState();

@@ -14,7 +14,6 @@ const Testimonials = () => {
 
   // Get Testimonials
   useEffect(() => {
-    console.log("ya");
     const fetchData = async () => {
       try {
         const response = await axios.get(

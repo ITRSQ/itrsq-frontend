@@ -37,6 +37,13 @@ const Header = () => {
           >
             IT Support
           </Link>
+          {/* <Link
+            to="/blog"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            Blog
+          </Link> */}
           <Link
             to="/about"
             className="txt-header-medium-dynamic"
@@ -89,6 +96,16 @@ const Header = () => {
             >
               IT Support
             </Link>
+            {/* <Link
+              to="/blog"
+              className={
+                location.pathname === "/blog"
+                  ? "header__clicked"
+                  : "underline-grow"
+              }
+            >
+              Blog
+            </Link> */}
             <Link
               to="/about"
               className={
