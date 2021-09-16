@@ -13,7 +13,7 @@ import Support from "./containers/Support";
 import Website from "./containers/Website";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
-// import Blog from "./containers/Blog";
+import Blog from "./containers/Blog";
 
 // Components
 import Header from "./components/Header";
@@ -71,9 +71,9 @@ function App() {
           <Route path="/support">
             <Support />
           </Route>
-          {/* <Route path="/blog">
+          <Route path="/blog">
             <Blog />
-          </Route> */}
+          </Route>
           <Route path="/">
             <Home />
           </Route>
