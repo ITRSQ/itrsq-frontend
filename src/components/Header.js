@@ -37,13 +37,13 @@ const Header = () => {
           >
             IT Support
           </Link>
-          <Link
+          {/* <Link
             to="/blog"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             to="/about"
             className="txt-header-medium-dynamic"
@@ -96,7 +96,7 @@ const Header = () => {
             >
               IT Support
             </Link>
-            <Link
+            {/* <Link
               to="/blog"
               className={
                 location.pathname === "/blog"
@@ -105,7 +105,7 @@ const Header = () => {
               }
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               to="/about"
               className={
