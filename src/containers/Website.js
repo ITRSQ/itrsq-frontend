@@ -164,7 +164,7 @@ const Website = () => {
             <p className="txt-description-small-white">
               Of course you’ll find the 3 famous names in Web Development :
               HTML5, CSS3 and Javascript. Handwritten and optimised for your
-              website, we’ll write that’ll make your website run smoothly,
+              website, we’ll write code that’ll make your website run smoothly,
               quickly and look great.
             </p>
           </div>

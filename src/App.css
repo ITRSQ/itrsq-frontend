@@ -438,11 +438,10 @@ body {
 /* Footer */
 
 .footer {
-  border-top: solid 2px var(--clr--white--transparent);
   margin-top: 30px;
   padding: 50px;
   width: 100%;
-  background-color: var(--clr--white--transparent);
+  background-color: rgb(32, 32, 32);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -454,15 +453,25 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .footer__container > h1 {
   font-family: var(--ff--common);
+  font-weight: 800;
+  font-size: 24px;
+  color: white;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.footer__container > h2 {
+  font-family: var(--ff--common);
   font-weight: 400;
   font-size: 10px;
-  color: white;
+  color: grey;
   padding: 5px;
   display: flex;
   align-items: center;
@@ -472,6 +481,20 @@ body {
 .footer__container img {
   width: 6rem;
   margin-left: 0.5rem;
+}
+
+.footer__container > div {
+  display: flex;
+  width: 270px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer__container > div > a {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 /* Home */
@@ -484,7 +507,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  position: relative;
 }
 
 .hero__container::before,
@@ -497,7 +519,7 @@ body {
   background-size: 80%;
   background-repeat: no-repeat;
   position: absolute;
-  top: -20%;
+  top: -150px;
   left: 50%;
   right: -50%;
   bottom: 0px;
@@ -609,7 +631,8 @@ body {
 
 .testimonials {
   width: 100vw;
-  background-color: rgb(233, 233, 233);
+  background-color: rgb(32, 32, 32);
+  position: relative;
 }
 
 .testimonials__container {
@@ -633,12 +656,11 @@ body {
   width: 10rem;
   border-radius: 50%;
   margin-bottom: 10px;
-  border: solid 3px var(--clr--orange--itrsq);
 }
 
 .testimonials__card p {
   font-family: var(--ff--common);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 14px;
   line-height: 18px;
@@ -649,7 +671,7 @@ body {
 
 .testimonials__card h2 {
   font-family: var(--ff--common);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 16px;
   line-height: 20px;
@@ -658,7 +680,7 @@ body {
 }
 .testimonials__card h3 {
   font-family: var(--ff--common);
-  color: rgb(0, 0, 0);
+  color: rgb(124, 124, 124);
   text-align: center;
   font-size: 14px;
   line-height: 20px;
@@ -780,7 +802,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
+  margin-top: 20px;
   z-index: 5;
   position: relative;
 }
@@ -1331,6 +1354,12 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
+.blog__content__tutorials {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 .blogModal {
   z-index: 100;
@@ -1474,7 +1503,7 @@ body {
     font-size: 12px;
   }
   .footer {
-    padding: 20px;
+    padding: 40px;
   }
 
   .footer__container > h1 {
