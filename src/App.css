@@ -638,6 +638,7 @@ body {
 .testimonials__container {
   max-width: 1440px;
   padding: 50px;
+  margin: 0 auto;
 }
 
 .testimonials__card {
