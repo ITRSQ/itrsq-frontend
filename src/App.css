@@ -1052,26 +1052,37 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .promotionBanner__container {
   position: relative;
   height: 498px;
   width: 1138px;
-  background-color: #ffffff;
+  background-color: black;
   border-radius: 15px;
   background-position: center;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   padding: 120px 0;
   z-index: 2000;
+  font-family: var(--ff--common);
+}
+
+.promotionBanner__textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70%;
 }
 
 .promotionBanner__x {
-  color: #818181;
+  color: white;
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -1083,53 +1094,79 @@ body {
   font-family: var(--ff--common);
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 73px;
   text-align: center;
-  color: #818181;
+  color: white;
+  font-style: italic;
+  padding: 15px 25px;
+  border: white solid 4px;
+  border-radius: 20px;
 }
 
 .promotionBanner__instructions {
   font-family: var(--ff--common);
   font-style: normal;
-  font-weight: 600;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 28px;
   line-height: 48px;
   text-align: center;
-  color: #c9c9c9;
-  width: 70%;
+  color: black;
+  width: 80%;
   line-height: 60px;
-}
-
-.promotionBanner__instructions span {
-  background: #9f9f9f;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
-.promotionBanner__btn {
-  width: 136px;
-  min-height: 62px;
-  left: 1353px;
-  top: 736px;
-  color: white;
-  background: #595959;
-  font-size: 16px;
-  border-radius: 15px;
-  font-family: var(--ff--common);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.1s ease-out;
   margin-top: 20px;
 }
 
-.promotionBanner__btn:hover {
+.promotionBanner__instructions span {
+  background: var(--clr--orange--itrsq);
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-style: normal;
+  font-weight: 600;
+  color: white;
+}
+
+.promotionBanner__btnContainer {
+  color: black;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.promotionBanner__btn {
+  margin-left: 10px;
+}
+
+/* .promotionBanner__btn:hover {
   background: white;
   border: solid 2px #595959;
   color: #595959;
+} */
+
+.promotionBanner__number {
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 60px;
+  background-color: var(--clr--orange--itrsq);
+  color: white;
+  text-align: center;
+  height: 350px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* transform: rotate(-20deg); */
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  border: double 15px white;
 }
 
+.promotionBanner__number span {
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: 500;
+}
 /* Blog */
 
 .blog {
@@ -1449,13 +1486,17 @@ body {
   .blog__smallContent {
     width: 48%;
   }
+  .promotionBanner__textContainer {
+    width: 60%;
+  }
   .promotionBanner__instructions {
-    font-size: 30px;
-    width: 80%;
+    font-size: 18px;
+    width: 60%;
+    line-height: 38px;
   }
   .promotionBanner__message {
-    font-size: 50px;
-    width: 80%;
+    font-size: 24px;
+    padding: 5px 20px;
   }
 }
 
@@ -1475,15 +1516,46 @@ body {
   .header__logo {
     margin-left: 3rem;
   }
+  .promotionBanner__container {
+    height: 630px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .promotionBanner__textContainer {
+    width: 90%;
+  }
+  .promotionBanner__instructions {
+    font-size: 18px;
+    width: 60%;
+    line-height: 38px;
+  }
+  .promotionBanner__message {
+    font-size: 22px;
+    padding: 5px 20px;
+  }
+  .promotionBanner__number {
+    font-size: 30px;
+    min-height: 250px;
+    min-width: 250px;
+    max-height: 250px;
+    max-width: 250px;
+    border: double 10px white;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .promotionBanner__number span {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
 }
 
 @media (max-width: 708px) {
   body {
     overflow-x: hidden;
-  }
-
-  .promotionBanner__container {
-    height: 598px;
   }
 
   .burger-menu {
@@ -1693,6 +1765,9 @@ body {
   .blog__content > div:nth-child(2) {
     width: 100%;
     margin-top: 50px;
+  }
+  .promotionBanner__message {
+    margin-top: 15px;
   }
 }
 
