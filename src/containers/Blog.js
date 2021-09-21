@@ -1,5 +1,6 @@
 // Packages
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 // Components
 import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
@@ -9,24 +10,11 @@ import BlogModal from "../components/Blog/BlogModal";
 
 const Blog = () => {
   // States
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [picker, setPicker] = useState("articles");
   const [modal, setModal] = useState(false);
   const [modalInfo, setModalInfo] = useState();
-  const [data, setData] = useState([
-    "Main Article",
-    "Article 2",
-    "Article 3",
-    "Article 4",
-    "Article 5",
-    "Article 6",
-    "Article 7",
-    "Article 8",
-    "Article 9",
-    "Article 10",
-    "Article 11",
-    "Article 12",
-  ]);
+  const [data, setData] = useState();
   const [data2, setData2] = useState([
     "Main Tutorial",
     "Tutorial 2",
@@ -43,6 +31,25 @@ const Blog = () => {
   ]);
 
   const comparisonData = [0, 1, 2, 3, 4, 5];
+
+  // Get Data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://itrsq.herokuapp.com/articles`
+        );
+
+        setData(response.data);
+        console.log(response.data);
+        console.log(response.data[0].title);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, []);
 
   // Modal Function
   const modalHandle = (props) => {
@@ -84,30 +91,23 @@ const Blog = () => {
             {picker === "articles" && (
               <div className="blog__content">
                 <div onClick={() => modalHandle({ info: data[0] })}>
-                  <img src={image} alt={image} />
+                  <img src={data[0].picture} alt={data[0].picture} />
                   <div>
-                    <h1 className="txt-header-small-white">{data[0]}</h1>
+                    <h1 className="txt-header-small-white">{data[0].title}</h1>
                     <p className="txt-description-small-white blog__description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Illo voluptatum ullam saepe nostrum quas explicabo quo
-                      exercitationem, debitis, assumenda atque ex libero vel?
-                      Repudiandae dolorum provident nostrum, id asperiores
-                      labore molestiae expedita, consequatur alias qui, dicta
-                      fuga odio adipisci? At dolorem vitae quasi voluptas atque
-                      cum veritatis? Laborum, veniam nemo sequi, culpa incidunt
-                      aliquid natus iure ex dolores ea nihil placeat tempore
-                      corporis itaque dicta at voluptatem fugiat tempora
-                      adipisci mollitia repellat ipsum. Id voluptatum nisi fugit
-                      ratione quae at architecto ad necessitatibus totam
-                      sapiente temporibus deleniti officia quod dolorum, iure
-                      odio commodi laudantium repellendus, nobis iusto
-                      voluptatem ea reprehenderit.
+                      {data[0].text}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <div>
-                    <h1 className="txt-header-small-white">{data[1]}</h1>
+                  <div onClick={() => modalHandle({ info: data[1] })}>
+                    <h1 className="txt-header-small-white">{data[1].title}</h1>
+                    <p className="txt-description-small-white blog__description">
+                      {data[1].text}
+                    </p>
+                  </div>
+                  {/* <div>
+                    <h1 className="txt-header-small-white">{data[2].title}</h1>
                     <p className="txt-description-small-white blog__description">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                       Quasi nostrum labore, et unde dolor repellat impedit culpa
@@ -119,19 +119,7 @@ const Blog = () => {
                     </p>
                   </div>
                   <div>
-                    <h1 className="txt-header-small-white">{data[2]}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Quasi nostrum labore, et unde dolor repellat impedit culpa
-                      quod, quisquam pariatur dolore rerum repellendus numquam
-                      doloremque voluptatum magnam voluptas ex facilis. Odio
-                      error ratione quisquam, dignissimos, dolorum nisi quas
-                      dolor nobis adipisci necessitatibus voluptates, facere in
-                      cum consectetur reprehenderit sed nostrum.
-                    </p>
-                  </div>
-                  <div>
-                    <h1 className="txt-header-small-white">{data[3]}</h1>
+                    <h1 className="txt-header-small-white">{data[3].title}</h1>
                     <p className="txt-description-small-white blog__description">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                       Quasi nostrum labore, et unde dolor repellat impedit culpa
@@ -147,7 +135,7 @@ const Blog = () => {
                   {" "}
                   <img src={image} alt={image} />
                   <div>
-                    <h1 className="txt-header-small-white">{data[4]}</h1>
+                    <h1 className="txt-header-small-white">{data[4].title}</h1>
                     <p className="txt-description-small-white blog__description">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Illo voluptatum ullam saepe nostrum quas explicabo quo
@@ -170,7 +158,7 @@ const Blog = () => {
                   {" "}
                   <img src={image} alt={image} />
                   <div>
-                    <h1 className="txt-header-small-white">{data[5]}</h1>
+                    <h1 className="txt-header-small-white">{data[5].title}</h1>
                     <p className="txt-description-small-white blog__description">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Illo voluptatum ullam saepe nostrum quas explicabo quo
@@ -187,9 +175,9 @@ const Blog = () => {
                       odio commodi laudantium repellendus, nobis iusto
                       voluptatem ea reprehenderit.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="blog__content__rest">
+                {/* <div className="blog__content__rest">
                   {data.map((article, index) => {
                     return (
                       comparisonData.indexOf(data.indexOf(article)) === -1 && (
@@ -211,12 +199,13 @@ const Blog = () => {
                       )
                     );
                   })}
-                </div>
+                </div> */}
               </div>
             )}
             {picker === "tutorials" && (
               <div className="blog__content__tutorials">
-                {data2.map((tutorial, index) => {
+                <h1 className="txt-header-large-grey">COMING SOON</h1>
+                {/* {data2.map((tutorial, index) => {
                   return (
                     <div
                       className="blog__smallContent"
@@ -234,7 +223,7 @@ const Blog = () => {
                       </p>
                     </div>
                   );
-                })}
+                })} */}
               </div>
             )}
           </>
