@@ -1564,7 +1564,7 @@ body {
     margin-left: 3rem;
   }
   .promotionBanner__container {
-    height: 630px;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     padding: 40px 0;
@@ -1575,12 +1575,13 @@ body {
   }
   .promotionBanner__instructions {
     font-size: 18px;
-    width: 60%;
+    width: 70%;
     line-height: 38px;
   }
   .promotionBanner__message {
     font-size: 22px;
     padding: 5px 20px;
+    margin-top: 15px;
   }
   .promotionBanner__number {
     font-size: 30px;
@@ -1814,6 +1815,14 @@ body {
     margin-top: 50px;
   }
   .promotionBanner__message {
+    line-height: 44px;
+  }
+  .promotionBanner__btnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .promotionBanner__btn {
     margin-top: 15px;
   }
 }
