@@ -1575,7 +1575,7 @@ body {
   }
   .promotionBanner__instructions {
     font-size: 18px;
-    width: 70%;
+    width: 80%;
     line-height: 38px;
   }
   .promotionBanner__message {
@@ -1810,6 +1810,10 @@ body {
     width: 100%;
   }
 
+  .blog__content > div:nth-child(1) img {
+    height: 60%;
+  }
+
   .blog__content > div:nth-child(2) {
     width: 100%;
     margin-top: 50px;
@@ -1824,6 +1828,9 @@ body {
   }
   .promotionBanner__btn {
     margin-top: 15px;
+  }
+  .txt-header-medium-white {
+    font-size: 1.8rem;
   }
 }
 

@@ -10,8 +10,7 @@ const PromotionalBanner = ({ onX, onContact }) => {
         <div className="promotionBanner__textContainer">
           <h1 className="promotionBanner__message">NEW CUSTOMER DISCOUNT</h1>
           <h2 className="promotionBanner__instructions">
-            ENTER <span>PROMO 111</span> AS A REFERENCE NUMBER WHEN CONTACTING
-            US
+            ENTER <span>PROMO111</span> AS A REFERENCE NUMBER WHEN CONTACTING US
           </h2>
           <div className="promotionBanner__btnContainer">
             or simply click here{" "}
