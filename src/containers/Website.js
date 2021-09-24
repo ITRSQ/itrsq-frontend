@@ -69,7 +69,7 @@ const Website = () => {
       <div className="container-full-white" id="how">
         {" "}
         <div className="website__how">
-          <h1 className="txt-header-medium-dynamic">How it works</h1>
+          <h1 className="txt-header-large-dynamic">How it works</h1>
           <div className="website__how__path">
             <div data-aos="fade-up">
               <SiGooglemessages className="website__how__path__icons" />
@@ -125,8 +125,100 @@ const Website = () => {
           </div>
         </div>
       </div>
+      <div className="website__prices">
+        <div className="website__prices__container">
+          <h1 className="txt-header-large-dynamic">Website Packages</h1>
+
+          <div className="website__prices__webdev">
+            <div data-aos="fade-up">
+              <div>
+                {" "}
+                <i class="fas fa-book-open"></i>
+                <h3 className="txt-header-small-dynamic">Basic</h3>
+                <h4 className="txt-description-medium-white">
+                  A professional informational website for your business or
+                  yourself.
+                </h4>
+              </div>
+
+              <ul>
+                <li>Fully bespoke website</li>
+                <li>Mobile and tablet responsive</li>
+                <li>Secure Web Hosting</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span>£249</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay={100}>
+              <div>
+                <i class="fas fa-shopping-cart"></i>
+                <h3 className="txt-header-small-dynamic">E-Commerce</h3>
+                <h4 className="txt-description-medium-white">
+                  Your very own E-shop.
+                </h4>
+              </div>
+
+              <ul>
+                <li>All features from Basic package</li>
+                <li>Online payment</li>
+                <li>Admin management</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span>£449</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay={200}>
+              <div>
+                {" "}
+                <i class="fas fa-drafting-compass"></i>
+                <h3 className="txt-header-small-dynamic">Custom</h3>
+                <h4 className="txt-description-medium-white">
+                  Your project doesn't fit in any of the previous packages ?
+                </h4>
+              </div>
+
+              <ul>
+                <li>All features from Basic package</li>
+                <li>Custom web plug-ins</li>
+                <li>Custom research and application</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span> £349</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="website__technologies" id="what">
-        <h1 className="txt-header-large-white">What we use</h1>
+        <h1 className="txt-header-large-white">Our Technology Stack</h1>
         <h2 className="txt-description-small-white">
           To keep up with the ever-changing web development world, <br /> we
           only use the latest programs and language versions in our programming.
