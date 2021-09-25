@@ -10,16 +10,19 @@ const Footer = () => {
           <a href="https://www.facebook.com/ITRSQ" target="_blank">
             <i class="fab fa-facebook"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/itrsq2000/" target="_blank">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#">
+          <a href="https://twitter.com/ItrsqS" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
           <a href="https://www.linkedin.com/company/itrsq/" target="_blank">
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href="#">
+          <a
+            href="https://www.youtube.com/channel/UCUUs-ri1zJU_mYumBbzjO6g"
+            target="_blank"
+          >
             <i class="fab fa-youtube"></i>
           </a>
         </div>

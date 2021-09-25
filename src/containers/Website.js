@@ -217,6 +217,101 @@ const Website = () => {
           </div>
         </div>
       </div>
+
+      <div className="website__maintenance__prices">
+        <div className="website__prices__container">
+          <h1 className="txt-header-large-dynamic">Maintenance Packages</h1>
+
+          <div className="website__prices__maintenance">
+            <div data-aos="fade-up">
+              <div>
+                {" "}
+                <i class="fas fa-book-open"></i>
+                <h3 className="txt-header-small-dynamic">One-time</h3>
+                <h4 className="txt-description-medium-black">
+                  If you just need to update something on your website or wish
+                  to add something new
+                </h4>
+              </div>
+
+              <ul>
+                <li>Portfolio update</li>
+                <li>Add functionality</li>
+                <li>Add pages</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span>£29/day</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay={100}>
+              <div>
+                <i class="fas fa-shopping-cart"></i>
+                <h3 className="txt-header-small-dynamic">Monthly</h3>
+                <h4 className="txt-description-medium-black">
+                  Save money by paying a monthly fee and getting the most of our
+                  service
+                </h4>
+              </div>
+
+              <ul>
+                <li>Less individual modification charges</li>
+                <li>Customer Support</li>
+                <li>Best Value</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span>£39/month</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay={200}>
+              <div>
+                {" "}
+                <i class="fas fa-drafting-compass"></i>
+                <h3 className="txt-header-small-dynamic">Custom</h3>
+                <h4 className="txt-description-medium-black">
+                  Need to make big changes ?
+                </h4>
+              </div>
+
+              <ul>
+                <li>Large-scale changes</li>
+                <li>Re-design</li>
+                <li>Website upgrades</li>
+              </ul>
+              <div>
+                {" "}
+                <h5>
+                  Prices start from <span> £99</span>
+                </h5>
+                <button
+                  className="btn-classic-blue"
+                  onClick={() => history.push("/contact")}
+                >
+                  Get your free quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="website__technologies" id="what">
         <h1 className="txt-header-large-white">Our Technology Stack</h1>
         <h2 className="txt-description-small-white">
