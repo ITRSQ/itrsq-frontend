@@ -226,7 +226,7 @@ const Website = () => {
             <div data-aos="fade-up">
               <div>
                 {" "}
-                <i class="fas fa-book-open"></i>
+                <i class="fas fa-stopwatch"></i>
                 <h3 className="txt-header-small-dynamic">One-time</h3>
                 <h4 className="txt-description-medium-black">
                   If you just need to update something on your website or wish
@@ -254,7 +254,7 @@ const Website = () => {
             </div>
             <div data-aos="fade-up" data-aos-delay={100}>
               <div>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-calendar"></i>
                 <h3 className="txt-header-small-dynamic">Monthly</h3>
                 <h4 className="txt-description-medium-black">
                   Save money by paying a monthly fee and getting the most of our
