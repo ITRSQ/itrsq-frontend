@@ -18,6 +18,7 @@ import Blog from "./containers/Blog";
 // Components
 import Header from "./components/Header";
 import PromotionalBanner from "./components/Promotions/PromotionalBanner";
+import LoaderFullScreen from "./components/Utility/LoaderFullScreen";
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,9 @@ function App() {
 
   // States
   const [promotion, setPromotion] = useState();
+  const [userToken, setUserToken] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Promotion Handle
   const promoXHandle = () => {
@@ -48,7 +52,40 @@ function App() {
     window.location.href = "/contact";
   };
 
-  return (
+  // Function for creating or deleting Cookies and State Token and Id:
+  const setTokenAndId = async (token, id) => {
+    if (id) {
+      await Cookies.set("userId", id);
+    } else {
+      await Cookies.remove("userId");
+    }
+    if (token) {
+      await Cookies.set("userToken", token);
+    } else {
+      await Cookies.remove("userToken");
+    }
+
+    setUserId(id);
+    setUserToken(token);
+  };
+
+  // useEffect for, on app loading, look for cookie token, call the function and stop isLoading
+  useEffect(() => {
+    const bootstrapAsync = async () => {
+      const userToken = await Cookies.get("userToken");
+      const userId = await Cookies.get("userId");
+      setUserId(userId);
+      setUserToken(userToken);
+
+      setIsLoading(false);
+    };
+
+    bootstrapAsync();
+  }, []);
+
+  return isLoading ? (
+    <LoaderFullScreen />
+  ) : (
     <div className="master-wrapper">
       <Router>
         {promotion && (
@@ -57,7 +94,7 @@ function App() {
             onContact={() => promoHandle()}
           />
         )}
-        <Header />
+        <Header userToken={userToken} />
         <Switch>
           <Route path="/contact">
             <Contact />

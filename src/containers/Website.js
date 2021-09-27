@@ -229,8 +229,7 @@ const Website = () => {
                 <i class="fas fa-stopwatch"></i>
                 <h3 className="txt-header-small-dynamic">One-time</h3>
                 <h4 className="txt-description-medium-black">
-                  If you just need to update something on your website or wish
-                  to add something new
+                  If you need to update your website or add something new
                 </h4>
               </div>
 
@@ -298,7 +297,7 @@ const Website = () => {
               <div>
                 {" "}
                 <h5>
-                  Prices start from <span> £99</span>
+                  Prices start from <span> £49</span>
                 </h5>
                 <button
                   className="btn-classic-blue"

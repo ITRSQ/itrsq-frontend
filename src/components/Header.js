@@ -6,10 +6,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 // Logo
 import logo from "../assets/img/logo.png";
 
-const Header = () => {
+const Header = ({ userToken }) => {
   const location = useLocation();
   // States
   const [burgerModal, setBurgerModal] = useState(false);
+  const [profileModal, setProfileModal] = useState(false);
 
   return (
     <div className="header">
@@ -118,9 +119,43 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <Link to="/contact" className="btn-classic-blue ">
-          Contact
-        </Link>
+        <div>
+          {/* <div>
+            <i
+              class="fas fa-user"
+              onClick={() => {
+                setProfileModal(!profileModal);
+              }}
+            ></i>
+            {profileModal && (
+              <div className="header__profileModal">
+                {userToken ? (
+                  <>
+                    <Link to="/" data-aos="fade-down" data-aos-delay={100}>
+                      Profile
+                    </Link>
+                    <Link to="/" data-aos="fade-down">
+                      Settings
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/" data-aos="fade-down" data-aos-delay={100}>
+                      Login
+                    </Link>
+                    <Link to="/" data-aos="fade-down">
+                      Signup
+                    </Link>
+                  </>
+                )}
+              </div>
+            )}
+          </div> */}
+
+          <Link to="/contact" className="btn-classic-blue ">
+            Contact
+          </Link>
+        </div>
       </div>
     </div>
   );
