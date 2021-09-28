@@ -1,7 +1,7 @@
 // Packages
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 // Components
 import Footer from "../../components/Footer";
@@ -13,6 +13,8 @@ const Signup = ({ setTokenAndId }) => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
   const [email, setEmail] = useState();
+  const [privacy, setPrivacy] = useState(true);
+  const [privacy1, setPrivacy1] = useState(true);
 
   // Signup Button Function
   const signupHandle = async () => {
@@ -43,31 +45,66 @@ const Signup = ({ setTokenAndId }) => {
             {errorMessage && <h2 className="error-message">{errorMessage}</h2>}
           </div>
           <div>
-            <label className="txt-description-small-white">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label className="txt-description-small-white">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
             <label className="txt-description-small-white">
-              Confirm Password
+              Email{" "}
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autocomplete="on"
+              />
             </label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
+
+            <label className="txt-description-small-white">
+              Password{" "}
+              <input
+                type={privacy === true ? "password" : "text"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autocomplete="current-password"
+              />
+              {privacy === true ? (
+                <i
+                  class="fas fa-eye icn-privacy"
+                  onClick={() => setPrivacy(false)}
+                ></i>
+              ) : (
+                <i
+                  class="fas fa-eye-slash icn-privacy"
+                  onClick={() => setPrivacy(true)}
+                ></i>
+              )}
+            </label>
+
+            <label className="txt-description-small-white">
+              Confirm Password{" "}
+              <input
+                type={privacy1 === true ? "password" : "text"}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                autocomplete="current-password"
+              />
+              {privacy1 === true ? (
+                <i
+                  class="fas fa-eye icn-privacy"
+                  onClick={() => setPrivacy1(false)}
+                ></i>
+              ) : (
+                <i
+                  class="fas fa-eye-slash icn-privacy"
+                  onClick={() => setPrivacy1(true)}
+                ></i>
+              )}
+            </label>
           </div>
           <div>
             <button className="btn-classic-blue" onClick={() => signupHandle()}>
               Signup
             </button>
+            <Link to="/login">
+              Already have an account ? <br />
+              Signup here
+            </Link>
           </div>
         </div>
       </div>

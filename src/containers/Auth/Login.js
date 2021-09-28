@@ -1,10 +1,11 @@
 // Packages
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 // Components
 import Footer from "../../components/Footer";
+import LoaderFullScreen from "../../components/Utility/LoaderFullScreen";
 
 const Login = ({ setTokenAndId }) => {
   const history = useHistory();
@@ -12,6 +13,7 @@ const Login = ({ setTokenAndId }) => {
   const [errorMessage, setErrorMessage] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
+  const [privacy, setPrivacy] = useState(true);
 
   // Login Button Function
   const loginHandle = async () => {
@@ -22,13 +24,12 @@ const Login = ({ setTokenAndId }) => {
       );
 
       if (response.data.token) {
-        setTokenAndId(response.data.token, response.data.id);
+        setTokenAndId(response.data.token, response.data._id);
         setErrorMessage();
         history.push("/");
       }
     } catch (e) {
       setErrorMessage(e.response.data.error);
-      console.log("ya");
     }
   };
 
@@ -43,23 +44,45 @@ const Login = ({ setTokenAndId }) => {
             {errorMessage && <h2 className="error-message">{errorMessage}</h2>}
           </div>
           <div>
-            <label className="txt-description-small-white">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label className="txt-description-small-white">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <label className="txt-description-small-white">
+              Email{" "}
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autocomplete="on"
+              />
+            </label>
+
+            <label className="txt-description-small-white">
+              Password{" "}
+              <input
+                type={privacy === true ? "password" : "text"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autocomplete="current-password"
+              />
+              {privacy === true ? (
+                <i
+                  class="fas fa-eye icn-privacy"
+                  onClick={() => setPrivacy(false)}
+                ></i>
+              ) : (
+                <i
+                  class="fas fa-eye-slash icn-privacy"
+                  onClick={() => setPrivacy(true)}
+                ></i>
+              )}
+            </label>
           </div>
           <div>
             <button className="btn-classic-blue" onClick={() => loginHandle()}>
               Login
             </button>
+            <Link to="/signup">
+              Don't have an account yet ? <br />
+              Signup here
+            </Link>
           </div>
         </div>
       </div>

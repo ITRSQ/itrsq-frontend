@@ -17,6 +17,7 @@ const Header = ({ userToken, setTokenAndId }) => {
   const logoutHandle = () => {
     setTokenAndId();
     setProfileModal(!profileModal);
+    history.push("/");
   };
 
   return (
@@ -74,7 +75,7 @@ const Header = ({ userToken, setTokenAndId }) => {
               <Link to="/" className="txt-header-medium-dynamic">
                 Profile
               </Link>
-              <Link to="/" className="txt-header-medium-dynamic">
+              <Link to="/settings" className="txt-header-medium-dynamic">
                 Settings
               </Link>
               <a
@@ -182,7 +183,7 @@ const Header = ({ userToken, setTokenAndId }) => {
                       Profile
                     </Link>
                     <Link
-                      to="/"
+                      to="/settings"
                       data-aos="fade-down"
                       data-aos-delay={100}
                       onClick={() => {

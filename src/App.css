@@ -490,12 +490,12 @@ body {
 .header__profileModal {
   position: absolute;
   top: 2.4rem;
-  right: 0.5rem;
+  right: 1.3rem;
 
   width: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   font-family: var(--ff--common);
   font-weight: 500;
   font-size: 16px;
@@ -630,7 +630,8 @@ body {
 .about::before,
 .contact::before,
 .blog::before,
-.auth::before {
+.auth::before,
+.settings::before {
   content: "";
   background-image: url("./assets/img/Q.png");
   background-size: 80%;
@@ -1125,7 +1126,7 @@ body {
 /* Support */
 .support {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1221,7 +1222,7 @@ body {
 .about__container {
   width: 1440px;
   max-width: 1440px;
-  min-height: 50vh;
+  padding-top: 300px;
   margin: 0 auto;
   z-index: 0;
   display: flex;
@@ -1752,6 +1753,10 @@ body {
   position: relative;
 }
 
+.auth__form button {
+  width: 70%;
+}
+
 .auth__form > div:nth-child(1) > h1 {
   margin-bottom: 20px;
 }
@@ -1761,19 +1766,129 @@ body {
   align-items: center;
   width: 90%;
   max-width: 300px;
+  margin-top: 10px;
 }
-.auth__form > div:nth-child(2) > input {
-  padding: 4px;
+
+.auth__form > div:nth-child(2) > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  position: relative;
+}
+
+.auth__form > div:nth-child(2) > label > input {
+  padding: 8px 20% 8px 10px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
-  border-radius: 5px;
+  border-radius: 20px;
   outline: none;
   text-decoration: none;
   font-family: var(--ff--common);
   color: white;
   background-color: var(--clr--white--transparent);
   border: solid 1px var(--clr--white--transparent);
+}
+
+.auth__form > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.auth__form > div:nth-child(3) > a {
+  font-family: var(--ff--common);
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.auth__form > div:nth-child(3) > a:hover {
+  color: black;
+}
+
+.icn-privacy {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Settings */
+
+.settings {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.settings__container {
+  width: 100%;
+  max-width: 1440px;
+  padding-top: 50px;
+  margin: 0 auto;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 140px;
+}
+
+.settings__container > h1 {
+  width: 80%;
+  margin-bottom: 90px;
+}
+.settings__container h2 {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.settings__container > div {
+  width: 80%;
+  display: flex;
+}
+.settings__container > div > div:nth-child(1),
+.settings__container > div > div:nth-child(2) {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings__container label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 300px;
+}
+
+.settings__container input {
+  padding: 8px 20% 8px 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  outline: none;
+  text-decoration: none;
+  font-family: var(--ff--common);
+  color: white;
+  background-color: var(--clr--white--transparent);
+  border: solid 1px var(--clr--white--transparent);
+}
+
+.settings__container button {
+  width: 300px;
 }
 
 /* RESPONSIVE */
@@ -1833,6 +1948,14 @@ body {
 }
 
 @media (max-width: 975px) {
+  .settings__container > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .settings__container > div > div:nth-child(1) {
+    margin-bottom: 40px;
+  }
   .blog__smallContent {
     width: 100%;
     padding: 2%;
@@ -2163,8 +2286,9 @@ body {
   .contact,
   .about,
   .support,
-  .auth {
-    padding-top: 120px;
+  .auth,
+  .settings {
+    padding-top: 105px;
   }
 
   .contact__form,
