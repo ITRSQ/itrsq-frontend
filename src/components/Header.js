@@ -1,22 +1,32 @@
 // Packages
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Logo
 import logo from "../assets/img/logo.png";
 
-const Header = ({ userToken }) => {
+const Header = ({ userToken, setTokenAndId }) => {
+  const history = useHistory();
   const location = useLocation();
   // States
   const [burgerModal, setBurgerModal] = useState(false);
   const [profileModal, setProfileModal] = useState(false);
 
+  // Logout Handle
+  const logoutHandle = () => {
+    setTokenAndId();
+    setProfileModal(!profileModal);
+  };
+
   return (
     <div className="header">
       {burgerModal && (
         <div className="burger-modal" data-aos="slide-right">
-          <i class="fas fa-times" onClick={() => setBurgerModal(false)}></i>
+          <i
+            class="fas fa-times icn-x"
+            onClick={() => setBurgerModal(false)}
+          ></i>
           <Link
             to="/"
             className="txt-header-medium-dynamic"
@@ -59,6 +69,31 @@ const Header = ({ userToken }) => {
           >
             Contact
           </Link>
+          {/* {userToken ? (
+            <>
+              <Link to="/" className="txt-header-medium-dynamic">
+                Profile
+              </Link>
+              <Link to="/" className="txt-header-medium-dynamic">
+                Settings
+              </Link>
+              <a
+                className="txt-header-medium-dynamic"
+                onClick={() => setTokenAndId()}
+              >
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="txt-header-medium-dynamic">
+                Login
+              </Link>
+              <Link to="/signup" className="txt-header-medium-dynamic">
+                Signup
+              </Link>
+            </>
+          )} */}
         </div>
       )}
       <div className="header__container">
@@ -67,7 +102,12 @@ const Header = ({ userToken }) => {
           onClick={() => setBurgerModal(true)}
         />
         <div>
-          <img src={logo} alt={logo} className="header__logo" />
+          <img
+            src={logo}
+            alt={logo}
+            className="header__logo"
+            onClick={() => history.push("/")}
+          />
           <div>
             <Link
               to="/"
@@ -131,19 +171,49 @@ const Header = ({ userToken }) => {
               <div className="header__profileModal">
                 {userToken ? (
                   <>
-                    <Link to="/" data-aos="fade-down" data-aos-delay={100}>
+                    <Link
+                      to="/"
+                      data-aos="fade-down"
+                      data-aos-delay={200}
+                      onClick={() => {
+                        setProfileModal(!profileModal);
+                      }}
+                    >
                       Profile
                     </Link>
-                    <Link to="/" data-aos="fade-down">
+                    <Link
+                      to="/"
+                      data-aos="fade-down"
+                      data-aos-delay={100}
+                      onClick={() => {
+                        setProfileModal(!profileModal);
+                      }}
+                    >
                       Settings
                     </Link>
+                    <a data-aos="fade-down" onClick={() => logoutHandle()}>
+                      Logout
+                    </a>
                   </>
                 ) : (
                   <>
-                    <Link to="/" data-aos="fade-down" data-aos-delay={100}>
+                    <Link
+                      to="/login"
+                      data-aos="fade-down"
+                      data-aos-delay={100}
+                      onClick={() => {
+                        setProfileModal(!profileModal);
+                      }}
+                    >
                       Login
                     </Link>
-                    <Link to="/" data-aos="fade-down">
+                    <Link
+                      to="/signup"
+                      data-aos="fade-down"
+                      onClick={() => {
+                        setProfileModal(!profileModal);
+                      }}
+                    >
                       Signup
                     </Link>
                   </>

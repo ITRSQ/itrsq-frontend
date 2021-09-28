@@ -14,6 +14,8 @@ import Website from "./containers/Website";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Blog from "./containers/Blog";
+import Login from "./containers/Auth/Login";
+import Signup from "./containers/Auth/Signup";
 
 // Components
 import Header from "./components/Header";
@@ -94,8 +96,14 @@ function App() {
             onContact={() => promoHandle()}
           />
         )}
-        <Header userToken={userToken} />
+        <Header userToken={userToken} setTokenAndId={setTokenAndId} />
         <Switch>
+          <Route path="/signup">
+            <Signup setTokenAndId={setTokenAndId} />
+          </Route>
+          <Route path="/login">
+            <Login setTokenAndId={setTokenAndId} />
+          </Route>
           <Route path="/contact">
             <Contact />
           </Route>

@@ -443,6 +443,7 @@ body {
 
 .header__logo {
   width: 6rem;
+  cursor: pointer;
 }
 
 .header__container {
@@ -538,6 +539,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
+  overflow-y: scroll;
+}
+
+.icn-x {
+  position: absolute;
+  color: white;
+  font-size: 3rem;
+  top: 3rem;
+  right: 4rem;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -618,7 +629,8 @@ body {
 .support::before,
 .about::before,
 .contact::before,
-.blog::before {
+.blog::before,
+.auth::before {
   content: "";
   background-image: url("./assets/img/Q.png");
   background-size: 80%;
@@ -1594,8 +1606,11 @@ body {
 .blog__smallContent {
   z-index: 5;
   padding: 1.5%;
-  width: 30.5%;
+  width: 47%;
   height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--clr--white--transparent);
   transition: 0.1s all ease-out;
   margin-top: 50px;
@@ -1625,12 +1640,11 @@ body {
 }
 .blog__content__tutorials {
   width: 90%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   z-index: 1;
-  padding-top: 20vh;
 }
 
 .blogModal {
@@ -1703,6 +1717,65 @@ body {
   margin-bottom: 30px;
 }
 
+/* Auth */
+
+.auth {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth__container {
+  width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.auth__form {
+  margin: 0 auto;
+  width: 50%;
+  height: 75%;
+  border-radius: 10px;
+  background-color: var(--clr--white--transparent);
+  border: solid 2px var(--clr--white--transparent);
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 100px;
+  margin-top: 150px;
+  z-index: 5;
+  position: relative;
+}
+
+.auth__form > div:nth-child(1) > h1 {
+  margin-bottom: 20px;
+}
+.auth__form > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 300px;
+}
+.auth__form > div:nth-child(2) > input {
+  padding: 4px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  outline: none;
+  text-decoration: none;
+  font-family: var(--ff--common);
+  color: white;
+  background-color: var(--clr--white--transparent);
+  border: solid 1px var(--clr--white--transparent);
+}
+
 /* RESPONSIVE */
 
 /* Width */
@@ -1718,6 +1791,7 @@ body {
   .website__technologies,
   .about__container,
   .contact__container,
+  .auth__container,
   .support__container {
     width: 100%;
   }
@@ -1743,9 +1817,7 @@ body {
     padding: 0 10%;
     flex-direction: column;
   }
-  .blog__smallContent {
-    width: 48%;
-  }
+
   .promotionBanner__textContainer {
     width: 60%;
   }
@@ -1761,10 +1833,18 @@ body {
 }
 
 @media (max-width: 975px) {
+  .blog__smallContent {
+    width: 100%;
+    padding: 2%;
+  }
   .stickyMenu {
     display: none;
   }
   .header__container > div:nth-child(2) > div:nth-child(2) {
+    display: none;
+  }
+
+  .header__container > div:nth-child(3) > div {
     display: none;
   }
 
@@ -2025,19 +2105,21 @@ body {
     width: 100%;
     z-index: 1;
   }
-  .contact__form {
+  .contact,
+  .auth {
+    height: fit-content;
+  }
+  .contact__form,
+  .auth__form {
     margin: 0 auto;
     width: 90%;
     padding: 20px 10px;
     margin-bottom: 20px;
     /* background-color: white; */
     border: none;
+    height: fit-content;
   }
 
-  .blog__smallContent {
-    width: 100%;
-    padding: 5%;
-  }
   .blog__content > div:nth-child(1),
   .blog__content > div:nth-child(3),
   .blog__content > div:nth-child(4) {
@@ -2067,6 +2149,9 @@ body {
   .txt-header-medium-white {
     font-size: 1.8rem;
   }
+  .icn-x {
+    font-size: 2rem;
+  }
 }
 
 /* Height */
@@ -2077,15 +2162,15 @@ body {
   }
   .contact,
   .about,
-  .support {
+  .support,
+  .auth {
     padding-top: 120px;
-
-    height: fit-content;
   }
 
-  .contact__form {
+  .contact__form,
+  .auth__form {
     margin-top: 30px;
-    height: 100%;
+    height: 86%;
   }
 
   .hero {

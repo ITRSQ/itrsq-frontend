@@ -204,26 +204,20 @@ const Blog = () => {
             )}
             {picker === "tutorials" && (
               <div className="blog__content__tutorials">
-                <h1 className="txt-header-large-grey">COMING SOON</h1>
-                {/* {data2.map((tutorial, index) => {
-                  return (
-                    <div
-                      className="blog__smallContent"
-                      key={tutorial}
-                      onClick={() => modalHandle({ info: tutorial })}
-                    >
-                      <img src={image} alt={image} />
-                      <h1 className="txt-header-small-white">{tutorial}</h1>
-                      <p className="txt-description-small-white blog__description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Recusandae optio, culpa neque voluptatum libero
-                        rerum aut quae ea veniam suscipit repellat distinctio
-                        iusto facere provident maiores et saepe? Laudantium,
-                        maiores!
-                      </p>
-                    </div>
-                  );
-                })} */}
+                <div className="blog__smallContent">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/_pKD2aRN5Uk"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div className="blog__smallContent">
+                  <h1 className="txt-header-medium-dynamic">Coming Soon</h1>
+                </div>
               </div>
             )}
           </>
