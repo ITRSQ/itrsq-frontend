@@ -25,6 +25,9 @@ const Footer = () => {
           >
             <i class="fab fa-youtube"></i>
           </a>
+          <a href="https://www.tiktok.com/@itrsq?" target="_blank">
+            <i class="fab fa-tiktok"></i>
+          </a>
         </div>
         <h2>
           @ 2021 - Website designed by{" "}

@@ -17,6 +17,7 @@ const Header = ({ userToken, setTokenAndId }) => {
   const logoutHandle = () => {
     setTokenAndId();
     setProfileModal(!profileModal);
+    setBurgerModal(false);
     history.push("/");
   };
 
@@ -72,25 +73,41 @@ const Header = ({ userToken, setTokenAndId }) => {
           </Link>
           {/* {userToken ? (
             <>
-              <Link to="/" className="txt-header-medium-dynamic">
-                Profile
+              <Link
+                to="/projects"
+                className="txt-header-medium-dynamic"
+                onClick={() => setBurgerModal(false)}
+              >
+                Projects
               </Link>
-              <Link to="/settings" className="txt-header-medium-dynamic">
+              <Link
+                to="/settings"
+                className="txt-header-medium-dynamic"
+                onClick={() => setBurgerModal(false)}
+              >
                 Settings
               </Link>
               <a
                 className="txt-header-medium-dynamic"
-                onClick={() => setTokenAndId()}
+                onClick={() => logoutHandle()}
               >
                 Logout
               </a>
             </>
           ) : (
             <>
-              <Link to="/login" className="txt-header-medium-dynamic">
+              <Link
+                to="/login"
+                className="txt-header-medium-dynamic"
+                onClick={() => setBurgerModal(false)}
+              >
                 Login
               </Link>
-              <Link to="/signup" className="txt-header-medium-dynamic">
+              <Link
+                to="/signup"
+                className="txt-header-medium-dynamic"
+                onClick={() => setBurgerModal(false)}
+              >
                 Signup
               </Link>
             </>
@@ -173,14 +190,14 @@ const Header = ({ userToken, setTokenAndId }) => {
                 {userToken ? (
                   <>
                     <Link
-                      to="/"
+                      to="/projects"
                       data-aos="fade-down"
                       data-aos-delay={200}
                       onClick={() => {
                         setProfileModal(!profileModal);
                       }}
                     >
-                      Profile
+                      Projects
                     </Link>
                     <Link
                       to="/settings"

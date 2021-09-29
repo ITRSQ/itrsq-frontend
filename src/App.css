@@ -240,10 +240,8 @@ body {
   font-size: 2.2rem;
   line-height: 2.4rem;
   font-weight: 800;
-
   color: white;
   font-family: var(--ff--common);
-
   margin-bottom: 40px;
   text-align: center;
 }
@@ -554,7 +552,6 @@ body {
 /* Footer */
 
 .footer {
-  margin-top: 30px;
   padding: 50px;
   width: 100%;
   background-color: rgb(32, 32, 32);
@@ -631,7 +628,8 @@ body {
 .contact::before,
 .blog::before,
 .auth::before,
-.settings::before {
+.settings::before,
+.projects::before {
   content: "";
   background-image: url("./assets/img/Q.png");
   background-size: 80%;
@@ -1021,7 +1019,7 @@ body {
 
 .contact {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1212,7 +1210,7 @@ body {
 /* About */
 
 .about {
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1220,15 +1218,15 @@ body {
 }
 
 .about__container {
-  width: 1440px;
+  width: 100%;
+  min-height: 100vh;
   max-width: 1440px;
-  padding-top: 300px;
+
   margin: 0 auto;
   z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 40vh;
 }
 
 .about__container > div:nth-child(1) {
@@ -1836,6 +1834,7 @@ body {
   width: 100%;
   max-width: 1440px;
   padding-top: 50px;
+  min-height: 100vh;
   margin: 0 auto;
   z-index: 5;
   display: flex;
@@ -1889,6 +1888,44 @@ body {
 
 .settings__container button {
   width: 300px;
+}
+
+/* Profile */
+
+.projects {
+  padding-top: 105px;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.projects__container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1440px;
+  padding-top: 50px;
+  z-index: 5;
+}
+
+.projects__preview__container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.projects__preview__none {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects__preview__none > h1 {
+  margin-bottom: 40px;
 }
 
 /* RESPONSIVE */
