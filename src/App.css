@@ -1525,12 +1525,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 43%;
-  height: 582px;
+  height: 388px;
   justify-content: space-between;
 }
 
 .blog__content > div:nth-child(2) > div {
-  height: 29%;
+  height: 45%;
   width: 100%;
   background-color: var(--clr--white--transparent);
   transition: 0.1s all ease-out;
@@ -1539,7 +1539,7 @@ body {
 }
 
 .blog__content > div:nth-child(2) > div > p {
-  height: 60%;
+  height: 50%;
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }

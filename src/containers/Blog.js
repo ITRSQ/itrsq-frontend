@@ -106,19 +106,13 @@ const Blog = () => {
                       {data[1].text}
                     </p>
                   </div>
-                  {/* <div>
+                  <div onClick={() => modalHandle({ info: data[2] })}>
                     <h1 className="txt-header-small-white">{data[2].title}</h1>
                     <p className="txt-description-small-white blog__description">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Quasi nostrum labore, et unde dolor repellat impedit culpa
-                      quod, quisquam pariatur dolore rerum repellendus numquam
-                      doloremque voluptatum magnam voluptas ex facilis. Odio
-                      error ratione quisquam, dignissimos, dolorum nisi quas
-                      dolor nobis adipisci necessitatibus voluptates, facere in
-                      cum consectetur reprehenderit sed nostrum.
+                      {data[2].text}
                     </p>
                   </div>
-                  <div>
+                  {/* <div>
                     <h1 className="txt-header-small-white">{data[3].title}</h1>
                     <p className="txt-description-small-white blog__description">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
