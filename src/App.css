@@ -1705,6 +1705,7 @@ body {
   width: 80%;
   text-align: start;
   line-break: normal;
+  word-wrap: break-word;
   margin-top: 10px;
   color: white;
 }
