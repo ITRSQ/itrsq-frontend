@@ -2092,6 +2092,10 @@ body {
   .blogModal__txt {
     width: 90%;
   }
+  .blogModal img {
+    width: 90%;
+    height: 200px;
+  }
   body {
     overflow-x: hidden;
   }
