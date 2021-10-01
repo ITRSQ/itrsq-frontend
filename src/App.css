@@ -1704,6 +1704,7 @@ body {
   font-family: var(--ff--common);
   width: 80%;
   text-align: start;
+  line-break: normal;
   margin-top: 10px;
   color: white;
 }
@@ -2085,6 +2086,12 @@ body {
 }
 
 @media (max-width: 708px) {
+  .blogModal {
+    width: 90%;
+  }
+  .blogModal__txt {
+    width: 90%;
+  }
   body {
     overflow-x: hidden;
   }
