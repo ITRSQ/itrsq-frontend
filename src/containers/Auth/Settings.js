@@ -55,7 +55,7 @@ const Settings = ({ userId, userToken, setUserId, setUserToken }) => {
       formData.append("_id", userId);
       formData.append("email", email);
       const response = await axios.post(
-        `http://localhost:3000/user/modify/email`,
+        `https://itrsq.herokuapp.com/user/modify/email`,
         formData,
         {
           headers: {
@@ -82,7 +82,7 @@ const Settings = ({ userId, userToken, setUserId, setUserToken }) => {
       formData.append("password", password);
       formData.append("confirmPassword", confirmPassword);
       const response = await axios.post(
-        `http://localhost:3000/user/modify/password`,
+        `https://itrsq.herokuapp.com/user/modify/password`,
         formData,
         {
           headers: {

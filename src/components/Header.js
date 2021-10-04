@@ -71,7 +71,7 @@ const Header = ({ userToken, setTokenAndId }) => {
           >
             Contact
           </Link>
-          {/* {userToken ? (
+          {userToken ? (
             <>
               <Link
                 to="/projects"
@@ -111,7 +111,7 @@ const Header = ({ userToken, setTokenAndId }) => {
                 Signup
               </Link>
             </>
-          )} */}
+          )}
         </div>
       )}
       <div className="header__container">
@@ -178,7 +178,7 @@ const Header = ({ userToken, setTokenAndId }) => {
           </div>
         </div>
         <div>
-          {/* <div>
+          <div>
             <i
               class="fas fa-user"
               onClick={() => {
@@ -238,7 +238,7 @@ const Header = ({ userToken, setTokenAndId }) => {
                 )}
               </div>
             )}
-          </div> */}
+          </div>
 
           <Link to="/contact" className="btn-classic-blue ">
             Contact

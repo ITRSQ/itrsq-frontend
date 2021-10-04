@@ -26,7 +26,7 @@ const Login = ({ setTokenAndId }) => {
       if (response.data.token) {
         setTokenAndId(response.data.token, response.data._id);
         setErrorMessage();
-        history.push("/");
+        history.push("/projects");
       }
     } catch (e) {
       setErrorMessage(e.response.data.error);

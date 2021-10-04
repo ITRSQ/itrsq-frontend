@@ -1910,12 +1910,14 @@ body {
 }
 
 .projects__preview__container {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 30px;
 }
 
 .projects__preview__none {
@@ -1928,6 +1930,44 @@ body {
 
 .projects__preview__none > h1 {
   margin-bottom: 40px;
+}
+
+.projects__preview {
+  font-family: var(--ff--common);
+  color: white;
+  height: 300px;
+  min-width: 300px;
+  width: 30%;
+  margin: 0 20px;
+  background-color: var(--clr--white--transparent);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* cursor: pointer; */
+  border: solid 2px var(--clr--white--transparent);
+  border-radius: 10px;
+}
+/* .projects__preview:hover {
+  background-color: var(--clr--white--transparent--hover);
+} */
+.projects__preview h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.projects__preview h1 > span {
+  font-weight: 400;
+}
+
+.projects__preview h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.projects__preview h2 > span {
+  font-weight: 400;
 }
 
 /* RESPONSIVE */
@@ -2211,7 +2251,11 @@ body {
   .hero__container::before,
   .support::before,
   .about::before,
-  .contact::before {
+  .contact::before,
+  .login::before,
+  .signup::before,
+  .settings::before,
+  .projects::before {
     content: "";
     background-image: none;
     background-size: 90%;
