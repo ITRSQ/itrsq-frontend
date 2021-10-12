@@ -1525,17 +1525,18 @@ body {
   display: flex;
   flex-direction: column;
   width: 43%;
-  height: 388px;
+  height: 582px;
   justify-content: space-between;
 }
 
 .blog__content > div:nth-child(2) > div {
-  height: 45%;
+  height: 30%;
   width: 100%;
   background-color: var(--clr--white--transparent);
   transition: 0.1s all ease-out;
   z-index: 5;
   padding: 5%;
+  overflow: hidden;
 }
 
 .blog__content > div:nth-child(2) > div > p {
