@@ -73,20 +73,32 @@ const Header = ({ userToken, setTokenAndId }) => {
           </Link>
           {userToken ? (
             <>
-              <Link
-                to="/projects"
-                className="txt-header-medium-dynamic"
-                onClick={() => setBurgerModal(false)}
-              >
-                Projects
-              </Link>
-              <Link
-                to="/settings"
-                className="txt-header-medium-dynamic"
-                onClick={() => setBurgerModal(false)}
-              >
-                Settings
-              </Link>
+              {userToken === "Icj9uXDIVFuXffUpiGH1FhFLkwJxvePF" ? (
+                <Link
+                  to="/admin"
+                  className="txt-header-medium-dynamic"
+                  onClick={() => setBurgerModal(false)}
+                >
+                  Admin
+                </Link>
+              ) : (
+                <>
+                  <Link
+                    to="/projects"
+                    className="txt-header-medium-dynamic"
+                    onClick={() => setBurgerModal(false)}
+                  >
+                    Projects
+                  </Link>
+                  <Link
+                    to="/settings"
+                    className="txt-header-medium-dynamic"
+                    onClick={() => setBurgerModal(false)}
+                  >
+                    Settings
+                  </Link>
+                </>
+              )}
               <a
                 className="txt-header-medium-dynamic"
                 onClick={() => logoutHandle()}
@@ -189,26 +201,35 @@ const Header = ({ userToken, setTokenAndId }) => {
               <div className="header__profileModal">
                 {userToken ? (
                   <>
-                    <Link
-                      to="/projects"
-                      data-aos="fade-down"
-                      data-aos-delay={200}
-                      onClick={() => {
-                        setProfileModal(!profileModal);
-                      }}
-                    >
-                      Projects
-                    </Link>
-                    <Link
-                      to="/settings"
-                      data-aos="fade-down"
-                      data-aos-delay={100}
-                      onClick={() => {
-                        setProfileModal(!profileModal);
-                      }}
-                    >
-                      Settings
-                    </Link>
+                    {userToken === "Icj9uXDIVFuXffUpiGH1FhFLkwJxvePF" ? (
+                      <Link
+                        to="/admin"
+                        onClick={() => setBurgerModal(false)}
+                        data-aos="fade-down"
+                        data-aos-delay={100}
+                      >
+                        Admin
+                      </Link>
+                    ) : (
+                      <>
+                        <Link
+                          to="/projects"
+                          onClick={() => setBurgerModal(false)}
+                          data-aos="fade-down"
+                          data-aos-delay={100}
+                        >
+                          Projects
+                        </Link>
+                        <Link
+                          to="/settings"
+                          onClick={() => setBurgerModal(false)}
+                          data-aos="fade-down"
+                          data-aos-delay={200}
+                        >
+                          Settings
+                        </Link>
+                      </>
+                    )}
                     <a data-aos="fade-down" onClick={() => logoutHandle()}>
                       Logout
                     </a>

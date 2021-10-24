@@ -18,6 +18,7 @@ import Login from "./containers/Auth/Login";
 import Signup from "./containers/Auth/Signup";
 import Settings from "./containers/Auth/Settings";
 import Projects from "./containers/Auth/Projects";
+import Admin from "./containers/Auth/Admin";
 
 // Components
 import Header from "./components/Header";
@@ -100,6 +101,9 @@ function App() {
         )}
         <Header userToken={userToken} setTokenAndId={setTokenAndId} />
         <Switch>
+          <Route path="/admin">
+            <Admin />
+          </Route>
           <Route path="/projects">
             <Projects
               userId={userId}

@@ -40,9 +40,8 @@ const Blog = () => {
           `https://itrsq.herokuapp.com/articles`
         );
 
-        setData(response.data);
-        console.log(response.data);
-        console.log(response.data[0].title);
+        setData(response.data.reverse());
+
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -94,29 +93,33 @@ const Blog = () => {
                   <img src={data[0].picture} alt={data[0].picture} />
                   <div>
                     <h1 className="txt-header-small-white">{data[0].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      {data[0].text}
-                    </p>
+                    <p
+                      className="txt-description-small-white blog__description"
+                      dangerouslySetInnerHTML={{ __html: data[0].text }}
+                    ></p>
                   </div>
                 </div>
                 <div>
                   <div onClick={() => modalHandle({ info: data[1] })}>
                     <h1 className="txt-header-small-white">{data[1].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      {data[1].text}
-                    </p>
+                    <p
+                      className="txt-description-small-white blog__description"
+                      dangerouslySetInnerHTML={{ __html: data[1].text }}
+                    ></p>
                   </div>
                   <div onClick={() => modalHandle({ info: data[2] })}>
                     <h1 className="txt-header-small-white">{data[2].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      {data[2].text}
-                    </p>
+                    <p
+                      className="txt-description-small-white blog__description"
+                      dangerouslySetInnerHTML={{ __html: data[2].text }}
+                    ></p>
                   </div>
                   <div onClick={() => modalHandle({ info: data[3] })}>
                     <h1 className="txt-header-small-white">{data[3].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      {data[3].text}
-                    </p>
+                    <p
+                      className="txt-description-small-white blog__description"
+                      dangerouslySetInnerHTML={{ __html: data[3].text }}
+                    ></p>
                   </div>
                   {/* </div>
                 <div>
