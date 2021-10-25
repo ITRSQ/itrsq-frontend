@@ -19,8 +19,8 @@ const BlogModal = ({ setModal, modalInfo }) => {
   //   return newText;
   // }
 
-  const html = `<h1>Title</h1>
-  <p>Text <a href="https://google.com" target="blank">Google </a>text</p><ul><li>hi</li><li>ho</li></ul>`;
+  // const html = `<h1>Title</h1>
+  // <p>Text <a href="https://google.com" target="blank">Google </a>text</p><ul><li>hi</li><li>ho</li></ul>`;
   return (
     <div className="blogModal">
       <i class="far fa-times-circle blog-x" onClick={() => setModal(false)}></i>
