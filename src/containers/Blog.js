@@ -151,29 +151,34 @@ const Blog = () => {
                     </div>
                   </div>
                 )}
-                {/* <div className="blog__content__rest">
-                  {data.map((article, index) => {
-                    return (
-                      comparisonData.indexOf(data.indexOf(article)) === -1 && (
-                        <div
-                          className="blog__smallContent"
-                          key={article}
-                          onClick={() => modalHandle({ info: article })}
-                        >
-                          <img src={image} alt={image} />
-                          <h1 className="txt-header-small-white">{article}</h1>
-                          <p className="txt-description-small-white blog__description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Recusandae optio, culpa neque voluptatum
-                            libero rerum aut quae ea veniam suscipit repellat
-                            distinctio iusto facere provident maiores et saepe?
-                            Laudantium, maiores!
-                          </p>
-                        </div>
-                      )
-                    );
-                  })}
-                </div> */}
+                {data[6] && (
+                  <div className="blog__content__rest">
+                    {data.map((article, index) => {
+                      return (
+                        comparisonData.indexOf(data.indexOf(article)) ===
+                          -1 && (
+                          <div
+                            className="blog__smallContent"
+                            key={article}
+                            onClick={() => modalHandle({ info: article })}
+                          >
+                            <img src={image} alt={image} />
+                            <h1 className="txt-header-small-white">
+                              {article}
+                            </h1>
+                            <p className="txt-description-small-white blog__description">
+                              Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Recusandae optio, culpa neque
+                              voluptatum libero rerum aut quae ea veniam
+                              suscipit repellat distinctio iusto facere
+                              provident maiores et saepe? Laudantium, maiores!
+                            </p>
+                          </div>
+                        )
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
             {picker === "tutorials" && (
