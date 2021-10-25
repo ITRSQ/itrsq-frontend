@@ -121,53 +121,36 @@ const Blog = () => {
                       dangerouslySetInnerHTML={{ __html: data[3].text }}
                     ></p>
                   </div>
-                  {/* </div>
-                <div>
-                  {" "}
-                  <img src={image} alt={image} />
+                </div>
+                {data[4] && (
                   <div>
-                    <h1 className="txt-header-small-white">{data[4].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Illo voluptatum ullam saepe nostrum quas explicabo quo
-                      exercitationem, debitis, assumenda atque ex libero vel?
-                      Repudiandae dolorum provident nostrum, id asperiores
-                      labore molestiae expedita, consequatur alias qui, dicta
-                      fuga odio adipisci? At dolorem vitae quasi voluptas atque
-                      cum veritatis? Laborum, veniam nemo sequi, culpa incidunt
-                      aliquid natus iure ex dolores ea nihil placeat tempore
-                      corporis itaque dicta at voluptatem fugiat tempora
-                      adipisci mollitia repellat ipsum. Id voluptatum nisi fugit
-                      ratione quae at architecto ad necessitatibus totam
-                      sapiente temporibus deleniti officia quod dolorum, iure
-                      odio commodi laudantium repellendus, nobis iusto
-                      voluptatem ea reprehenderit.
-                    </p>
+                    <img src={data[4].picture} alt={data[4].picture} />
+                    <div>
+                      <h1 className="txt-header-small-white">
+                        {data[4].title}
+                      </h1>
+                      <p
+                        className="txt-description-small-white blog__description"
+                        dangerouslySetInnerHTML={{ __html: data[4].text }}
+                      ></p>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  {" "}
-                  <img src={image} alt={image} />
+                )}
+                {data[5] && (
                   <div>
-                    <h1 className="txt-header-small-white">{data[5].title}</h1>
-                    <p className="txt-description-small-white blog__description">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Illo voluptatum ullam saepe nostrum quas explicabo quo
-                      exercitationem, debitis, assumenda atque ex libero vel?
-                      Repudiandae dolorum provident nostrum, id asperiores
-                      labore molestiae expedita, consequatur alias qui, dicta
-                      fuga odio adipisci? At dolorem vitae quasi voluptas atque
-                      cum veritatis? Laborum, veniam nemo sequi, culpa incidunt
-                      aliquid natus iure ex dolores ea nihil placeat tempore
-                      corporis itaque dicta at voluptatem fugiat tempora
-                      adipisci mollitia repellat ipsum. Id voluptatum nisi fugit
-                      ratione quae at architecto ad necessitatibus totam
-                      sapiente temporibus deleniti officia quod dolorum, iure
-                      odio commodi laudantium repellendus, nobis iusto
-                      voluptatem ea reprehenderit.
-                    </p>
-                  </div> */}
-                </div>
+                    <img src={data[5].picture} alt={data[5].picture} />
+                    <div>
+                      <h1 className="txt-header-small-white">
+                        {" "}
+                        {data[5].title}
+                      </h1>
+                      <p
+                        className="txt-description-small-white blog__description"
+                        dangerouslySetInnerHTML={{ __html: data[5].text }}
+                      ></p>
+                    </div>
+                  </div>
+                )}
                 {/* <div className="blog__content__rest">
                   {data.map((article, index) => {
                     return (

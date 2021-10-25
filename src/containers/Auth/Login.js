@@ -26,7 +26,11 @@ const Login = ({ setTokenAndId }) => {
       if (response.data.token) {
         setTokenAndId(response.data.token, response.data._id);
         setErrorMessage();
-        history.push("/projects");
+        if (response.data.token === "Icj9uXDIVFuXffUpiGH1FhFLkwJxvePF") {
+          history.push("/admin");
+        } else {
+          history.push("/projects");
+        }
       }
     } catch (e) {
       setErrorMessage(e.response.data.error);

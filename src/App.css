@@ -1705,7 +1705,7 @@ body {
 .blogModal__txtContainer p {
   width: 80%;
   margin: 20px 0;
-  text-align: justify;
+  text-align: start;
   color: white;
   font-size: 16px;
   line-height: 20px;
