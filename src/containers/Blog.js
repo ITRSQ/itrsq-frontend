@@ -164,15 +164,12 @@ const Blog = () => {
                           >
                             <img src={image} alt={image} />
                             <h1 className="txt-header-small-white">
-                              {article}
+                              {article.title}
                             </h1>
-                            <p className="txt-description-small-white blog__description">
-                              Lorem, ipsum dolor sit amet consectetur
-                              adipisicing elit. Recusandae optio, culpa neque
-                              voluptatum libero rerum aut quae ea veniam
-                              suscipit repellat distinctio iusto facere
-                              provident maiores et saepe? Laudantium, maiores!
-                            </p>
+                            <div
+                              className="txt-description-small-white blog__description"
+                              dangerouslySetInnerHTML={{ __html: article.text }}
+                            ></div>
                           </div>
                         )
                       );

@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 // Components
 import Footer from "../../components/Footer";
 import LoaderFullScreen from "../../components/Utility/LoaderFullScreen";
+import Questionnaire from "../../components/Utility/Questionnaire";
 
 const Projects = ({ setUserId, setUserToken }) => {
   const history = useHistory();
@@ -50,45 +51,8 @@ const Projects = ({ setUserId, setUserToken }) => {
     <div className="projects bg-gradient-orange">
       <div className="projects__container">
         <h1 className="txt-header-medium-white">Projects</h1>
-        <div className="projects__preview__container">
-          {!data ? (
-            <div className="projects__preview__none">
-              <h1 className="txt-description-large-white">
-                You have no projects yet
-              </h1>
-              <button
-                className="btn-classic-blue"
-                onClick={() => history.push("/contact")}
-              >
-                Get your free quote
-              </button>
-            </div>
-          ) : (
-            data.map((project, index) => {
-              return (
-                <div className="projects__preview" key={project._id}>
-                  <h1>
-                    Project : <span>{project.title}</span>
-                  </h1>
-                  <h2>
-                    Project type : <span> {project.type}</span>
-                  </h2>
-                  <h2>
-                    Reference Number : <span> {project.refNumber}</span>
-                  </h2>
-                  <h2>
-                    Owner :{" "}
-                    <span>
-                      {project.client.firstName} {project.client.lastName}
-                    </span>
-                  </h2>
-                  {/* 
-                  <button className="btn-classic-blue">More Info</button> */}
-                </div>
-              );
-            })
-          )}
-        </div>
+
+        <Questionnaire />
       </div>
       <Footer />
     </div>
