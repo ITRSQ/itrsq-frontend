@@ -51,8 +51,19 @@ const Projects = ({ setUserId, setUserToken }) => {
     <div className="projects bg-gradient-orange">
       <div className="projects__container">
         <h1 className="txt-header-medium-white">Projects</h1>
+        <div className="projects__preview__none">
+          <h1 className="txt-description-large-grey ">
+            You have no projects yet
+          </h1>
+          <button
+            onClick={() => history.push("/contact")}
+            className="btn-classic-blue"
+          >
+            Get your free quote
+          </button>
+        </div>
 
-        <Questionnaire />
+        {/* <Questionnaire /> */}
       </div>
       <Footer />
     </div>

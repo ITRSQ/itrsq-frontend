@@ -15,13 +15,19 @@ const Signup = ({ setTokenAndId }) => {
   const [email, setEmail] = useState();
   const [privacy, setPrivacy] = useState(true);
   const [privacy1, setPrivacy1] = useState(true);
+  const [newsletter, setNewsletter] = useState(false);
 
   // Signup Button Function
   const signupHandle = async () => {
     try {
       const response = await axios.post(
         "https://itrsq.herokuapp.com/users/signup",
-        { email: email, password: password, confirmPassword: confirmPassword }
+        {
+          email: email,
+          password: password,
+          confirmPassword: confirmPassword,
+          newsletter: newsletter,
+        }
       );
 
       if (response.data.token) {
@@ -40,62 +46,68 @@ const Signup = ({ setTokenAndId }) => {
       <div className="auth__container">
         <div className="auth__form">
           <div>
-            {" "}
             <h1 className="txt-header-medium-white">Signup</h1>
             {errorMessage && <h2 className="error-message">{errorMessage}</h2>}
           </div>
           <div>
             <label className="txt-description-small-white">
-              Email{" "}
+              Email
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                autocomplete="on"
+                autoComplete="on"
               />
             </label>
-
             <label className="txt-description-small-white">
-              Password{" "}
+              Password
               <input
                 type={privacy === true ? "password" : "text"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                autocomplete="current-password"
+                autoComplete="current-password"
               />
               {privacy === true ? (
                 <i
-                  class="fas fa-eye icn-privacy"
+                  className="fas fa-eye icn-privacy"
                   onClick={() => setPrivacy(false)}
                 ></i>
               ) : (
                 <i
-                  class="fas fa-eye-slash icn-privacy"
+                  className="fas fa-eye-slash icn-privacy"
                   onClick={() => setPrivacy(true)}
                 ></i>
               )}
             </label>
-
             <label className="txt-description-small-white">
-              Confirm Password{" "}
+              Confirm Password
               <input
                 type={privacy1 === true ? "password" : "text"}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                autocomplete="current-password"
+                autoComplete="current-password"
               />
               {privacy1 === true ? (
                 <i
-                  class="fas fa-eye icn-privacy"
+                  className="fas fa-eye icn-privacy"
                   onClick={() => setPrivacy1(false)}
                 ></i>
               ) : (
                 <i
-                  class="fas fa-eye-slash icn-privacy"
+                  className="fas fa-eye-slash icn-privacy"
                   onClick={() => setPrivacy1(true)}
                 ></i>
               )}
             </label>
+            <p className="txt-description-small-white">
+              <input
+                type="checkbox"
+                value={newsletter}
+                onChange={(e) => setNewsletter(!newsletter)}
+              />
+              Do you wish to receive our monthly newsletter containing articles,
+              tutorials and news ?
+            </p>
           </div>
           <div>
             <button className="btn-classic-blue" onClick={() => signupHandle()}>

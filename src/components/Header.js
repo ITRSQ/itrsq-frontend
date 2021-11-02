@@ -26,7 +26,7 @@ const Header = ({ userToken, setTokenAndId }) => {
       {burgerModal && (
         <div className="burger-modal" data-aos="slide-right">
           <i
-            class="fas fa-times icn-x"
+            className="fas fa-times icn-x"
             onClick={() => setBurgerModal(false)}
           ></i>
           <Link
@@ -192,7 +192,7 @@ const Header = ({ userToken, setTokenAndId }) => {
         <div>
           <div>
             <i
-              class="fas fa-user"
+              className="fas fa-user"
               onClick={() => {
                 setProfileModal(!profileModal);
               }}

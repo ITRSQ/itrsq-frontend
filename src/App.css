@@ -1779,7 +1779,7 @@ body {
 
 .auth {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1790,6 +1790,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   z-index: 5;
+  padding-bottom: 100px;
 }
 
 .auth__form {
@@ -1824,6 +1825,17 @@ body {
   width: 90%;
   max-width: 300px;
   margin-top: 10px;
+}
+
+.auth__form > div:nth-child(2) > p {
+  width: 70%;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.auth__form > div:nth-child(2) > p > input {
+  margin-right: 5px;
 }
 
 .auth__form > div:nth-child(2) > label {
@@ -2002,19 +2014,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   /* cursor: pointer; */
   border: solid 2px var(--clr--white--transparent);
   border-radius: 10px;
 }
+
 /* .projects__preview:hover {
   background-color: var(--clr--white--transparent--hover);
 } */
+
 .projects__preview h1 {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .projects__preview h1 > span {
   font-weight: 400;
 }
@@ -2024,6 +2038,7 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 .projects__preview h2 > span {
   font-weight: 400;
 }
