@@ -1,14 +1,15 @@
 // Packages
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 // Components
 import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 import Footer from "../components/Footer";
 import image from "../assets/img/white-background.png";
-import BlogModal from "../components/Blog/BlogModal";
 
 const Blog = () => {
+  const history = useHistory();
   // States
   const [isLoading, setIsLoading] = useState(true);
   const [picker, setPicker] = useState("articles");
@@ -61,147 +62,135 @@ const Blog = () => {
   ) : (
     <div className="blog bg-gradient-orange">
       <div className="blog__container">
-        {modal ? (
-          <BlogModal setModal={setModal} modalInfo={modalInfo} />
-        ) : (
-          <>
-            <div className="blog__picker">
-              <button
-                className={
-                  picker === "articles"
-                    ? "txt-header-medium-white blog__buttons"
-                    : "txt-header-medium-white blog__buttons__clicked"
-                }
-                onClick={() => setPicker("articles")}
-              >
-                Articles
-              </button>
-              <button
-                className={
-                  picker === "tutorials"
-                    ? "txt-header-medium-white blog__buttons"
-                    : "txt-header-medium-white blog__buttons__clicked"
-                }
-                onClick={() => setPicker("tutorials")}
-              >
-                Tutorials
-              </button>
+        <div className="blog__picker">
+          <button
+            className={
+              picker === "articles"
+                ? "txt-header-medium-white blog__buttons"
+                : "txt-header-medium-white blog__buttons__clicked"
+            }
+            onClick={() => setPicker("articles")}
+          >
+            Articles
+          </button>
+          <button
+            className={
+              picker === "tutorials"
+                ? "txt-header-medium-white blog__buttons"
+                : "txt-header-medium-white blog__buttons__clicked"
+            }
+            onClick={() => setPicker("tutorials")}
+          >
+            Tutorials
+          </button>
+        </div>
+        {picker === "articles" && (
+          <div className="blog__content">
+            <div onClick={() => history.push(`/article/${data[0]._id}`)}>
+              <img src={data[0].picture} alt={data[0].picture} />
+              <div>
+                <h1 className="txt-header-small-white">{data[0].title}</h1>
+                <p
+                  className="txt-description-small-white blog__description"
+                  dangerouslySetInnerHTML={{ __html: data[0].text }}
+                ></p>
+              </div>
             </div>
-            {picker === "articles" && (
-              <div className="blog__content">
-                <div onClick={() => modalHandle({ info: data[0] })}>
-                  <img src={data[0].picture} alt={data[0].picture} />
-                  <div>
-                    <h1 className="txt-header-small-white">{data[0].title}</h1>
-                    <p
-                      className="txt-description-small-white blog__description"
-                      dangerouslySetInnerHTML={{ __html: data[0].text }}
-                    ></p>
-                  </div>
-                </div>
+            <div>
+              <div onClick={() => history.push(`/article/${data[1]._id}`)}>
+                <h1 className="txt-header-small-white">{data[1].title}</h1>
+                <p
+                  className="txt-description-small-white blog__description"
+                  dangerouslySetInnerHTML={{ __html: data[1].text }}
+                ></p>
+              </div>
+              <div onClick={() => history.push(`/article/${data[2]._id}`)}>
+                <h1 className="txt-header-small-white">{data[2].title}</h1>
+                <p
+                  className="txt-description-small-white blog__description"
+                  dangerouslySetInnerHTML={{ __html: data[2].text }}
+                ></p>
+              </div>
+              <div onClick={() => history.push(`/article/${data[3]._id}`)}>
+                <h1 className="txt-header-small-white">{data[3].title}</h1>
+                <p
+                  className="txt-description-small-white blog__description"
+                  dangerouslySetInnerHTML={{ __html: data[3].text }}
+                ></p>
+              </div>
+            </div>
+            {data[4] && (
+              <div onClick={() => history.push(`/article/${data[4]._id}`)}>
+                <img src={data[4].picture} alt={data[4].picture} />
                 <div>
-                  <div onClick={() => modalHandle({ info: data[1] })}>
-                    <h1 className="txt-header-small-white">{data[1].title}</h1>
-                    <p
-                      className="txt-description-small-white blog__description"
-                      dangerouslySetInnerHTML={{ __html: data[1].text }}
-                    ></p>
-                  </div>
-                  <div onClick={() => modalHandle({ info: data[2] })}>
-                    <h1 className="txt-header-small-white">{data[2].title}</h1>
-                    <p
-                      className="txt-description-small-white blog__description"
-                      dangerouslySetInnerHTML={{ __html: data[2].text }}
-                    ></p>
-                  </div>
-                  <div onClick={() => modalHandle({ info: data[3] })}>
-                    <h1 className="txt-header-small-white">{data[3].title}</h1>
-                    <p
-                      className="txt-description-small-white blog__description"
-                      dangerouslySetInnerHTML={{ __html: data[3].text }}
-                    ></p>
-                  </div>
-                </div>
-                {data[4] && (
-                  <div>
-                    <img src={data[4].picture} alt={data[4].picture} />
-                    <div>
-                      <h1 className="txt-header-small-white">
-                        {data[4].title}
-                      </h1>
-                      <p
-                        className="txt-description-small-white blog__description"
-                        dangerouslySetInnerHTML={{ __html: data[4].text }}
-                      ></p>
-                    </div>
-                  </div>
-                )}
-                {data[5] && (
-                  <div>
-                    <img src={data[5].picture} alt={data[5].picture} />
-                    <div>
-                      <h1 className="txt-header-small-white">
-                        {" "}
-                        {data[5].title}
-                      </h1>
-                      <p
-                        className="txt-description-small-white blog__description"
-                        dangerouslySetInnerHTML={{ __html: data[5].text }}
-                      ></p>
-                    </div>
-                  </div>
-                )}
-                {data[6] && (
-                  <div className="blog__content__rest">
-                    {data.map((article, index) => {
-                      return (
-                        comparisonData.indexOf(data.indexOf(article)) ===
-                          -1 && (
-                          <div
-                            className="blog__smallContent"
-                            key={article}
-                            onClick={() => modalHandle({ info: article })}
-                          >
-                            <img src={image} alt={image} />
-                            <h1 className="txt-header-small-white">
-                              {article.title}
-                            </h1>
-                            <div
-                              className="txt-description-small-white blog__description"
-                              dangerouslySetInnerHTML={{ __html: article.text }}
-                            ></div>
-                          </div>
-                        )
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
-            {picker === "tutorials" && (
-              <div className="blog__content__tutorials">
-                <div className="blog__smallContent">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/_pKD2aRN5Uk"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                    allowfullscreen
-                    allowfullscreen="allowfullscreen"
-                    mozallowfullscreen="mozallowfullscreen"
-                    msallowfullscreen="msallowfullscreen"
-                    oallowfullscreen="oallowfullscreen"
-                    webkitallowfullscreen="webkitallowfullscreen"
-                  ></iframe>
-                </div>
-                <div className="blog__smallContent">
-                  <h1 className="txt-header-medium-dynamic">Coming Soon</h1>
+                  <h1 className="txt-header-small-white">{data[4].title}</h1>
+                  <p
+                    className="txt-description-small-white blog__description"
+                    dangerouslySetInnerHTML={{ __html: data[4].text }}
+                  ></p>
                 </div>
               </div>
             )}
-          </>
+            {data[5] && (
+              <div onClick={() => history.push(`/article/${data[5]._id}`)}>
+                <img src={data[5].picture} alt={data[5].picture} />
+                <div>
+                  <h1 className="txt-header-small-white"> {data[5].title}</h1>
+                  <p
+                    className="txt-description-small-white blog__description"
+                    dangerouslySetInnerHTML={{ __html: data[5].text }}
+                  ></p>
+                </div>
+              </div>
+            )}
+            {data[6] && (
+              <div className="blog__content__rest">
+                {data.map((article, index) => {
+                  return (
+                    comparisonData.indexOf(data.indexOf(article)) === -1 && (
+                      <div
+                        className="blog__smallContent"
+                        key={article}
+                        onClick={() => history.push(`/article/${article._id}`)}
+                      >
+                        <img src={image} alt={image} />
+                        <h1 className="txt-header-small-white">
+                          {article.title}
+                        </h1>
+                        <div
+                          className="txt-description-small-white blog__description"
+                          dangerouslySetInnerHTML={{ __html: article.text }}
+                        ></div>
+                      </div>
+                    )
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+        {picker === "tutorials" && (
+          <div className="blog__content__tutorials">
+            <div className="blog__smallContent">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/_pKD2aRN5Uk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowfullscreen
+                allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen"
+                msallowfullscreen="msallowfullscreen"
+                oallowfullscreen="oallowfullscreen"
+                webkitallowfullscreen="webkitallowfullscreen"
+              ></iframe>
+            </div>
+            <div className="blog__smallContent">
+              <h1 className="txt-header-medium-dynamic">Coming Soon</h1>
+            </div>
+          </div>
         )}
       </div>
       <Footer />

@@ -19,6 +19,7 @@ import Signup from "./containers/Auth/Signup";
 import Settings from "./containers/Auth/Settings";
 import Projects from "./containers/Auth/Projects";
 import Admin from "./containers/Auth/Admin";
+import Article from "./components/Blog/Article";
 
 // Components
 import Header from "./components/Header";
@@ -137,6 +138,9 @@ function App() {
           </Route>
           <Route path="/support">
             <Support />
+          </Route>
+          <Route path="/article/:id">
+            <Article />
           </Route>
           <Route path="/blog">
             <Blog />
