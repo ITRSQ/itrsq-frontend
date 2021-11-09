@@ -1571,6 +1571,10 @@ body {
   margin-top: 50px;
   overflow: hidden;
 }
+.blog__content > div:nth-child(3) > img {
+  object-fit: cover;
+  height: 55%;
+}
 
 .blog__content > div:nth-child(3) > div > h1 {
   margin-top: 20px;
