@@ -20,6 +20,7 @@ import Settings from "./containers/Auth/Settings";
 import Projects from "./containers/Auth/Projects";
 import Admin from "./containers/Auth/Admin";
 import Article from "./components/Blog/Article";
+import Project from "./containers/Auth/Project";
 
 // Components
 import Header from "./components/Header";
@@ -104,6 +105,9 @@ function App() {
         <Switch>
           <Route path="/admin">
             <Admin />
+          </Route>
+          <Route path="/project/:id">
+            <Project />
           </Route>
           <Route path="/projects">
             <Projects

@@ -40,7 +40,6 @@ const Projects = ({ setUserId, setUserToken }) => {
       } catch (error) {
         setData();
         setIsLoading(false);
-        console.log(error.message);
       }
     };
     fetchData();
@@ -51,17 +50,38 @@ const Projects = ({ setUserId, setUserToken }) => {
     <div className="projects bg-gradient-orange">
       <div className="projects__container">
         <h1 className="txt-header-medium-white">Projects</h1>
-        <div className="projects__preview__none">
-          <h1 className="txt-description-large-grey ">
-            You have no projects yet
-          </h1>
-          <button
-            onClick={() => history.push("/contact")}
-            className="btn-classic-blue"
-          >
-            Get your free quote
-          </button>
-        </div>
+        {data === undefined ? (
+          <div className="projects__preview__none">
+            <h1 className="txt-description-large-grey ">
+              You have no projects yet
+            </h1>
+            <button
+              onClick={() => history.push("/contact")}
+              className="btn-classic-blue"
+            >
+              Get your free quote
+            </button>
+          </div>
+        ) : (
+          <div className="projects__preview__container">
+            {data.map((project, index) => {
+              return (
+                <div
+                  className="projects__preview"
+                  onClick={() => history.push(`/project/${project._id}`)}
+                >
+                  <h1>
+                    Title : <span>{project.title}</span>
+                  </h1>
+                  <h2>
+                    User :{" "}
+                    <span>{`${project.client.firstName} ${project.client.lastName}`}</span>
+                  </h2>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         {/* <Questionnaire /> */}
       </div>
