@@ -153,7 +153,7 @@ const Blog = () => {
                         key={article}
                         onClick={() => history.push(`/article/${article._id}`)}
                       >
-                        <img src={image} alt={image} />
+                        <img src={article.picture} alt={article.picture} />
                         <h1 className="txt-header-small-white">
                           {article.title}
                         </h1>
