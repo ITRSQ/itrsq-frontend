@@ -2,6 +2,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 // Components
 import LoaderFullScreen from "../../components/Utility/LoaderFullScreen";
@@ -21,7 +23,7 @@ const Project = () => {
         );
 
         setData(response.data);
-
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -29,6 +31,35 @@ const Project = () => {
     };
     fetchData();
   }, []);
+
+  //   Carousel Responsive
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1200 },
+      items: 3,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    desktop2: {
+      breakpoint: { max: 1355, min: 1085 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1085, min: 815 },
+      items: 2,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 815, min: 545 },
+      items: 2,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile2: {
+      breakpoint: { max: 545, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   return isLoading ? (
     <LoaderFullScreen />
@@ -70,16 +101,27 @@ const Project = () => {
         </div>
 
         <div className="project__progress">
-          {data.progress.map((step, index) => {
+          <h3 className="txt-header-medium-white">Project Progress</h3>
+          {/* {data.progress.map((step, index) => {
             return (
               <div className="project__progress__step txt-description-medium-black">
                 {step}
               </div>
             );
-          })}
-          <h3 className="txt-header-medium-white">Project Progress</h3>
+          })} */}
+
+          <Carousel responsive={responsive} arrows={true} centerMode={true}>
+            {data.progress.map((step) => {
+              return (
+                <div className="project__progress__step txt-description-medium-black">
+                  <h1>{step}</h1>
+                </div>
+              );
+            })}
+          </Carousel>
         </div>
       </div>
+
       <Footer />
     </div>
   );

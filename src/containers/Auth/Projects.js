@@ -71,11 +71,17 @@ const Projects = ({ setUserId, setUserToken }) => {
                   onClick={() => history.push(`/project/${project._id}`)}
                 >
                   <h1>
-                    Title : <span>{project.title}</span>
+                    <span>{project.title}</span>
                   </h1>
                   <h2>
                     User :{" "}
                     <span>{`${project.client.firstName} ${project.client.lastName}`}</span>
+                  </h2>
+                  <h2>
+                    Type : <span>{project.type}</span>
+                  </h2>
+                  <h2>
+                    Ref : <span>{project.refNumber}</span>
                   </h2>
                 </div>
               );
