@@ -19,7 +19,7 @@ const Project = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://itrsq.herokuapp.com${window.location.pathname}`
+          `https://itrsq.herokuapp.com${window.location.pathname}`
         );
 
         setData(response.data);
