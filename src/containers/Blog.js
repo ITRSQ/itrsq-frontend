@@ -16,20 +16,7 @@ const Blog = () => {
   const [modal, setModal] = useState(false);
   const [modalInfo, setModalInfo] = useState();
   const [data, setData] = useState();
-  const [data2, setData2] = useState([
-    "Main Tutorial",
-    "Tutorial 2",
-    "Tutorial 3",
-    "Tutorial 4",
-    "Tutorial 5",
-    "Tutorial 6",
-    "Tutorial 7",
-    "Tutorial 8",
-    "Tutorial 9",
-    "Tutorial 10",
-    "Tutorial 11",
-    "Tutorial 12",
-  ]);
+  const [data2, setData2] = useState();
 
   const comparisonData = [0, 1, 2, 3, 4, 5];
 
@@ -40,8 +27,12 @@ const Blog = () => {
         const response = await axios.get(
           `https://itrsq.herokuapp.com/articles`
         );
+        const response2 = await axios.get(
+          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLswfTxS_KhBlt6p-Ln3xZX1yCWKdt9-lQ&key=AIzaSyCKsqzC5bcbGo5LwAXJJbvEW5qRUSVc-P8`
+        );
 
         setData(response.data.reverse());
+        setData2(response2.data.items.reverse());
 
         setIsLoading(false);
       } catch (error) {
@@ -171,8 +162,7 @@ const Blog = () => {
         )}
         {picker === "tutorials" && (
           <div className="blog__content__tutorials">
-            <div className="blog__smallContent">
-              <iframe
+            {/* <iframe
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/_pKD2aRN5Uk"
@@ -185,11 +175,27 @@ const Blog = () => {
                 msallowfullscreen="msallowfullscreen"
                 oallowfullscreen="oallowfullscreen"
                 webkitallowfullscreen="webkitallowfullscreen"
-              ></iframe>
-            </div>
-            <div className="blog__smallContent">
-              <h1 className="txt-header-medium-dynamic">Coming Soon</h1>
-            </div>
+              ></iframe> */}
+            {data2.map((video) => {
+              return (
+                <div className="blog__smallContent">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    allowfullscreen="allowfullscreen"
+                    mozallowfullscreen="mozallowfullscreen"
+                    msallowfullscreen="msallowfullscreen"
+                    oallowfullscreen="oallowfullscreen"
+                    webkitallowfullscreen="webkitallowfullscreen"
+                  ></iframe>{" "}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
