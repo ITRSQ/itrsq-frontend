@@ -41,7 +41,7 @@ function App() {
   }, []);
 
   // States
-  const [promotion, setPromotion] = useState();
+  const [promotion, setPromotion] = useState(false);
   const [userToken, setUserToken] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

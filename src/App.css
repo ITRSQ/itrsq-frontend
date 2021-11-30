@@ -389,6 +389,27 @@ body {
   background-color: var(--clr--blue--hover);
 }
 
+.btn-classic-red {
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  padding: 17px 25px;
+  background-color: transparent;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+  font-family: var(--ff--common);
+  font-weight: 400;
+  font-size: 14px;
+  transition: 0.1s all ease-out;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-classic-red:hover {
+  background-color: rgb(185, 0, 0);
+}
+
 /* CLASSES */
 
 .stickyMenu {
@@ -2220,6 +2241,7 @@ body {
   padding: 50px;
   border: solid 2px var(--clr--white--transparent);
   border-radius: 20px;
+  margin-bottom: 80px;
 }
 
 .admin__form > h1 {
@@ -2234,13 +2256,25 @@ body {
 }
 
 .admin__form > label > input,
-.admin__form > label > textarea {
+.admin__form > label > textarea,
+.admin__form > label > select {
   border: none;
   border-radius: 5px;
   padding: 5px;
   outline: none;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.admin__form img {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  margin: 30px 0;
+}
+
+.admin__form button {
+  margin-bottom: 15px;
 }
 
 /* RESPONSIVE */
