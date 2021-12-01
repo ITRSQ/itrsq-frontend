@@ -21,6 +21,7 @@ import Projects from "./containers/Auth/Projects";
 import Admin from "./containers/Auth/Admin";
 import Article from "./components/Blog/Article";
 import Project from "./containers/Auth/Project";
+import Tools from "./containers/Tools";
 
 // Components
 import Header from "./components/Header";
@@ -136,6 +137,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/tools">
+            <Tools />
           </Route>
           <Route path="/website">
             <Website />

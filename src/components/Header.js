@@ -58,6 +58,13 @@ const Header = ({ userToken, setTokenAndId }) => {
             Blog
           </Link>
           <Link
+            to="/tools"
+            className="txt-header-medium-dynamic"
+            onClick={() => setBurgerModal(false)}
+          >
+            Tools
+          </Link>
+          <Link
             to="/about"
             className="txt-header-medium-dynamic"
             onClick={() => setBurgerModal(false)}
@@ -176,6 +183,16 @@ const Header = ({ userToken, setTokenAndId }) => {
               }
             >
               Blog
+            </Link>
+            <Link
+              to="/tools"
+              className={
+                location.pathname === "/tools"
+                  ? "header__clicked"
+                  : "underline-grow"
+              }
+            >
+              Tools
             </Link>
             <Link
               to="/about"

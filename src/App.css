@@ -194,7 +194,7 @@ body {
 }
 .txt-header-medium-dynamic {
   font-size: 2.2rem;
-  line-height: 2.4rem;
+  line-height: 2.8rem;
   font-weight: 600;
   background: linear-gradient(
     -45deg,
@@ -2293,6 +2293,60 @@ body {
   margin-bottom: 15px;
 }
 
+/* Tools */
+
+.tools {
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.tools__container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0 1%;
+  max-width: 1440px;
+}
+
+.tool {
+  height: 400px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid var(--clr--white--transparent--hover) 3px;
+  border-radius: 5px;
+  padding: 20px 10px 30px 10px;
+  margin: 0 2% 50px 2%;
+}
+
+.tool i {
+  font-style: italic;
+}
+
+.tool > * {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.tool input {
+  padding: 4px;
+  border-radius: 5px;
+  outline: none;
+  text-decoration: none;
+  font-family: var(--ff--common);
+  color: white;
+  background-color: var(--clr--white--transparent);
+  border: solid 1px var(--clr--white--transparent);
+}
+
+.tool h3 {
+  font-family: var(--ff--common);
+  color: black;
+}
 /* RESPONSIVE */
 
 /* Width */
@@ -2350,6 +2404,9 @@ body {
 }
 
 @media (max-width: 975px) {
+  .tool {
+    width: 90%;
+  }
   .settings__container > div {
     flex-direction: column;
     align-items: center;
