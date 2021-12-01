@@ -1444,6 +1444,10 @@ body {
   padding-top: 130px;
 }
 
+.blog a {
+  color: white;
+}
+
 .blog__container {
   max-width: 1440px;
   margin: 0 auto;
@@ -1805,6 +1809,18 @@ body {
 }
 .article__txtContainer a:hover {
   color: grey;
+}
+
+.article__txtContainer u {
+  text-decoration: underline;
+  font-family: var(--ff--common);
+  color: white;
+}
+
+.article__txtContainer b {
+  font-weight: bold;
+  font-family: var(--ff--common);
+  color: white;
 }
 
 /* Auth */
