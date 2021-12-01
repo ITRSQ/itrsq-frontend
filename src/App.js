@@ -96,12 +96,12 @@ function App() {
   ) : (
     <div className="master-wrapper">
       <Router>
-        {promotion && (
+        {/* {promotion && (
           <PromotionalBanner
             onX={() => promoXHandle()}
             onContact={() => promoHandle()}
           />
-        )}
+        )} */}
         <Header userToken={userToken} setTokenAndId={setTokenAndId} />
         <Switch>
           <Route path="/admin">
