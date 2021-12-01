@@ -1805,10 +1805,10 @@ body {
   line-break: normal;
   word-wrap: break-word;
   margin-top: 10px;
-  color: var(--clr--orange--itrsq);
+  color: black;
 }
 .article__txtContainer a:hover {
-  color: grey;
+  color: var(--clr--black--transparent);
 }
 
 .article__txtContainer u {
