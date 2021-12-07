@@ -5,6 +5,7 @@ import axios from "axios";
 // Components
 
 import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
+import { set } from "js-cookie";
 
 const Tools = () => {
   // States
@@ -17,7 +18,7 @@ const Tools = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [vat, setVat] = useState();
-
+  console.log(email);
   //   Email Handle
   const emailHandle = async () => {
     const formData = new FormData();
@@ -75,7 +76,7 @@ const Tools = () => {
   //   Url Handle
   const urlHandle = async () => {
     const formData = new FormData();
-    formData.append("url", longUrl);
+    formData.append("longUrl", longUrl);
     try {
       setIsLoading(true);
       const response = await axios.post(
@@ -89,6 +90,25 @@ const Tools = () => {
       setVatMessage(error.response.data.error);
       setIsLoading(false);
     }
+  };
+
+  // Do another handles
+
+  const anotherEmail = () => {
+    setEmailMessage();
+    setEmail("");
+  };
+  const anotherPhone = () => {
+    setPhoneMessage();
+    setPhone("");
+  };
+  const anotherVat = () => {
+    setVatMessage();
+    setVat("");
+  };
+  const anotherUrl = () => {
+    setUrlMessage();
+    setLongUrl("");
   };
 
   return isLoading ? (
@@ -107,8 +127,11 @@ const Tools = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <h3>{emailMessage}</h3>
-          <button className="btn-classic" onClick={() => emailHandle()}>
-            Submit
+          <button
+            className="btn-classic"
+            onClick={emailMessage ? () => anotherEmail() : () => emailHandle()}
+          >
+            {emailMessage ? "Do another" : "Submit"}
           </button>
         </div>
         <div className="tool">
@@ -124,8 +147,11 @@ const Tools = () => {
             onChange={(e) => setPhone(e.target.value)}
           />
           <h3>{phoneMessage}</h3>
-          <button className="btn-classic" onClick={() => phoneHandle()}>
-            Submit
+          <button
+            className="btn-classic"
+            onClick={phoneMessage ? () => anotherPhone() : () => phoneHandle()}
+          >
+            {phoneMessage ? "Do another" : "Submit"}
           </button>
         </div>
         <div className="tool">
@@ -140,8 +166,11 @@ const Tools = () => {
             onChange={(e) => setVat(e.target.value)}
           />
           <h3>{vatMessage}</h3>
-          <button className="btn-classic" onClick={() => vatHandle()}>
-            Submit
+          <button
+            className="btn-classic"
+            onClick={vatMessage ? () => anotherVat() : () => vatHandle()}
+          >
+            {vatMessage ? "Do another" : "Submit"}
           </button>
         </div>
         <div className="tool">
@@ -155,11 +184,22 @@ const Tools = () => {
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
           />
-          <a href={urlMessage} target="_blank">
-            {urlMessage}
-          </a>
-          <button className="btn-classic" onClick={() => urlHandle()}>
-            Submit
+          {urlMessage && (
+            <h2 className="txt-description-medium-white">
+              Here's your shortened link !
+            </h2>
+          )}
+          {urlMessage && (
+            <a href={urlMessage} target="_blank">
+              {urlMessage}
+            </a>
+          )}
+
+          <button
+            className="btn-classic"
+            onClick={urlMessage ? () => anotherUrl() : () => urlHandle()}
+          >
+            {urlMessage ? "Do another" : "Submit"}
           </button>
         </div>
         {/* <div className="tool">

@@ -2354,6 +2354,10 @@ body {
   color: black;
   text-decoration: none;
 }
+
+.tool a:hover {
+  color: var(--clr--black--transparent);
+}
 /* RESPONSIVE */
 
 /* Width */
