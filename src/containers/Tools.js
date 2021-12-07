@@ -12,6 +12,8 @@ const Tools = () => {
   const [emailMessage, setEmailMessage] = useState();
   const [phoneMessage, setPhoneMessage] = useState();
   const [vatMessage, setVatMessage] = useState();
+  const [urlMessage, setUrlMessage] = useState();
+  const [longUrl, setLongUrl] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [vat, setVat] = useState();
@@ -63,6 +65,25 @@ const Tools = () => {
         formData
       );
       setVatMessage(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      setVatMessage(error.response.data.error);
+      setIsLoading(false);
+    }
+  };
+
+  //   Url Handle
+  const urlHandle = async () => {
+    const formData = new FormData();
+    formData.append("url", longUrl);
+    try {
+      setIsLoading(true);
+      const response = await axios.post(
+        "https://itrsq.herokuapp.com/tools/url",
+        formData
+      );
+      console.log(response.data);
+      setUrlMessage(response.data.shortUrl);
       setIsLoading(false);
     } catch (error) {
       setVatMessage(error.response.data.error);
@@ -124,8 +145,26 @@ const Tools = () => {
           </button>
         </div>
         <div className="tool">
-          <h1 className="txt-header-medium-dynamic">More Tools Coming Soon</h1>
+          <h1 className="txt-header-medium-white">URL Shortener</h1>
+          <h2 className="txt-description-medium-white">
+            Enter the URL you wish to shorten
+          </h2>
+
+          <input
+            type="text"
+            value={longUrl}
+            onChange={(e) => setLongUrl(e.target.value)}
+          />
+          <a href={urlMessage} target="_blank">
+            {urlMessage}
+          </a>
+          <button className="btn-classic" onClick={() => urlHandle()}>
+            Submit
+          </button>
         </div>
+        {/* <div className="tool">
+          <h1 className="txt-header-medium-dynamic">More Tools Coming Soon</h1>
+        </div> */}
       </div>
     </div>
   );
