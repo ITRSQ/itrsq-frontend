@@ -12,7 +12,7 @@ const Why = ({ id }) => {
               builder). There is no easy way to transfer them out because the
               source code of your page is translated into metadata. This means
               if you decide you want to change to a different hosting platform,
-              you will have to rebuild yyour website from scratch.
+              you will have to rebuild your website from scratch.
             </p>
           </div>
           <div data-aos="fade-up" data-aos-delay={300}>
