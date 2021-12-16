@@ -21,8 +21,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.youtube.com/channel/UCUUs-ri1zJU_mYumBbzjO6g"
-            target="_blank"
-          >
+            target="_blank">
             <i className="fab fa-youtube"></i>
           </a>
           <a href="https://www.tiktok.com/@itrsq?" target="_blank">
