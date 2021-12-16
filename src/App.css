@@ -1823,6 +1823,12 @@ body {
   color: white;
 }
 
+.article__txtContainer i {
+  font-style: italic;
+  font-family: var(--ff--common);
+  color: white;
+}
+
 /* Auth */
 
 .auth {
