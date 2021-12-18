@@ -1,7 +1,7 @@
 const Services = ({ id }) => {
   return (
     <div className="container-full-white" id={id}>
-      <div className="card-container">
+      <div className="card-container1">
         <div>
           <h1 className="txt-header-medium-dynamic" data-aos="fade-up">
             Website Design
@@ -10,8 +10,8 @@ const Services = ({ id }) => {
             If you aren’t already working with a designer, our team will design
             the identity and components of your website. We’ll always make sure
             that what we do corresponds to your vision by communicating with you
-            throughout the design process if you wish to be involved. Your final
-            product will be a <span>beautiful</span>, <span>modern</span> and{" "}
+            throughout the design process. Your final product will be a 
+            <span>beautiful</span>, <span>modern</span> and{" "}
             <span>responsive</span> website that you’ll be proud to share with
             the world.
           </p>

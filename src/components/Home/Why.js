@@ -1,10 +1,10 @@
 const Why = ({ id }) => {
   return (
-    <div className="home__why " id={id}>
+    <div className="home__why" id={id}>
       <div className="home__why__container">
         {" "}
         <h1 className="txt-header-large-white">Why choose our service ?</h1>
-        <div className="card-container">
+        <div className="card-container2">
           <div data-aos="fade-up">
             <h2 className="txt-header-small-white">Your website</h2>
             <p className="txt-description-small-white">
@@ -36,7 +36,7 @@ const Why = ({ id }) => {
             </p>
           </div>
         </div>
-        <div className="card-container">
+        <div className="card-container2">
           <div data-aos="fade-up" data-aos-delay={300}>
             <h2 className="txt-header-small-white">Security</h2>
             <p className="txt-description-small-white">
