@@ -4,6 +4,7 @@ import axios from "axios";
 
 // Components
 import { set } from "js-cookie";
+import Footer from "../components/Footer";
 import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 
 const Tools = () => {
@@ -277,7 +278,7 @@ const Tools = () => {
             {urlMessage ? "Do another" : "Submit"}
           </button>
         </div>
-        <div className="tool__image">
+        {/* <div className="tool__image">
           <h1 className="txt-header-medium-white">Image Resizing</h1>
           <div>
             <div className="tool__image__display">
@@ -351,11 +352,12 @@ const Tools = () => {
           <button className="btn-classic" onClick={() => imageHandle()}>
             Submit
           </button>
-        </div>
+        </div> */}
         {/* <div className="tool">
           <h1 className="txt-header-medium-dynamic">More Tools Coming Soon</h1>
         </div> */}
       </div>
+      <Footer />
     </div>
   );
 };

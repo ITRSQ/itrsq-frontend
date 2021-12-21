@@ -122,9 +122,9 @@ body {
   /* background-color: white; */
   background-image: url(./assets/img/white-background.png);
   background-size: cover;
-  width: 1390px;
+  width: 1440px;
   max-width: 1440px;
-  padding: 80px 130px 20px 130px;
+  padding: 20px 0px 20px 0px;
   margin: 0 auto;
   z-index: 1;
 }
@@ -142,28 +142,13 @@ body {
   font-family: var(--ff--common);
 }
 
-.card-container1 > div {
+.card-container > div {
   flex: 1;
   padding: 30px 30px;
   margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  vertical-align: top;
-  justify-content: center;
-  border: solid var(--clr--white--transparent) 1px;
-  border-radius: 10px;
-  background-color: var(--clr--white--transparent) 0.8;
-}
-
-.card-container2 > div {
-  flex: 1;
-  padding: 30px 30px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: top;
   justify-content: center;
   border: solid var(--clr--white--transparent) 1px;
   border-radius: 10px;
@@ -267,7 +252,7 @@ body {
 .txt-description-large-black {
   font-family: var(--ff--common);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: black;
   line-height: 1.8rem;
 }
@@ -2333,6 +2318,7 @@ body {
   margin-top: 50px;
   padding: 0 1%;
   max-width: 1440px;
+  padding-bottom: 50px;
 }
 
 .tool {
