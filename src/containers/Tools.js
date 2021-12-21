@@ -3,9 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 
 // Components
-
-import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 import { set } from "js-cookie";
+import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 
 const Tools = () => {
   // States
