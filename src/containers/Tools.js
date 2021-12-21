@@ -18,7 +18,14 @@ const Tools = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [vat, setVat] = useState();
-  console.log(email);
+  const [image, setImage] = useState();
+  const [imageDisplay, setImageDisplay] = useState();
+  const [height, setHeight] = useState();
+  const [width, setWidth] = useState();
+  const [strategy, setStrategy] = useState();
+  const [imgUrl, setImgUrl] = useState();
+  const [imgUrlMessage, setImgUrlMessage] = useState();
+
   //   Email Handle
   const emailHandle = async () => {
     const formData = new FormData();
@@ -111,6 +118,75 @@ const Tools = () => {
     setLongUrl("");
   };
 
+  // Image resizing Handle
+
+  const imageHandle = async () => {
+    try {
+      setIsLoading(true);
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append("height", height);
+      formData.append("width", width);
+      formData.append("strategy", strategy);
+
+      const response = await axios.post(
+        "http://localhost:3000/tools/image",
+        formData
+      );
+      setImgUrl(response.data);
+      setImgUrlMessage("Click here to download your Image !");
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setImgUrlMessage("There has been a problem with your request");
+      setIsLoading(false);
+    }
+
+    // const data = {
+    //   api_key: "682f39dfc32b4cae884dfd77f53b2439",
+    //   resize: {
+    //     width: parseInt(width, 10),
+    //     height: parseInt(height, 10),
+    //     strategy,
+    //   },
+    // };
+    // const formData = new FormData();
+    // formData.append("image", image);
+    // setIsLoading(true);
+    // try {
+    //   const response = await axios.post(
+    //     "https://itrsq.herokuapp.com/tools/image",
+    //     formData
+    //   );
+    //   if (response.data) {
+    //     console.log(response.data);
+    //     const formData1 = new FormData();
+    //     formData.append("image", response.data);
+    //     formData.append("data", data);
+    //     try {
+    //       const response1 = await axios.post(
+    //         "https://images.abstractapi.com/v1/upload/",
+    //         formData1
+    //       );
+    //       setImgUrl(response1.data.url);
+    //       setImgUrlMessage("Click here to download your Image !");
+    //       setIsLoading(false);
+    //     } catch (error) {
+    //       console.log(error);
+    //       setImgUrlMessage("There has been a problem with your request1");
+    //       setIsLoading(false);
+    //     }
+    //   } else {
+    //     setImgUrlMessage("There has been a problem with your request2");
+    //     setIsLoading(false);
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   setImgUrlMessage("There has been a problem with your request3");
+    //   setIsLoading(false);
+    // }
+  };
+
   return isLoading ? (
     <LoaderFullScreen />
   ) : (
@@ -200,6 +276,81 @@ const Tools = () => {
             onClick={urlMessage ? () => anotherUrl() : () => urlHandle()}
           >
             {urlMessage ? "Do another" : "Submit"}
+          </button>
+        </div>
+        <div className="tool__image">
+          <h1 className="txt-header-medium-white">Image Resizing</h1>
+          <div>
+            <div className="tool__image__display">
+              <img src={imageDisplay} />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  setImageDisplay(URL.createObjectURL(e.target.files[0]));
+                  setImage(e.target.files[0]);
+                }}
+              />
+              <h2>(Format must be JPG)</h2>
+            </div>
+            <div>
+              <label>
+                Height :{" "}
+                <input
+                  type="number"
+                  value={height}
+                  onChange={(e) => setHeight(e.target.value)}
+                />{" "}
+                px
+              </label>
+              <label>
+                Width :{" "}
+                <input
+                  type="number"
+                  value={width}
+                  onChange={(e) => setWidth(e.target.value)}
+                />{" "}
+                px
+              </label>
+              <label>
+                Format :{" "}
+                <select
+                  value={strategy}
+                  name="strategy"
+                  onChange={(e) => setStrategy(e.target.value)}
+                >
+                  <option value="exact" selected>
+                    Exact : Resize to exact width and height. Aspect ratio will
+                    not be maintained
+                  </option>
+                  <option value="portrait">
+                    Portrait : Exact height will be set, width will be adjusted
+                    according to aspect ratio
+                  </option>
+                  <option value="landscape">
+                    Landscape : Exact width will be set, height will be adjusted
+                    according to aspect ratio
+                  </option>
+                  <option value="auto">
+                    Auto : The best strategy (portrait or landscape) will be
+                    selected according to its aspect ratio
+                  </option>
+                  <option value="fit">
+                    Fit : This option will crop and resize the image to fit the
+                    desired width and height.
+                  </option>
+                </select>
+              </label>
+              {imgUrlMessage && (
+                <a href={imgUrl} target="_blank">
+                  {imgUrlMessage}
+                </a>
+              )}
+            </div>
+          </div>
+
+          <button className="btn-classic" onClick={() => imageHandle()}>
+            Submit
           </button>
         </div>
         {/* <div className="tool">
