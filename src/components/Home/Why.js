@@ -29,7 +29,7 @@ const Why = ({ id }) => {
             <h2 className="txt-header-small-white">Optimisation </h2>
             <p className="txt-description-small-white">
               Personalised code is nearly always more efficient. The source code
-              of ready- made websites is not minimalistic by any means since it
+              of ready-made websites is not minimalistic by any means since it
               must be very adaptable and also hosts mandatory advertisement
               information. This increases the chance of your site failing on a
               technical level.
