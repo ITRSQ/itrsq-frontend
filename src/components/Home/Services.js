@@ -1,9 +1,9 @@
 const Services = ({ id }) => {
   return (
     <div className="container-full-white" id={id}>
-      <div className="home__services">
+      <div className="card-container-services">
         <div>
-          <h1 className="txt-header-medium-dynamic" data-aos="fade-right">
+          <h1 className="txt-header-medium-dynamic" data-aos="fade-up">
             Website Design
           </h1>
           <p className="txt-description-large-black" data-aos="fade-up">
@@ -16,11 +16,11 @@ const Services = ({ id }) => {
             the world.
           </p>
         </div>
-        <div className="container-right">
-          <h1 className="txt-header-medium-dynamic" data-aos="fade-left">
+        <div>
+          <h1 className="txt-header-medium-dynamic" data-aos="fade-up" data-aos-delay={300}>
             Website Development
           </h1>
-          <p className="txt-description-large-black" data-aos="fade-left">
+          <p className="txt-description-large-black" data-aos="fade-up" data-aos-delay={300}>
             Once the design and concept are validated, we’ll of course build
             your website. Depending on your needs, we’ll code a{" "}
             <span>complete solution</span> from scratch (frontend, backend &
@@ -28,10 +28,10 @@ const Services = ({ id }) => {
           </p>
         </div>
         <div>
-          <h1 className="txt-header-medium-dynamic" data-aos="fade-right">
+          <h1 className="txt-header-medium-dynamic" data-aos="fade-up" data-aos-delay={600}>
             IT Support
           </h1>
-          <p className="txt-description-large-black" data-aos="fade-right">
+          <p className="txt-description-large-black" data-aos="fade-up" data-aos-delay={600}>
             We’ll stay <span>by your side</span> throughout the creation process
             and much further down the line. If you change your mind about
             something, want your website redesigned or updated, you can count on
