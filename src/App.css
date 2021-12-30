@@ -2443,6 +2443,114 @@ body {
   font-style: italic;
   margin-top: 5px;
 }
+
+.tool__hashtag {
+  height: 600px;
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid var(--clr--white--transparent--hover) 3px;
+  border-radius: 5px;
+  padding: 40px 20px 30px 20px;
+  margin: 0 2% 50px 2%;
+}
+.tool__hashtag > div {
+  width: 100%;
+  display: flex;
+
+  height: 100%;
+}
+
+.tool__hashtag > div > div:nth-child(1) {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 15px;
+}
+
+.tool__hashtag > div > div:nth-child(1) > textarea {
+  background-color: var(--clr--white--transparent);
+  border: solid 1px var(--clr--white--transparent);
+  font-family: var(--ff--common);
+  padding: 4px;
+  border-radius: 5px;
+  color: white;
+  width: 90%;
+  outline: none;
+}
+.tool__hashtag > div > div:nth-child(2) {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 100%;
+}
+.tool__hashtag > div > div:nth-child(2) > div {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: solid 1px var(--clr--white--transparent);
+  height: 70%;
+}
+
+.tool__hashtag > div > div:nth-child(2) > div > div:nth-child(1) {
+  width: 100%;
+  display: flex;
+  height: 20%;
+  background-color: var(--clr--white--transparent);
+}
+
+.tool__hashtag > div > div:nth-child(2) > div > div:nth-child(1) > h3 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border: solid 1px var(--clr--white--transparent);
+}
+
+.tool__hashtag > div > div:nth-child(2) > div > div:nth-child(2) {
+  width: 100%;
+
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tool__hashtag
+  > div
+  > div:nth-child(2)
+  > div
+  > div:nth-child(2)::-webkit-scrollbar {
+  display: none;
+}
+.tool__hashtag > div > div:nth-child(2) > div > div:nth-child(2) > div {
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+
+.tool__hashtag > div > div:nth-child(2) > div > div:nth-child(2) > div > h3 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border: solid 1px var(--clr--white--transparent);
+}
+
 /* RESPONSIVE */
 
 /* Width */
@@ -2847,6 +2955,27 @@ body {
   .project__info {
     flex-direction: column;
     padding: 20px 0px;
+  }
+  .tool__hashtag > div {
+    flex-direction: column;
+  }
+  .tool__hashtag > div > div:nth-child(1),
+  .tool__hashtag > div > div:nth-child(2) {
+    width: 100%;
+  }
+  .tool__hashtag {
+    height: fit-content;
+    min-height: 600px;
+  }
+  .tool__hashtag textarea {
+    margin: 10px 0;
+  }
+  .tool__hashtag > div > div:nth-child(2) > div {
+    margin: 20px 0;
+    min-height: 100px;
+  }
+  .tool__hashtag > div > div:nth-child(1) {
+    margin-bottom: 20px;
   }
 }
 
