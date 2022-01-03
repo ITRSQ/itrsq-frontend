@@ -2711,6 +2711,16 @@ body {
 }
 
 @media (max-width: 708px) {
+  .float {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 30px;
+  }
   .article {
     width: 90%;
   }
@@ -3048,12 +3058,12 @@ body {
 /* WhatsApp */
 
 /*WhatsApp for desktop */
-.whatsapp_float {
+.float {
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 50px;
-  right: 50px;
+  bottom: 40px;
+  right: 40px;
   background-color: #25d366;
   color: #fff;
   border-radius: 50px;
@@ -3064,7 +3074,7 @@ body {
   display: none;
 }
 
-.whatsapp_float:hover {
+.float:hover {
   transform: scale(1.2);
 
   transition: transform 0.3s ease;
@@ -3072,7 +3082,7 @@ body {
 
 /*WhatsApp for mobile */
 @media screen and (max-width: 767px) {
-  .whatsapp_float {
+  .float {
     display: flex;
     justify-content: center;
     align-items: center;

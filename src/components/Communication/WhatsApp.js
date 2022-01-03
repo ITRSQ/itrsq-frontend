@@ -2,11 +2,11 @@ const WhatsApp = () => {
   return (
     <a
       href="https://wa.me/+447931538608"
-      class="whatsapp_float"
+      class="float"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <i className="fab fa-whatsapp whatsapp-icon"></i>
+      <i className="fab fa-whatsapp my-float"></i>
     </a>
   );
 };
