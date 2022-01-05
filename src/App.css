@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #ffffff;
   z-index: 1000;
 }
 
@@ -61,6 +61,7 @@ body {
   --clr--yellow--itrsq: #ffc400;
   --clr--orange--complementary: #e66e2e;
   --clr--white--transparent: rgba(255, 255, 255, 0.2);
+  --clr--white--transparent--services: rgba(255, 255, 255, 0.6);
   --clr--white--transparent--hover: rgba(255, 255, 255, 0.6);
   --clr--black--transparent: rgba(0, 0, 0, 0.2);
   --ff--common: "Inter", sans-serif;
@@ -123,7 +124,7 @@ body {
   background-image: url(./assets/img/white-background.png);
   background-size: cover;
 
-  max-width: 1440px;
+  max-width: 100%;
   padding: 20px 0px 20px 0px;
   margin: 0 auto;
   z-index: 1;
@@ -153,6 +154,28 @@ body {
   border: solid var(--clr--white--transparent) 1px;
   border-radius: 10px;
   background-color: var(--clr--white--transparent);
+}
+
+.card-container-services {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ff--common);
+  margin: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.card-container-services > div {
+  flex: 1;
+  padding: 30px 30px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  border: solid var(--clr--white--transparent--services) 1px;
+  background-color: var(--clr--white--transparent--services);
+  border-radius: 10px;
 }
 
 /* Text*/
@@ -197,7 +220,7 @@ body {
   text-align: center;
 }
 .txt-header-medium-dynamic {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 2.8rem;
   font-weight: 600;
   background: linear-gradient(
@@ -252,7 +275,7 @@ body {
 .txt-description-large-black {
   font-family: var(--ff--common);
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: black;
   line-height: 1.8rem;
 }
