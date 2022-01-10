@@ -149,7 +149,7 @@ const Website = () => {
               <div>
                 {" "}
                 <h5>
-                  Prices start from <span>£249</span>
+                  Prices start from <span>£499</span>
                 </h5>
                 <button
                   className="btn-classic-blue"
@@ -176,7 +176,7 @@ const Website = () => {
               <div>
                 {" "}
                 <h5>
-                  Prices start from <span>£449</span>
+                  Prices start from <span>£1299</span>
                 </h5>
                 <button
                   className="btn-classic-blue"
@@ -204,7 +204,7 @@ const Website = () => {
               <div>
                 {" "}
                 <h5>
-                  Prices start from <span> £349</span>
+                  Prices start from <span>N/A</span>
                 </h5>
                 <button
                   className="btn-classic-blue"
