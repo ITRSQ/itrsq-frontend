@@ -32,7 +32,7 @@ const Tools = () => {
   const [hashtagMessage, setHashtagMessage] = useState();
 
   // Hashtag Handle
-  const hashtagHandle = async () => {
+  const hashtagHandle = async (e) => {
     try {
       setIsLoading(true);
       const response = await axios.post(
@@ -216,9 +216,7 @@ const Tools = () => {
     // }
   };
 
-  return isLoading ? (
-    <LoaderFullScreen />
-  ) : (
+  return (
     <div className="tools bg-gradient-orange">
       <div className="tools__container">
         <div className="tool">
@@ -382,60 +380,64 @@ const Tools = () => {
             Submit
           </button>
         </div> */}
-        <div className="tool__hashtag">
-          <h1 className="txt-header-medium-white">Hashtag Generator</h1>
-          <div>
+        {isLoading ? (
+          <LoaderFullScreen />
+        ) : (
+          <div className="tool__hashtag">
+            <h1 className="txt-header-medium-white">Hashtag Generator</h1>
             <div>
-              <h2 className="txt-description-medium-white">
-                Enter your text here (up to 1000 characters) and our Hashtag
-                Generator will generate a list of the best hashtags associated
-              </h2>
-              <textarea
-                maxLength={1000}
-                cols="30"
-                rows="10"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-              ></textarea>
-              {hashtagMessage && <h3>{hashtagMessage}</h3>}
-              <button
-                className="btn-classic"
-                onClick={
-                  hashtags ? () => anotherHashtag() : () => hashtagHandle()
-                }
-              >
-                {hashtags ? "Do another" : "Submit"}
-              </button>
-            </div>
-            <div>
-              {" "}
-              <h2 className="txt-description-medium-white">Your Hashtags</h2>
               <div>
+                <h2 className="txt-description-medium-white">
+                  Enter your text here (up to 1000 characters) and our Hashtag
+                  Generator will generate a list of the best hashtags associated
+                </h2>
+                <textarea
+                  maxLength={1000}
+                  cols="30"
+                  rows="10"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                ></textarea>
+                {hashtagMessage && <h3>{hashtagMessage}</h3>}
+                <button
+                  className="btn-classic"
+                  onClick={
+                    hashtags ? () => anotherHashtag() : () => hashtagHandle()
+                  }
+                >
+                  {hashtags ? "Do another" : "Submit"}
+                </button>
+              </div>
+              <div>
+                {" "}
+                <h2 className="txt-description-medium-white">Your Hashtags</h2>
                 <div>
-                  <h3 className="txt-description-small-white">Hashtags</h3>
-                  <h3 className="txt-description-small-white">
-                    Rating (Based on Exposure Potential)
-                  </h3>
-                </div>
-                <div>
-                  {hashtags &&
-                    hashtags.map((hashtag) => {
-                      return (
-                        <div>
-                          <h3 className="txt-description-small-white">
-                            {hashtag.hashtag}
-                          </h3>
-                          <h3 className="txt-description-small-white">
-                            {hashtag.exposure}
-                          </h3>
-                        </div>
-                      );
-                    })}
+                  <div>
+                    <h3 className="txt-description-small-white">Hashtags</h3>
+                    <h3 className="txt-description-small-white">
+                      Rating (Based on Exposure Potential)
+                    </h3>
+                  </div>
+                  <div>
+                    {hashtags &&
+                      hashtags.map((hashtag) => {
+                        return (
+                          <div>
+                            <h3 className="txt-description-small-white">
+                              {hashtag.hashtag}
+                            </h3>
+                            <h3 className="txt-description-small-white">
+                              {hashtag.exposure}
+                            </h3>
+                          </div>
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
         {/* <div className="tool">
           <h1 className="txt-header-medium-dynamic">More Tools Coming Soon</h1>
         </div> */}
