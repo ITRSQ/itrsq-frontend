@@ -180,7 +180,7 @@ const Tools = () => {
       formData.append("files", image);
 
       const response = await axios.post(
-        "http://api.resmush.it/ws.php",
+        "https://api.resmush.it/ws.php",
         formData
       );
       setImgUrl(response.data.dest);
