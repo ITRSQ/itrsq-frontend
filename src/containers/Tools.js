@@ -18,13 +18,14 @@ const Tools = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [vat, setVat] = useState();
+  const [imageHolder, setImageHolder] = useState();
   const [image, setImage] = useState();
   const [imageDisplay, setImageDisplay] = useState();
-  const [height, setHeight] = useState();
-  const [width, setWidth] = useState();
-  const [strategy, setStrategy] = useState();
+  const [quality, setQuality] = useState();
   const [imgUrl, setImgUrl] = useState();
   const [imgUrlMessage, setImgUrlMessage] = useState();
+  const [originalSize, setOriginalSize] = useState();
+  const [newSize, setNewSize] = useState();
 
   // Hashtag Tool States
   const [text, setText] = useState();
@@ -146,74 +147,52 @@ const Tools = () => {
     setHashtags();
     setText();
   };
+  const anotherImage = async () => {
+    setImageHolder("");
+    setImage("");
+    setImageDisplay("");
+    setImgUrl();
+    setImgUrlMessage();
+    setOriginalSize();
+    setNewSize();
+    setQuality(0);
+  };
+
+  // Byte Conversion Function
+  function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return "0 Bytes";
+
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+  }
 
   // Image resizing Handle
-
   const imageHandle = async () => {
     try {
       setIsLoading(true);
       const formData = new FormData();
-      formData.append("image", image);
-      formData.append("height", height);
-      formData.append("width", width);
-      formData.append("strategy", strategy);
+      formData.append("qlty", quality);
+      formData.append("files", image);
 
       const response = await axios.post(
-        "http://localhost:3000/tools/image",
+        "http://api.resmush.it/ws.php",
         formData
       );
-      setImgUrl(response.data);
+      setImgUrl(response.data.dest);
       setImgUrlMessage("Click here to download your Image !");
+      setOriginalSize(formatBytes(response.data.src_size));
+      setNewSize(formatBytes(response.data.dest_size));
       setIsLoading(false);
     } catch (error) {
       console.log(error);
       setImgUrlMessage("There has been a problem with your request");
       setIsLoading(false);
     }
-
-    // const data = {
-    //   api_key: "682f39dfc32b4cae884dfd77f53b2439",
-    //   resize: {
-    //     width: parseInt(width, 10),
-    //     height: parseInt(height, 10),
-    //     strategy,
-    //   },
-    // };
-    // const formData = new FormData();
-    // formData.append("image", image);
-    // setIsLoading(true);
-    // try {
-    //   const response = await axios.post(
-    //     "https://itrsq.herokuapp.com/tools/image",
-    //     formData
-    //   );
-    //   if (response.data) {
-    //     console.log(response.data);
-    //     const formData1 = new FormData();
-    //     formData.append("image", response.data);
-    //     formData.append("data", data);
-    //     try {
-    //       const response1 = await axios.post(
-    //         "https://images.abstractapi.com/v1/upload/",
-    //         formData1
-    //       );
-    //       setImgUrl(response1.data.url);
-    //       setImgUrlMessage("Click here to download your Image !");
-    //       setIsLoading(false);
-    //     } catch (error) {
-    //       console.log(error);
-    //       setImgUrlMessage("There has been a problem with your request1");
-    //       setIsLoading(false);
-    //     }
-    //   } else {
-    //     setImgUrlMessage("There has been a problem with your request2");
-    //     setIsLoading(false);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   setImgUrlMessage("There has been a problem with your request3");
-    //   setIsLoading(false);
-    // }
   };
 
   return (
@@ -305,81 +284,7 @@ const Tools = () => {
             {urlMessage ? "Do another" : "Submit"}
           </button>
         </div>
-        {/* <div className="tool__image">
-          <h1 className="txt-header-medium-white">Image Resizing</h1>
-          <div>
-            <div className="tool__image__display">
-              <img src={imageDisplay} />
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  setImageDisplay(URL.createObjectURL(e.target.files[0]));
-                  setImage(e.target.files[0]);
-                }}
-              />
-              <h2>(Format must be JPG)</h2>
-            </div>
-            <div>
-              <label>
-                Height :{" "}
-                <input
-                  type="number"
-                  value={height}
-                  onChange={(e) => setHeight(e.target.value)}
-                />{" "}
-                px
-              </label>
-              <label>
-                Width :{" "}
-                <input
-                  type="number"
-                  value={width}
-                  onChange={(e) => setWidth(e.target.value)}
-                />{" "}
-                px
-              </label>
-              <label>
-                Format :{" "}
-                <select
-                  value={strategy}
-                  name="strategy"
-                  onChange={(e) => setStrategy(e.target.value)}
-                >
-                  <option value="exact" selected>
-                    Exact : Resize to exact width and height. Aspect ratio will
-                    not be maintained
-                  </option>
-                  <option value="portrait">
-                    Portrait : Exact height will be set, width will be adjusted
-                    according to aspect ratio
-                  </option>
-                  <option value="landscape">
-                    Landscape : Exact width will be set, height will be adjusted
-                    according to aspect ratio
-                  </option>
-                  <option value="auto">
-                    Auto : The best strategy (portrait or landscape) will be
-                    selected according to its aspect ratio
-                  </option>
-                  <option value="fit">
-                    Fit : This option will crop and resize the image to fit the
-                    desired width and height.
-                  </option>
-                </select>
-              </label>
-              {imgUrlMessage && (
-                <a href={imgUrl} target="_blank">
-                  {imgUrlMessage}
-                </a>
-              )}
-            </div>
-          </div>
 
-          <button className="btn-classic" onClick={() => imageHandle()}>
-            Submit
-          </button>
-        </div> */}
         {isLoading ? (
           <LoaderFullScreen />
         ) : (
@@ -438,6 +343,60 @@ const Tools = () => {
             </div>
           </div>
         )}
+        <div className="tool__image">
+          <h1 className="txt-header-medium-white">Image Compression</h1>
+          <div>
+            <div className="tool__image__display">
+              <img src={imageDisplay} />
+              <input
+                type="file"
+                accept="image/*"
+                value={imageHolder}
+                onChange={(e) => {
+                  setImageDisplay(URL.createObjectURL(e.target.files[0]));
+                  setImage(e.target.files[0]);
+                }}
+              />
+              <h2>( Format must be JPG )</h2>
+              <label>
+                Quality :{" "}
+                <input
+                  type="number"
+                  value={quality}
+                  onChange={(e) => setQuality(e.target.value)}
+                  max={100}
+                  min={0}
+                />{" "}
+                %
+              </label>
+              <h2>
+                ( Enter what percentage of compression you wish to apply to your
+                image between 0-100%. 50% will mean that your image will be half
+                of it's original size. )
+              </h2>
+            </div>
+            <div>
+              <label>Original Size : {originalSize}</label>
+              <label>New Size : {newSize}</label>
+              <label>
+                Your new image :{" "}
+                {imgUrlMessage && (
+                  <a href={imgUrl} download={`${imgUrl}.jpeg`} target="_blank">
+                    {" "}
+                    {imgUrlMessage}
+                  </a>
+                )}
+              </label>
+            </div>
+          </div>
+
+          <button
+            className="btn-classic"
+            onClick={imgUrl ? () => anotherImage() : () => imageHandle()}
+          >
+            {imgUrl ? "Do another" : "Submit"}
+          </button>
+        </div>
         {/* <div className="tool">
           <h1 className="txt-header-medium-dynamic">More Tools Coming Soon</h1>
         </div> */}
