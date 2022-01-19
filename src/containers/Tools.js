@@ -371,8 +371,7 @@ const Tools = () => {
               </label>
               <h2>
                 ( Enter what percentage of compression you wish to apply to your
-                image between 0-100%. 50% will mean that your image will be half
-                of it's original size. )
+                image between 0-100%.)
               </h2>
             </div>
             <div>
