@@ -18,7 +18,7 @@ const About = () => {
           <img src={logo} alt={logo} />
           <p className="txt-description-small-white">
             We are an all rounder IT solutions company, based in London. Started
-            in 2017 and continously growing. We deal with anything from
+            in 2017 and continuously growing. We deal with anything from
             supporting Phones to servers as well as Web Development. We have a
             proactive team that are willing to go that extra mile to cater to
             your needs. We believe in Value, Trust and Transparency.
