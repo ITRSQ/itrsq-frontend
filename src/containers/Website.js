@@ -39,11 +39,10 @@ const Website = () => {
             Portfolio ? Blog?
             <br />
             E-Commerce ? <br />
-            We've got you covered 😉
+            We've got you covered
           </h1>
           <h2 data-aos="fade-up" data-aos-delay={200}>
-            Just tell us what you want and get yourself an online presence
-            worthy of your ideas
+          Tell us about it/ tell us your vision and get yourself an online presence worthy of your ideas
           </h2>
           <div data-aos="fade-up" data-aos-delay={400}>
             {" "}
@@ -84,8 +83,7 @@ const Website = () => {
               <h1 className="txt-header-small-black">Receive our quote</h1>
               <p className="txt-description-small-black">
                 Once we've examined your proposition, we'll send you a detailed
-                quote based on how ambitious your project is and how busy we
-                currently are
+                quote based on how ambitious your project is
               </p>
             </div>
             <div data-aos="fade-up" data-aos-delay={200}>
@@ -111,7 +109,7 @@ const Website = () => {
               <h1 className="txt-header-small-black">It's a website !</h1>
               <p className="txt-description-small-black">
                 Once your website is built and tested, you will receive all
-                credentials to claim ownership over your new baby
+                credentials to claim ownership over your new website
               </p>
             </div>
             <div data-aos="fade-up" data-aos-delay={500}>

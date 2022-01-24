@@ -7,13 +7,7 @@ const Services = ({ id }) => {
             Website Design
           </h1>
           <p className="txt-description-large-black" data-aos="fade-up">
-            If you aren’t already working with a designer, our team will design
-            the identity and components of your website. We’ll always make sure
-            that what we do corresponds to your vision by communicating with you
-            throughout the design process. Your final product will be a
-            <span>beautiful</span>, <span>modern</span> and{" "}
-            <span>responsive</span> website that you’ll be proud to share with
-            the world.
+          We can design the components of your website if you don't already have a designer. Throughout the design process, we'll communicate carefully with you so that the final product is pleasing to the eye, informative, and valuable to your audience. /We'll ensure what we do corresponds to what you want by communicating with you throughout the entire process. Your final product will be beautiful, modern, and functional.
           </p>
         </div>
         <div className="container-right">
@@ -21,10 +15,7 @@ const Services = ({ id }) => {
             Website Development
           </h1>
           <p className="txt-description-large-black" data-aos="fade-left">
-            Once the design and concept are validated, we’ll of course build
-            your website. Depending on your needs, we’ll code a{" "}
-            <span>complete solution</span> from scratch (frontend, backend &
-            database).
+          Once the design and concepts are validated, we begin to build/ building your website. To cater to your every need, we code a complete solution from scratch (frontend, backend, and database).
           </p>
         </div>
         <div>
@@ -32,10 +23,8 @@ const Services = ({ id }) => {
             IT Support
           </h1>
           <p className="txt-description-large-black" data-aos="fade-right">
-            We’ll stay <span>by your side</span> throughout the creation process
-            and much further down the line. If you change your mind about
-            something, want your website redesigned or updated, you can count on
-            our assistance.
+          We will stay by your side throughout the process and beyond. If you change your mind about something – whether it be new designs or updates, you can count on us.
+
           </p>
         </div>
       </div>

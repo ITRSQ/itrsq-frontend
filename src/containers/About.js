@@ -17,11 +17,14 @@ const About = () => {
         <div>
           <img src={logo} alt={logo} />
           <p className="txt-description-small-white">
-            We are an all rounder IT solutions company, based in London. Started
-            in 2017 and continuously growing. We deal with anything from
-            supporting Phones to servers as well as Web Development. We have a
-            proactive team that are willing to go that extra mile to cater to
-            your needs. We believe in Value, Trust and Transparency.
+          An all-rounder IT solutions company, based in London. Started in 2017 and continually growing. We provide anything from Phone Support to Server Support to Web Development. We have a team of proactive individuals willing to go that extra mile to ensure your needs are met. We believe in value, trust, and transparency.
+<br/>
+We are a comprehensive IT solutions company based in London that handles everything from phones to servers, as well as web development. Our proactive team will go the extra mile to make sure you're satisfied. We believe in value, trust, and transparency.
+<br/>
+
+An all-encompassing IT solutions company based in London. We deal with everything from supporting phones to servers, as well as Web Development. We pride ourselves on being proactive and going the extra mile. We believe in value, trust, and transparency.
+<br/>
+With a team that is proactive and willing to cater to your needs
           </p>
         </div>
         {/* <div>
