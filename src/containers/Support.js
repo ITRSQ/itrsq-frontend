@@ -8,11 +8,20 @@ import Footer from "../components/Footer";
 // JSON
 import itServices from "../assets/json/itServices.json";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/itsupport.json";
+
 const Support = () => {
   const [selectedService, setSelectedService] = useState("Overview");
 
   return (
     <div className="support bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       <WhatsApp />
       <div className="filler"></div>
       <div className="support__container">

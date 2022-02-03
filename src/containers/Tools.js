@@ -7,6 +7,10 @@ import { set } from "js-cookie";
 import Footer from "../components/Footer";
 import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/tools.json";
+
 const Tools = () => {
   // States
   const [isLoading, setIsLoading] = useState(false);
@@ -197,6 +201,11 @@ const Tools = () => {
 
   return (
     <div className="tools bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       <div className="tools__container">
         <div className="tool">
           <h1 className="txt-header-medium-white">Email Verification</h1>

@@ -8,9 +8,18 @@ import logo from "../assets/img/logo.png";
 // // JSON
 // import team from "../assets/json/team.json";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/about.json";
+
 const About = () => {
   return (
     <div className="about bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       <WhatsApp />
       <div></div>
       <div className="about__container">
