@@ -78,7 +78,7 @@ const Header = ({ userToken, setTokenAndId }) => {
           >
             Contact
           </Link>
-          {userToken ? (
+          {/* {userToken ? (
             <>
               {userToken === "Icj9uXDIVFuXffUpiGH1FhFLkwJxvePF" ? (
                 <Link
@@ -130,7 +130,7 @@ const Header = ({ userToken, setTokenAndId }) => {
                 Signup
               </Link>
             </>
-          )}
+          )} */}
         </div>
       )}
       <div className="header__container">
@@ -208,13 +208,13 @@ const Header = ({ userToken, setTokenAndId }) => {
         </div>
         <div>
           <div>
-            <i
+            {/* <i
               className="fas fa-user"
               onClick={() => {
                 setProfileModal(!profileModal);
               }}
-            ></i>
-            {profileModal && (
+            ></i> */}
+            {/* {profileModal && (
               <div className="header__profileModal">
                 {userToken ? (
                   <>
@@ -275,7 +275,7 @@ const Header = ({ userToken, setTokenAndId }) => {
                   </>
                 )}
               </div>
-            )}
+            )} */}
           </div>
 
           <Link to="/contact" className="btn-classic-blue ">
