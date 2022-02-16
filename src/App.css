@@ -2379,8 +2379,12 @@ body {
   justify-content: center;
   border: solid var(--clr--white--transparent--hover) 3px;
   border-radius: 5px;
-  padding: 20px 20px 30px 20px;
+  padding: 30px 20px 30px 20px;
   margin: 0 2% 50px 2%;
+}
+
+.tool__image a {
+  margin-left: 5px;
 }
 
 .tool__image > div {
@@ -2435,6 +2439,8 @@ body {
   padding: 4px;
   border-radius: 5px;
   color: white;
+  outline: none;
+  text-decoration: none;
 }
 
 .tool__image h2 {
@@ -2442,6 +2448,11 @@ body {
   color: white;
   font-style: italic;
   margin-top: 5px;
+  margin-bottom: 10px;
+  max-width: 60%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
 }
 
 .tool__hashtag {
@@ -2986,6 +2997,26 @@ body {
   }
   .tool__hashtag > div > div:nth-child(1) {
     margin-bottom: 20px;
+  }
+
+  .tool__image > div {
+    flex-direction: column;
+  }
+
+  .tool__image {
+    height: fit-content;
+  }
+  .tool__image > div > div {
+    width: 100%;
+    text-align: center;
+  }
+  .tool__image a {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .tool__image > div > div:nth-child(2) label {
+    display: flex;
+    flex-direction: column;
   }
 }
 

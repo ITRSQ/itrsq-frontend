@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Cookies from "js-cookie";
+import Loadable from "react-loadable";
 
 // Containers
 import Home from "./containers/Home";
@@ -91,6 +92,13 @@ function App() {
     bootstrapAsync();
   }, []);
 
+  const AsyncComponent = Loadable({
+    loader: () =>
+      import(/* webpackChunkName: "myNamedChunk" */ "./components/Header"),
+    loading: () => <div>loading...</div>,
+    modules: ["myNamedChunk"],
+  });
+
   return isLoading ? (
     <LoaderFullScreen />
   ) : (
@@ -102,7 +110,7 @@ function App() {
             onContact={() => promoHandle()}
           />
         )} */}
-        <Header userToken={userToken} setTokenAndId={setTokenAndId} />
+        <AsyncComponent userToken={userToken} setTokenAndId={setTokenAndId} />
         <Switch>
           <Route path="/admin">
             <Admin />

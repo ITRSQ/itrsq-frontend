@@ -8,6 +8,10 @@ import LoaderFullScreen from "../components/Utility/LoaderFullScreen";
 import Footer from "../components/Footer";
 import image from "../assets/img/white-background.png";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/blog.json";
+
 const Blog = () => {
   const history = useHistory();
   // States
@@ -52,6 +56,11 @@ const Blog = () => {
     <LoaderFullScreen />
   ) : (
     <div className="blog bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       <div className="blog__container">
         <div className="blog__picker">
           <button

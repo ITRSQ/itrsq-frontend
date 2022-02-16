@@ -7,9 +7,18 @@ import Footer from "../components/Footer";
 import WhatsApp from "../components/Communication/WhatsApp";
 import Testimonials from "../components/Home/Testimonials";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/home.json";
+
 const Home = () => {
   return (
     <div className="bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       <WhatsApp />
       {/* <StickyMenu
         anchor1="Home"

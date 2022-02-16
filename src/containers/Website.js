@@ -19,10 +19,19 @@ import htmlcssjs from "../assets/img/htmlcssjs-logo.png";
 import nodejs from "../assets/img/nodejs-logo.png";
 import react from "../assets/img/React-logo.png";
 
+// Meta
+import Metadecorator from "../components/Utility/MetaDecorators";
+import tags from "../assets/json/meta_tags/website.json";
+
 const Website = () => {
   const history = useHistory();
   return (
     <div className="website bg-gradient-orange">
+      <Metadecorator
+        title={tags.pagetitle}
+        description={tags.pagedescription}
+        tags={tags.tags}
+      />
       {/* <StickyMenu
         anchor1="Website"
         anchor1Id="hero"
