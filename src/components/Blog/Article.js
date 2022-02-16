@@ -7,6 +7,12 @@ import { useHistory } from "react-router-dom";
 import LoaderFullScreen from "../Utility/LoaderFullScreen";
 import Footer from "../Footer";
 
+// Meta
+import Metadecorator from "../../components/Utility/MetaDecorators";
+const name = "ITRSQ - ";
+const read_more = "...\n\nRead More Here"
+const regex = /(<([^>]+)>)/ig;
+
 const Article = ({ setModal, modalInfo }) => {
   console.log(window.location);
   const history = useHistory();
@@ -35,6 +41,7 @@ const Article = ({ setModal, modalInfo }) => {
     <LoaderFullScreen />
   ) : (
     <div className="blog bg-gradient-orange">
+      <Metadecorator title={name + data.title} description={data.title + data.text.replace(regex, '').substring(0, 350) + read_more} tags={data.tags} image={data.picture}/>
       <div className="blog__container">
         <div className="article">
           <i

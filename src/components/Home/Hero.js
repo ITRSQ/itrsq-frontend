@@ -10,12 +10,13 @@ const Hero = ({ onArrow, id }) => {
       <div className="hero__container">
         {" "}
         <h1 data-aos="fade-up">
-          Beautiful websites <br />
-          with dedicated IT support
+        Beautiful websites with  <br />
+        personalised / professional / bespoke IT support
         </h1>
         <h2 data-aos="fade-up" data-aos-delay={200}>
-          A London-based company focused on helping and assisting clients bring
-          their vision or business online, from design to deployment
+        A London-based company dedicated to assisting clients bring
+        their ideas or business online, from conception / design to
+        implementation.
         </h2>
         <div data-aos="fade-up" data-aos-delay={400}>
           {" "}
