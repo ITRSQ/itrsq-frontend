@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Installation",
+        "value": "installation"
+    },
+    {
+        "title": "Configuration",
+        "value": "configuration"
+    },
+    {
+        "title": "Windows",
+        "value": "windows"
+    },
+    {
+        "title": "Apple",
+        "value": "apple"
+    },
+    {
+        "title": "Android",
+        "value": "android"
+    },
+    {
+        "title": "Cloud Engineering",
+        "value": "cloudEngineering"
+    },
+    {
+        "title": "Cyber Security",
+        "value": "cyberSecurity"
+    },
+    {
+        "title": "Something Else",
+        "value": "otherIt"
+    }
+
+]

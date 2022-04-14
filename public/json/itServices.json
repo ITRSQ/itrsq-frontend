@@ -1,0 +1,54 @@
+[{
+    "title": "Development of IT strategy",
+    "detail": [
+        "Work with clients to develop and implement effective IT strategy", "Disaster prevention and business continuity strategy", "Complex IT network planning, testing and maintenance"
+    ],
+    "icon":"fas fa-chess"
+},
+{
+    "title": "Cyber security strategy",
+    "detail":["Threat detection, firewalls, and anti-virus implementation", "Monitoring and testing security vulnerabilities across cloud, hardware, and remote technology", "Risk management and cyber security regulations compliance"]
+    ,
+    "icon":"fas fa-shield-alt"
+},
+{
+    "title": "Cloud technology solutions",
+    "detail":["Enabling transition from office to remote working", "Commercial cloud or private cloud infrastructure development", "Cloud migration, managed hosting, cloud desktop, storage, and backup"]
+    ,
+    "icon":"fas fa-cloud"
+},
+{
+    "title": "IT project management",
+    "detail":["IT strategy and project delivery adapted to business goals, timeline, and budget", "Integrated IT communications across providers and manufacturers", "Change management and training services for business adaptations"]
+    ,
+    "icon":"fas fa-tasks"
+},
+{
+    "title": "IT procurement",
+    "detail":["Supplier audits and high specification sourcing leads", "Product consultation, logistics and purchase advice", "Configuration, installation, and maintenance support"]
+    ,
+    "icon":"fas fa-parachute-box"
+},
+{
+    "title": "IT infrastructure",
+    "detail":["Facilitating integration of infrastructure and systems after mergers, office moves or acquisitions", "Ensure device and system updates and regular in-depth audits of technology networks"]
+    ,
+    "icon":"fas fa-shapes"
+},
+{
+    "title": "Email migration",
+    "detail":["Exchange server and IMAP email migration", "Complete data migration service implementation", "Ongoing email migration monitoring"]    ,
+    "icon":"fas fa-exchange-alt"
+},
+{
+    "title": "Backup & data recovery",
+    "detail":["Prevention of software failure, protection of critical systems and data", "Virtualised real-time backup environments and immediate data restoration", "GDPR"]
+    ,
+    "icon":"fas fa-database"
+},
+{
+    "title": "Website design/development",
+    "detail":["Design, branding and logo consultation services", "Complete database, backend, and frontend website development", "Ecommerce, SEO optimisation and security integration"]
+    ,
+    "icon":"fas fa-globe"
+}]

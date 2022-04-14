@@ -1,0 +1,17 @@
+[
+    {
+        "position": "CEO",
+        "name": "Aaron Raha",
+        "picture": "https://res.cloudinary.com/itrsq/image/upload/v1630137964/ITRSQ-WEBSITE-ASSETS/aaron_z1jnjr.jpg"
+    },
+    {
+        "position": "Design & Marketing",
+        "name": "Ruth Miller",
+        "picture": "https://res.cloudinary.com/itrsq/image/upload/v1630137967/ITRSQ-WEBSITE-ASSETS/ruth_cyv391.jpg"
+    },
+    {
+        "position": "Full Stack Developer",
+        "name": "Julian Tran",
+        "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQFXVM10bhYCoA/profile-displayphoto-shrink_800_800/0/1624748281920?e=1634774400&v=beta&t=herAT8vAa53biKhX-b5I3l2-BojCWwqQUEN52Y9GNIg"
+    }
+]
