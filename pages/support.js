@@ -108,7 +108,7 @@ const Support = () => {
             </div>
           </div>
         </div>
-        <div className="pricing">
+        {/* <div className="pricing">
           <div className="text-holder">
             <h1>IT Support Costs</h1>
             <p>
@@ -183,7 +183,7 @@ const Support = () => {
               <div className="btn subnow">Purchase Now</div>
             </div>
           </div>
-        </div>
+        </div> */}
         <Footer />
       </div>
     </div>
