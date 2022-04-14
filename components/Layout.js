@@ -22,7 +22,7 @@ export default function Layout({ children }) {
           name="google-site-verification"
           content="S_xmw4KVLwwBiH4XRPrORopV2GXIUDPv-olDatEx_P8"
         />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="keywords"
           content="ITRSQ, HTML, CSS, JavaScript, Web design, Websites, Make a website, website builder, website design, website checker, website maker, make a website uk, make a website for business, websites for business"
