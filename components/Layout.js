@@ -7,6 +7,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         <title>ITRSQ</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,7 +17,7 @@ export default function Layout({ children }) {
           content="A London-based company focused on helping and assisting clients bring their vision or business online, from design to deployment"
           data-react-helmet="true"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <meta name="theme-color" content="#000000" />
         <meta
           name="google-site-verification"

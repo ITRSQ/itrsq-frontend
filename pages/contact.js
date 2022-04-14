@@ -123,7 +123,7 @@ const Contact = () => {
               /> */}
                 <div className="double">
                   <div className="single">
-                    <label htmlFor="firstName" className="label-style">
+                    <label for="firstName" className="label-style">
                       First Name <span>*</span>
                     </label>
                     <input
@@ -134,7 +134,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="single right-mar">
-                    <label htmlFor="lastname" className="label-style">
+                    <label for="lastname" className="label-style">
                       Last Name <span>*</span>
                     </label>
                     <input
@@ -147,7 +147,7 @@ const Contact = () => {
                 </div>
                 <div className="double">
                   <div className="single">
-                    <label htmlFor="email" className="label-style">
+                    <label for="email" className="label-style">
                       Email <span>*</span>
                     </label>
                     <input
@@ -158,7 +158,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="single right-mar">
-                    <label htmlFor="ref" className="label-style">
+                    <label for="ref" className="label-style">
                       Reference Number
                     </label>
                     <input
@@ -171,7 +171,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="single right-mar">
-                    <label htmlFor="topic" className="label-style">
+                    <label for="topic" className="label-style">
                       What is this about ? <span>*</span>
                     </label>
                     <select
@@ -191,7 +191,7 @@ const Contact = () => {
                   </div>
 
                   <div className="single right-mar">
-                    <label htmlFor="website" className="label-style">
+                    <label for="website" className="label-style">
                       Could you be more specific ? <span>*</span>
                     </label>
                     {topic === "website" && (
@@ -238,7 +238,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="single right-mar">
-                  <label htmlFor="msg" className="label-style">
+                  <label for="msg" className="label-style">
                     Your Message <span>*</span>
                   </label>
                   <textarea

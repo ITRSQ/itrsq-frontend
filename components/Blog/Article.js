@@ -10,7 +10,6 @@ import Footer from "../Footer";
 import HeroSection from "../HeroSection";
 
 const Article = ({ setModal, modalInfo }) => {
-  console.log(window.location);
   const history = useHistory();
   // States
   const [data, setData] = useState();
@@ -24,7 +23,7 @@ const Article = ({ setModal, modalInfo }) => {
         const response = await axios.get(
           `https://itrsq.herokuapp.com${window.location.pathname}`
         );
-        console.log(response.data);
+
         setData(response.data);
 
         setIsLoading(false);

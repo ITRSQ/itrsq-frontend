@@ -36,7 +36,6 @@ export default function Header({ userToken, setTokenAndId }) {
     setPath(e.target.innerText);
     router.push("/");
     document.body.style.overflowY = burgerModal ? "scroll" : "hidden";
-    console.log(e.target.innerText);
   };
   return (
     <header className="header">

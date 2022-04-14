@@ -2,7 +2,6 @@ import Image from "next/image";
 import blogIcon from "../public/img/hero/blog.svg";
 
 const HeroSection = ({ title, img, topTitle }) => {
-  console.log(img);
   return (
     <div className="new-hero">
       <div className="cont">

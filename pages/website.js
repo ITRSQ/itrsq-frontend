@@ -26,7 +26,6 @@ const Website = () => {
   const [toggleState, setToggleState] = useState(0);
   const toggleTab = (index) => {
     setToggleState(index);
-    console.log(index);
   };
   return (
     <div className="core-page">

@@ -51,7 +51,7 @@ const Tools = () => {
           text: text,
         }
       );
-      console.log(response.data);
+
       setHashtags(response.data.data);
       setIsLoading(false);
     } catch (error) {
@@ -124,7 +124,7 @@ const Tools = () => {
         "https://itrsq.herokuapp.com/tools/url",
         formData
       );
-      console.log(response.data);
+
       setUrlMessage(response.data.shortUrl);
       setIsLoading(false);
     } catch (error) {
@@ -176,7 +176,6 @@ const Tools = () => {
       setImgUrlMessage("Click here to download your Image !");
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
       setImgUrlMessage("There has been a problem with your request");
       setIsLoading(false);
     }

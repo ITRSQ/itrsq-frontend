@@ -36,7 +36,6 @@ const Article = ({ setModal, modalInfo }) => {
   }, []);
 
   const regex = /(<([^>]+)>)/gi;
-  console.log(data);
 
   return isLoading ? (
     <LoaderFullScreen />
