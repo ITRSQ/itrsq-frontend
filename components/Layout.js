@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import WhatsApp from "./Communication/WhatsApp";
 
 import Head from "next/head";
 import Script from "next/script";
@@ -68,6 +69,7 @@ export default function Layout({ children }) {
       />
 
       <Header />
+      <WhatsApp />
       <main>{children}</main>
     </>
   );

@@ -2,7 +2,7 @@ const WhatsApp = () => {
   return (
     <a
       href="https://wa.me/+447931538608"
-      className="what"
+      className="float"
       target="_blank"
       rel="noopener noreferrer"
     >
