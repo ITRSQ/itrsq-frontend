@@ -244,19 +244,44 @@ const Tools = () => {
             <div className="tool-light">
               <div className="tool-single">
                 <div className="left-side">
-                  <Image src={emailIcon} alt="" />
+                  <div
+                    className="image-container-tools"
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                    data-aos-once="true"
+                  >
+                    <Image src={emailIcon} alt="" />
+                  </div>
                 </div>
                 <div className="right-side">
                   <div className="text-holder">
-                    <h1>Email Verification</h1>
-                    <h2>Enter the email you wish to verify</h2>
+                    <h1
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-once="true"
+                    >
+                      Email Verification
+                    </h1>
+                    <h2
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
+                    >
+                      Enter the email you wish to verify
+                    </h2>
                     <input
                       type="text"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-once="true"
                     />
                     <h3>{emailMessage}</h3>
                     <button
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-once="true"
                       className="btn-main orange-color btn-tools"
                       onClick={
                         emailMessage
@@ -274,18 +299,43 @@ const Tools = () => {
               <div className="tool-single">
                 <div className="left-side">
                   <div className="text-holder">
-                    <h1>Phone Number Verification</h1>
-                    <h2>
+                    <h1
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-once="true"
+                    >
+                      Phone Number Verification
+                    </h1>
+                    <h2
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
+                    >
                       Enter the phone number you wish to verify <br />
-                      <span>{"(Don't forget to add the country prefix)"}</span>
+                      <span
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        data-aos-once="true"
+                      >
+                        {"(Don't forget to add the country prefix)"}
+                      </span>
                     </h2>
 
                     <input
                       type="text"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-once="true"
                     />
-                    <h3>{phoneMessage}</h3>
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      data-aos-once="true"
+                    >
+                      {phoneMessage}
+                    </h3>
                     <button
                       className="btn-main orange-color btn-tools-light"
                       onClick={
@@ -293,37 +343,78 @@ const Tools = () => {
                           ? () => anotherPhone()
                           : () => phoneHandle()
                       }
+                      data-aos="fade-up"
+                      data-aos-delay="600"
+                      data-aos-once="true"
                     >
                       {phoneMessage ? "Do another" : "Verify"}
                     </button>
                   </div>
                 </div>
                 <div className="right-side">
-                  <Image src={mobileIcon} alt="" />
+                  <div
+                    className="image-container-tools"
+                    data-aos="fade-up"
+                    data-aos-delay="700"
+                    data-aos-once="true"
+                  >
+                    <Image src={mobileIcon} alt="" />
+                  </div>
                 </div>
               </div>
             </div>
             <div className="tool-light">
               <div className="tool-single">
                 <div className="left-side">
-                  <Image src={vatIcon} alt="" />
+                  <div
+                    className="image-container-tools"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    data-aos-once="true"
+                  >
+                    <Image src={vatIcon} alt="" />
+                  </div>
                 </div>
                 <div className="right-side">
                   <div className="text-holder">
-                    <h1>VAT Number Verification</h1>
-                    <h2>Enter the VAT number you wish to verify</h2>
+                    <h1
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
+                    >
+                      VAT Number Verification
+                    </h1>
+                    <h2
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-once="true"
+                    >
+                      Enter the VAT number you wish to verify
+                    </h2>
 
                     <input
                       type="text"
                       value={vat}
                       onChange={(e) => setVat(e.target.value)}
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-once="true"
                     />
-                    <h3>{vatMessage}</h3>
+                    <h3
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      data-aos-once="true"
+                    >
+                      {vatMessage}
+                    </h3>
                     <button
                       className="btn-main orange-color btn-tools"
                       onClick={
                         vatMessage ? () => anotherVat() : () => vatHandle()
                       }
+                      data-aos="fade-up"
+                      data-aos-delay="600"
+                      data-aos-once="true"
                     >
                       {vatMessage ? "Do another" : "Verify"}
                     </button>
@@ -335,8 +426,19 @@ const Tools = () => {
               <div className="tool-single">
                 <div className="left-side">
                   <div className="text-holder">
-                    <h1>URL Shortener</h1>
-                    <h2 className="itallic">
+                    <h1
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-once="true"
+                    >
+                      URL Shortener
+                    </h1>
+                    <h2
+                      className="itallic"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
+                    >
                       Enter the URL you wish to shorten
                     </h2>
 
@@ -344,14 +446,29 @@ const Tools = () => {
                       type="text"
                       value={longUrl}
                       onChange={(e) => setLongUrl(e.target.value)}
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-once="true"
                     />
                     {urlMessage && (
-                      <h2 className="txt-description-medium-white">
+                      <h2
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-aos-once="true"
+                        className="txt-description-medium-white"
+                      >
                         {"Here's your shortened link !"}
                       </h2>
                     )}
                     {urlMessage && (
-                      <a href={urlMessage} target="_blank" rel="noreferrer">
+                      <a
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-aos-once="true"
+                        href={urlMessage}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {urlMessage}
                       </a>
                     )}
@@ -361,27 +478,50 @@ const Tools = () => {
                       onClick={
                         urlMessage ? () => anotherUrl() : () => urlHandle()
                       }
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-once="true"
                     >
                       {urlMessage ? "Do another" : "Submit"}
                     </button>
                   </div>
                 </div>
                 <div className="right-side">
-                  <Image src={wwwIcon} alt="" />
+                  <div
+                    className="image-container-tools"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                  >
+                    <Image src={wwwIcon} alt="" />
+                  </div>
                 </div>
               </div>
             </div>
             <div className="tool-hash">
               <div className="tool__hashtag">
-                <h1 className="txt-header-medium-white">Hashtag Generator</h1>
+                <h1
+                  className="txt-header-medium-white"
+                  data-aos="fade-up"
+                  data-aos-once="true"
+                >
+                  Hashtag Generator
+                </h1>
                 <div>
                   <div>
-                    <h2>
+                    <h2
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-once="true"
+                    >
                       Enter your text here (up to 1000 characters) and our
                       Hashtag Generator will generate a list of the best
                       hashtags associated
                     </h2>
                     <textarea
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
                       maxLength={1000}
                       cols="30"
                       rows="10"
@@ -397,13 +537,20 @@ const Tools = () => {
                           ? () => anotherHashtag()
                           : () => hashtagHandle()
                       }
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-once="true"
                     >
                       {hashtags ? "Do another" : "Submit"}
                     </button>
                   </div>
                   <div>
                     {" "}
-                    <div>
+                    <div
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-once="true"
+                    >
                       <div>
                         <h3 className="txt-description-small-white">
                           Hashtags

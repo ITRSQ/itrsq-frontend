@@ -32,7 +32,12 @@ const Hero = ({ onArrow, id }) => {
           </div> */}
         </div>
 
-        <div className="img-hero">
+        <div
+          className="img-hero"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-once="true"
+        >
           {" "}
           <Image src={devIcon} alt={devIcon} />
         </div>

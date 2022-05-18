@@ -44,7 +44,7 @@ const Blog = () => {
 
         setData(blogPage.data.reverse());
         setData2(response2.data.items.reverse());
-
+        console.log(blogPage.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);

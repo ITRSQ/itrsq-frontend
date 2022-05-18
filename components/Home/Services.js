@@ -26,7 +26,9 @@ function Services({ id }) {
               data-rellax-desktop-speed="1.5"
             >
               <div className="img-border">
-                <Image src={design} alt="" />
+                <div className="image-container-services">
+                  <Image src={design} alt="" />
+                </div>
               </div>
               <span className="solo-3-span">
                 <i className="fas fa-chevron-right"></i>Web Design
@@ -49,7 +51,9 @@ function Services({ id }) {
               data-rellax-desktop-speed="1"
             >
               <div className="img-border">
-                <Image src={work} alt="" />
+                <div className="image-container-services">
+                  <Image src={work} alt="" />
+                </div>
               </div>
               <span className="solo-3-span">
                 <i className="fas fa-chevron-right"></i>Web Development
@@ -70,7 +74,9 @@ function Services({ id }) {
               data-rellax-desktop-speed="1.3"
             >
               <div className="img-border">
-                <Image src={support} alt="" />
+                <div className="image-container-services">
+                  <Image src={support} alt="" />
+                </div>
               </div>
               <span>
                 <i className="fas fa-chevron-right"></i>IT Support

@@ -1,4 +1,5 @@
 import webSub from "../../public/img/icons/homesubs/website.svg";
+import arrow from "../../public/img/icons/homesubs/arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,14 +18,17 @@ const SubWebsite = () => {
               believe that great products come from communication and attention
               to detail, we’ll be with you every step of the way.
             </p>
-            <Link href="/" passHref>
+            <Link href="/website" passHref>
               <span
                 className="sub-btn"
                 data-aos="fade-right"
                 data-aos-once="true"
                 data-aos-delay={300}
               >
-                Get Started
+                Get Started{" "}
+                <i>
+                  <Image src={arrow} alt="" />
+                </i>
               </span>
             </Link>
           </div>

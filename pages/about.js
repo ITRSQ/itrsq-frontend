@@ -25,16 +25,39 @@ const About = () => {
         />
         <div>
           <div className="aboutus-section">
-            <div className="left-side">
-              <Image src={howIcon} alt="how" />
+            <div
+              className="left-side"
+              data-aos="fade-right"
+              data-aos-delay="400"
+              data-aos-once="true"
+            >
+              <div className="image-container-about">
+                <Image src={howIcon} alt="how" />
+              </div>
             </div>
             <div className="right-side">
               <div className="text-holder">
-                <div className="smol-title">About Us</div>
-                <div className="main-title">
+                <div
+                  className="smol-title"
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                  data-aos-once="true"
+                >
+                  About Us
+                </div>
+                <div
+                  className="main-title"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-once="true"
+                >
                   How we ensure your vision comes to life
                 </div>
-                <p>
+                <p
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                  data-aos-once="true"
+                >
                   We are an all rounder IT solutions company, based in London.
                   Started in 2017 and continously growing. We deal with anything
                   from supporting Phones to servers as well as Web Development.
@@ -48,11 +71,27 @@ const About = () => {
           <div className="expert-section">
             <div className="left-side">
               <div className="text-holder">
-                <div className="smol-title">Our Expertise</div>
-                <div className="main-title">
+                <div
+                  className="smol-title"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-once="true"
+                >
+                  Our Expertise
+                </div>
+                <div
+                  className="main-title"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-once="true"
+                >
                   Bespoke solutions for your business
                 </div>
-                <p>
+                <p
+                  data-aos="fade-right"
+                  data-aos-delay="300"
+                  data-aos-once="true"
+                >
                   Development, Communication, Support and Maintenance, ITRSQ
                   goes the extra mile to make sure your experience with us feels
                   completely tailored to your requirements. No matter what your
@@ -63,25 +102,45 @@ const About = () => {
             </div>
             <div className="right-side">
               <div className="poggres-holder">
-                <div className="pogress">
+                <div
+                  className="pogress"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-once="true"
+                >
                   <div className="title">Development Experience</div>
                   <div className="bar">
                     <div className="inner" style={{ width: "87%" }}></div>
                   </div>
                 </div>
-                <div className="pogress">
+                <div
+                  className="pogress"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-once="true"
+                >
                   <div className="title">IT Support Experience</div>
                   <div className="bar">
                     <div className="inner" style={{ width: "78%" }}></div>
                   </div>
                 </div>
-                <div className="pogress">
+                <div
+                  className="pogress"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  data-aos-once="true"
+                >
                   <div className="title">Marketing Experience</div>
                   <div className="bar">
                     <div className="inner" style={{ width: "69%" }}></div>
                   </div>
                 </div>
-                <div className="pogress">
+                <div
+                  className="pogress"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-once="true"
+                >
                   <div className="title">Consulting Experience</div>
                   <div className="bar">
                     <div className="inner" style={{ width: "65%" }}></div>

@@ -1,10 +1,17 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import WhatsApp from "./Communication/WhatsApp";
-
+// Packages
+import { useEffect } from "react";
 import Head from "next/head";
 import Script from "next/script";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// Components
+import Header from "./Header";
+import Footer from "./Footer";
+
 export default function Layout({ children }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <Head>
@@ -69,7 +76,7 @@ export default function Layout({ children }) {
       />
 
       <Header />
-      <WhatsApp />
+
       <main>{children}</main>
     </>
   );
