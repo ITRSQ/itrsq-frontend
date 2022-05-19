@@ -272,7 +272,9 @@ const Contact = () => {
               </div>
               <div className="gridded">
                 <div className="title">Office Address</div>
-                <div className="under-title">123 High Street</div>
+                <div className="under-title">
+                  24 Holborn Viaduct, London EC1A 2BN
+                </div>
               </div>
             </div>
           </div>
@@ -283,7 +285,7 @@ const Contact = () => {
               </div>
               <div className="gridded">
                 <div className="title">Phone Number</div>
-                <div className="under-title">123 High Street</div>
+                <div className="under-title">+44 7931 538608</div>
               </div>
             </div>
           </div>
@@ -294,7 +296,7 @@ const Contact = () => {
               </div>
               <div className="gridded">
                 <div className="title">Email Us</div>
-                <div className="under-title">123 High Street</div>
+                <div className="under-title">Info@itrsq.com</div>
               </div>
             </div>
           </div>

@@ -31,10 +31,8 @@ export default function Header({ userToken, setTokenAndId }) {
     setBurgerModal(!burgerModal);
     document.body.style.overflowY = burgerModal ? "scroll" : "hidden";
   };
-  const menuOff = (e) => {
+  const menuOff = () => {
     setBurgerModal(!burgerModal);
-    setPath(e.target.innerText);
-    router.push("/");
     document.body.style.overflowY = burgerModal ? "scroll" : "hidden";
   };
   return (
@@ -209,98 +207,98 @@ export default function Header({ userToken, setTokenAndId }) {
           </span>
         </div>
       </div>
-      {burgerModal && (
-        <div
-          className="burger-modal"
-          data-aos="slide-right"
-          data-aos-duration="100"
-          data-aos-easing="ease-in-out"
-        >
-          <div className="logo-plus-close">
+      <div className={burgerModal ? "burger-modal" : "burger-modal hidden"}>
+        <div className="logo-plus-close">
+          <div className="image-container-burger">
             <Image
-              width="100"
-              height="100"
               src={logo_orange}
               alt="ITRSQ LOGO"
               className="header__logo"
               onClick={(e) => menuOff(e)}
             />
-            <i className="fas fa-times icn-x" onClick={() => menuOn()}></i>
           </div>
-          <div className="menu-list">
-            <div
-              className={"btn-wrapper " + (changePath === "HOME" && "active")}
-            >
-              <Link passHref href="/">
-                <span onClick={(e) => menuOff(e)} className="menu-mobile-text">
-                  Home
-                </span>
-              </Link>
-            </div>
-            <div
-              className={
-                "btn-wrapper " + (changePath === "WEBSITE" && "active")
-              }
-            >
-              <Link passHref href="/website">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  {" "}
-                  Website
-                </span>
-              </Link>
-            </div>
-            <div
-              className={
-                "btn-wrapper " + (changePath === "IT SUPPORT" && "active")
-              }
-            >
-              <Link passHref href="/support">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  {" "}
-                  IT Support
-                </span>
-              </Link>
-            </div>
-            <div
-              className={"btn-wrapper " + (changePath === "BLOG" && "active")}
-            >
-              <Link passHref href="/blog">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  Blog
-                </span>
-              </Link>
-            </div>
-            <div
-              className={"btn-wrapper " + (changePath === "TOOLS" && "active")}
-            >
-              <Link passHref href="/tools">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  Tools
-                </span>
-              </Link>
-            </div>
-            <div
-              className={"btn-wrapper " + (changePath === "ABOUT" && "active")}
-            >
-              <Link passHref href="/about">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  About
-                </span>
-              </Link>
-            </div>
-            <div
-              className={
-                "btn-wrapper " + (changePath === "CONTACT" && "active")
-              }
-            >
-              <Link passHref href="/contact">
-                <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
-                  Contact
-                </span>
-              </Link>
-            </div>
+          <i className="fas fa-times icn-x" onClick={() => menuOn()}></i>
+        </div>
+        <div className="menu-list">
+          <div
+            className={"btn-wrapper " + (router.pathname === "/" && "active")}
+          >
+            <Link passHref href="/">
+              <span onClick={(e) => menuOff(e)} className="menu-mobile-text">
+                Home
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/website" && "active")
+            }
+          >
+            <Link passHref href="/website">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                {" "}
+                Website
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/support" && "active")
+            }
+          >
+            <Link passHref href="/support">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                {" "}
+                IT Support
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/blog" && "active")
+            }
+          >
+            <Link passHref href="/blog">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                Blog
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/tools" && "active")
+            }
+          >
+            <Link passHref href="/tools">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                Tools
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/about" && "active")
+            }
+          >
+            <Link passHref href="/about">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                About
+              </span>
+            </Link>
+          </div>
+          <div
+            className={
+              "btn-wrapper " + (router.pathname === "/contact" && "active")
+            }
+          >
+            <Link passHref href="/contact">
+              <span className="menu-mobile-text" onClick={(e) => menuOff(e)}>
+                Contact
+              </span>
+            </Link>
+          </div>
 
-            {/* {userToken ? (
+          {/* {userToken ? (
               <>
                 {userToken === "Icj9uXDIVFuXffUpiGH1FhFLkwJxvePF" ? (
                   <Link
@@ -358,63 +356,65 @@ export default function Header({ userToken, setTokenAndId }) {
               </Link>
               </>
             )} */}
-          </div>
-          <div className="bottom-socials-holder">
-            <div className="bottom-socials-app">
-              <div className="socials">
-                <a
-                  passHref
-                  href="https://www.facebook.com/ITRSQ"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-facebook"></i>
-                </a>
-                <a
-                  passHref
-                  href="https://www.instagram.com/itrsq2000/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a
-                  passHref
-                  href="https://twitter.com/ItrsqS"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  passHref
-                  href="https://www.linkedin.com/company/itrsq/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a
-                  passHref
-                  href="https://www.youtube.com/channel/UCUUs-ri1zJU_mYumBbzjO6g"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-youtube"></i>
-                </a>
-                <a
-                  passHref
-                  href="https://www.tiktok.com/@itrsq?"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fab fa-tiktok"></i>
-                </a>
-              </div>
+        </div>
+        <div className="bottom-socials-holder">
+          <div className="bottom-socials-app">
+            <div className="socials">
+              <a
+                passHref
+                href="https://www.facebook.com/ITRSQ"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a
+                passHref
+                href="https://www.instagram.com/itrsq2000/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                passHref
+                href="https://twitter.com/ItrsqS"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a
+                passHref
+                href="https://www.linkedin.com/company/itrsq/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                passHref
+                href="https://www.youtube.com/channel/UCUUs-ri1zJU_mYumBbzjO6g"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-youtube"></i>
+              </a>
+              <a
+                passHref
+                href="https://www.tiktok.com/@itrsq?"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-tiktok"></i>
+              </a>
             </div>
           </div>
         </div>
-      )}
+      </div>
+      <div className={burgerModal ? "whatsapp hidden" : "whatsapp show"}>
+        <WhatsApp />
+      </div>
     </header>
   );
 }

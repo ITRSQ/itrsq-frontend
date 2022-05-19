@@ -50,7 +50,9 @@ function SubTools() {
                   }
                   onClick={() => toggleTab(0)}
                 >
-                  <Image src={emailIcon} alt="" height="100" width="180" />
+                  <div className="image-container-icon-tools">
+                    <Image src={emailIcon} alt="" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -58,7 +60,9 @@ function SubTools() {
                   }
                   onClick={() => toggleTab(1)}
                 >
-                  <Image src={phoneIcon} alt="" height="100" width="180" />
+                  <div className="image-container-icon-tools">
+                    <Image src={phoneIcon} alt="" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -66,7 +70,9 @@ function SubTools() {
                   }
                   onClick={() => toggleTab(2)}
                 >
-                  <Image src={vatIcon} alt="" height="100" width="180" />
+                  <div className="image-container-icon-tools">
+                    <Image src={vatIcon} alt="" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -74,15 +80,21 @@ function SubTools() {
                   }
                   onClick={() => toggleTab(3)}
                 >
-                  <Image src={urlIcon} alt="" height="100" width="180" />
+                  <div className="image-container-icon-tools">
+                    <Image src={urlIcon} alt="" />
+                  </div>
                 </div>
                 <div
                   className={
-                    toggleState === 4 ? "flexed-box active" : "flexed-box"
+                    toggleState === 4
+                      ? "flexed-box active last"
+                      : "flexed-box last"
                   }
                   onClick={() => toggleTab(4)}
                 >
-                  <Image src={hashIcon} alt="" height="100" width="180" />
+                  <div className="image-container-icon-tools">
+                    <Image src={hashIcon} alt="" />
+                  </div>
                 </div>
                 <Link href="/tools">
                   <a href="">Find out More</a>
@@ -100,13 +112,11 @@ function SubTools() {
                     content ? Use this tool to validate as many addresses as you
                     need .
                   </p>
-                  <Image
+                  <div
                     className={toggleState === 0 ? "image-up" : "image-down"}
-                    src={emailIcon}
-                    alt=""
-                    height="350"
-                    width="350"
-                  />
+                  >
+                    <Image src={emailIcon} alt="" height="350" width="350" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -118,13 +128,11 @@ function SubTools() {
                     Need to verify if a phone number is valid ? Enter the number
                     with the appropriate country code and find out now .
                   </p>
-                  <Image
+                  <div
                     className={toggleState === 1 ? "image-up" : "image-down"}
-                    src={phoneIcon}
-                    alt=""
-                    height="350"
-                    width="350"
-                  />
+                  >
+                    <Image src={phoneIcon} alt="" height="350" width="350" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -133,13 +141,11 @@ function SubTools() {
                 >
                   <div className="title">VAT Verification</div>
                   <p>VAT number validation check at your fingertips !</p>
-                  <Image
+                  <div
                     className={toggleState === 2 ? "image-up" : "image-down"}
-                    src={vatIcon}
-                    alt=""
-                    height="350"
-                    width="350"
-                  />
+                  >
+                    <Image src={vatIcon} alt="" height="350" width="350" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -152,13 +158,11 @@ function SubTools() {
                     in your link and ITRSQ will provide you with a short, sweet
                     and shareable new link.
                   </p>
-                  <Image
+                  <div
                     className={toggleState === 3 ? "image-up" : "image-down"}
-                    src={urlIcon}
-                    alt=""
-                    height="350"
-                    width="350"
-                  />
+                  >
+                    <Image src={urlIcon} alt="" height="350" width="350" />
+                  </div>
                 </div>
                 <div
                   className={
@@ -171,13 +175,11 @@ function SubTools() {
                     How popular are they ? Stop wondering and find out now by
                     entering some text into our Hashtag finder.
                   </p>
-                  <Image
+                  <div
                     className={toggleState === 4 ? "image-up" : "image-down"}
-                    src={hashIcon}
-                    alt=""
-                    height="350"
-                    width="350"
-                  />
+                  >
+                    <Image src={hashIcon} alt="" height="350" width="350" />
+                  </div>
                 </div>
 
                 <div className="close-dots">

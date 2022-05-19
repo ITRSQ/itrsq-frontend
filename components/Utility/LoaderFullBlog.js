@@ -154,7 +154,7 @@ const LoaderFullBlog = () => {
               <div className="blog-latest">
                 <div className="single-item">
                   <div className="img-holder">
-                    <Image src="" alt="" />
+                    {/* <Image src="" alt="" /> */}
                   </div>
                   <div className="inner-grid">
                     <div className="title-single-line">
@@ -177,7 +177,7 @@ const LoaderFullBlog = () => {
                 </div>
                 <div className="single-item">
                   <div className="img-holder">
-                    <Image src="" alt="" />
+                    {/* <Image src="" alt="" /> */}
                   </div>
                   <div className="inner-grid">
                     <div className="title-single-line">
@@ -200,7 +200,7 @@ const LoaderFullBlog = () => {
                 </div>
                 <div className="single-item">
                   <div className="img-holder">
-                    <Image src="" alt="" />
+                    {/* <Image src="" alt="" /> */}
                   </div>
                   <div className="inner-grid">
                     <div className="title-single-line">

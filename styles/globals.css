@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
@@ -7,11 +5,10 @@
   --clr--black: var(--clr--secondary);
   --clr--blog--background: rgb(240, 240, 240);
 
-
   --clr--primary: #fe8202;
   --clr--secondary: #283044;
-  --clr--accent:#44A1A0;
-  --clr--light:#F0EFF4;
+  --clr--accent: #44a1a0;
+  --clr--light: #f0eff4;
 
   --ff--common: "Inter", sans-serif;
 
@@ -19,14 +16,15 @@
   --swiper-pagination-bullet-inactive-color: rgb(0, 0, 0) !important;
 }
 
-
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+html {
+  overflow-x: hidden;
+}
 body {
   overflow-x: hidden;
   position: relative;
@@ -72,12 +70,8 @@ body {
   font-size: 1rem;
 }
 
-
 .bg-gradient-orange {
-  background: radial-gradient(
-    var(--clr--secondary),
-    var(--clr--primary)
-  );
+  background: radial-gradient(var(--clr--secondary), var(--clr--primary));
   background-size: 600% 600%;
   -webkit-animation: bg--gradient--main 8s ease infinite;
   -moz-animation: bg--gradient--main 8s ease infinite;
@@ -118,11 +112,9 @@ body {
   }
 }
 
-
-
 .container-full-white {
   width: 100vw;
-background-image: url(/public/img/white-background.jpg);
+  background-image: url(/public/img/white-background.jpg);
   background-size: cover;
 
   max-width: 1440px;
@@ -156,8 +148,6 @@ background-image: url(/public/img/white-background.jpg);
   border-radius: 10px;
   background-color: var(--clr--white);
 }
-
-
 
 .txt-header-large-white {
   font-size: 3rem;
@@ -352,8 +342,6 @@ background-image: url(/public/img/white-background.jpg);
   line-height: 2rem;
 }
 
-
-
 .btn-classic {
   cursor: pointer;
   padding: 15px 30px;
@@ -471,15 +459,9 @@ background-image: url(/public/img/white-background.jpg);
 }
 
 .header__logo {
-
-
-
-justify-content: center;
-
+  justify-content: center;
   cursor: pointer;
   display: flex;
-
-  margin-left: 2rem;
 }
 
 .header__container {
@@ -550,18 +532,17 @@ justify-content: center;
   color: rgba(255, 255, 255, 0.808);
 }
 
-.header__container > div > div  > span  {
+.header__container > div > div > span {
   color: white;
   height: 24px;
   margin-right: 20px;
   cursor: pointer;
 }
-.header__container > div > div > a   {
+.header__container > div > div > a {
   color: white;
   height: 24px;
   margin-right: 20px;
 }
-
 
 .burger-menu {
   display: none;
@@ -584,10 +565,6 @@ justify-content: center;
   z-index: 200;
   overflow-y: scroll;
 }
-
-
-
-
 
 .footer {
   padding: 50px;
@@ -648,8 +625,6 @@ justify-content: center;
   z-index: 1;
 }
 
-
-
 .hero {
   width: 100vw;
   height: 100vh;
@@ -660,8 +635,6 @@ justify-content: center;
   z-index: 0;
 }
 
-
-
 .hero__container {
   width: 1440px;
   max-width: 1440px;
@@ -670,7 +643,7 @@ justify-content: center;
   z-index: 0;
   overflow: hidden;
 }
-.hero__container .text-holder{
+.hero__container .text-holder {
   margin: auto;
 }
 .hero__container .text-holder h1 {
@@ -827,7 +800,6 @@ justify-content: center;
   line-height: 20px;
   font-weight: 400;
 }
-
 
 .website {
   display: flex;
@@ -1038,8 +1010,6 @@ justify-content: center;
   padding: 30px;
 }
 
-
-
 .contact {
   width: 100vw;
   min-height: 100vh;
@@ -1144,7 +1114,6 @@ justify-content: center;
   align-items: center;
 }
 
-
 .support {
   width: 100vw;
   min-height: 100vh;
@@ -1231,7 +1200,6 @@ justify-content: center;
   align-items: center;
 }
 
-
 .about {
   min-width: 100vw;
   height: 100vh;
@@ -1265,9 +1233,6 @@ justify-content: center;
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
-
-
-
 
 .promotionBanner {
   position: fixed;
@@ -1364,8 +1329,6 @@ justify-content: center;
   margin-left: 10px;
 }
 
-
-
 .promotionBanner__number {
   border-radius: 50%;
   font-weight: 600;
@@ -1391,7 +1354,6 @@ justify-content: center;
   margin-top: 15px;
   font-weight: 500;
 }
-
 
 .blog {
   width: 100vw;
@@ -1493,8 +1455,16 @@ justify-content: center;
 .blog__content > div:nth-child(1) > div > p {
   height: 70%;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, var(--clr--secondary) 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, var(--clr--secondary) 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 80%,
+    transparent 100%
+  );
 }
 
 .blog__description {
@@ -1534,8 +1504,16 @@ justify-content: center;
 
 .blog__content > div:nth-child(2) > div > p {
   height: 60%;
-  -webkit-mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
 }
 
 .blog__content > div:nth-child(2) > div > h1 {
@@ -1572,8 +1550,16 @@ justify-content: center;
 .blog__content > div:nth-child(3) > div > p {
   margin-top: 10px;
   height: 6%;
-  -webkit-mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
 }
 
 .blog__content > div:nth-child(4) {
@@ -1603,8 +1589,16 @@ justify-content: center;
 
 .blog__content > div:nth-child(4) > div > p {
   height: 100px;
-  -webkit-mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
 }
 
 .blog__content__rest {
@@ -1647,8 +1641,16 @@ justify-content: center;
 
 .blog__smallContent > div {
   height: 30%;
-  -webkit-mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, var(--clr--secondary) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--clr--secondary) 50%,
+    transparent 100%
+  );
 }
 .blog__content__tutorials {
   width: 90%;
@@ -1783,8 +1785,6 @@ justify-content: center;
   color: white;
 }
 
-
-
 .auth {
   width: 100vw;
   min-height: 100vh;
@@ -1899,7 +1899,6 @@ justify-content: center;
   cursor: pointer;
 }
 
-
 .settings {
   width: 100vw;
   min-height: 100vh;
@@ -1967,8 +1966,6 @@ justify-content: center;
 .settings__container button {
   width: 300px;
 }
-
-
 
 .projects {
   padding-top: 105px;
@@ -2061,7 +2058,6 @@ justify-content: center;
   font-weight: 400;
 }
 
-
 .newProject {
   display: flex;
   flex-direction: column;
@@ -2071,8 +2067,6 @@ justify-content: center;
 .newProject > h1 {
   margin-bottom: 40px;
 }
-
-
 
 .project {
   padding-top: 105px;
@@ -2181,8 +2175,6 @@ justify-content: center;
   padding: 10px;
 }
 
-
-
 .admin {
   min-height: 100vh;
   min-width: 100vw;
@@ -2250,8 +2242,6 @@ justify-content: center;
 .admin__form button {
   margin-bottom: 15px;
 }
-
-
 
 .tools {
   min-height: 100vh;
@@ -2472,8 +2462,8 @@ justify-content: center;
 
   height: 100%;
   overflow-y: scroll;
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .tool__hashtag
@@ -2499,10 +2489,6 @@ justify-content: center;
   border: solid 1px var(--clr--white);
 }
 
-
-
-
-
 .underline-grow {
   position: relative;
   color: white;
@@ -2525,7 +2511,6 @@ justify-content: center;
   transform: scaleX(1);
 }
 
-
 .float {
   position: fixed;
   width: 60px;
@@ -2547,6 +2532,27 @@ justify-content: center;
 
   transition: transform 0.3s ease;
 }
-
-
-
+/* Next Image Optimisation */
+.image-container-services {
+  position: relative;
+  width: 75%;
+  margin: auto;
+}
+.image-container-icon-tools {
+  position: relative;
+  width: 45px;
+  margin: auto;
+}
+.image-container-burger {
+  position: relative;
+  width: 34%;
+}
+.image-container-tools {
+  position: relative;
+}
+.image-container-about {
+  position: relative;
+  width: 78%;
+  margin: auto;
+  margin-bottom: 20px;
+}
